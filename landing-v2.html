@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АрхОКН — Проектная документация по объектам культурного наследия</title>
+    <meta name="description" content="Разработка разделов обеспечения сохранности, проектов реставрации и приспособления объектов культурного наследия. Работаем с 2008 года.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-dark: #0a0a0a;
+            --color-dark-light: #141414;
+            --color-gold: #c9a227;
+            --color-gold-light: #e0c158;
+            --color-text: #e8e8e8;
+            --color-text-muted: #888;
+            --color-border: rgba(201, 162, 39, 0.15);
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-dark);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 0 24px; }
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 24px 0;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.8) 50%, transparent 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            color: var(--color-gold);
+            font-weight: 400;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 48px;
+        }
+        
+        .nav a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav a:hover {
+            color: var(--color-gold);
+        }
+        
+        .header-phone {
+            color: var(--color-gold);
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+        
+        @media (max-width: 1024px) {
+            .nav { display: none; }
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 160px 48px 120px;
+            background: 
+                radial-gradient(ellipse at top, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(201, 162, 39, 0.05) 0%, transparent 40%),
+                var(--color-dark);
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.03"><path d="M0 0h100v100H0z" fill="none"/><path d="M0 50h100M50 0v100" stroke="%23c9a227" stroke-width="0.5"/></svg>');
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+        
+        .hero-quote {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            font-style: italic;
+            color: var(--color-gold);
+            margin-bottom: 60px;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        
+        .hero-quote-author {
+            font-size: 14px;
+            color: var(--color-text-muted);
+            margin-top: 16px;
+            font-style: normal;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 32px;
+            color: var(--color-text);
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--color-text-muted);
+            margin-bottom: 56px;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: transparent;
+            color: var(--color-gold);
+            padding: 20px 48px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border: 1px solid var(--color-gold);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--color-gold);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover {
+            color: var(--color-dark);
+        }
+        
+        .btn-primary:hover::before {
+            left: 0;
+        }
+        
+        /* Section Common */
+        .section {
+            padding: 140px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-label {
+            display: block;
+            color: var(--color-gold);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 500;
+            color: var(--color-text);
+            line-height: 1.2;
+        }
+        
+        /* About */
+        .about {
+            background: var(--color-dark-light);
+            position: relative;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--color-border), transparent);
+        }
+        
+        .about-text {
+            font-size: 18px;
+            line-height: 1.9;
+            color: var(--color-text-muted);
+            max-width: 800px;
+            margin: 0 auto 64px;
+            text-align: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 24px;
+        }
+        
+        .founder {
+            text-align: center;
+            margin-top: 64px;
+        }
+        
+        .founder-name {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+        
+        .founder-role {
+            color: var(--color-gold);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Services */
+        .services {
+            background: var(--color-dark);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+        
+        .service-card {
+            background: var(--color-dark-light);
+            padding: 48px 40px;
+            border: 1px solid var(--color-border);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--color-gold);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover {
+            border-color: rgba(201, 162, 39, 0.3);
+            transform: translateY(-4px);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-number {
+            font-family: var(--font-serif);
+            font-size: 56px;
+            color: var(--color-gold);
+            opacity: 0.3;
+            margin-bottom: 24px;
+            line-height: 1;
+        }
+        
+        .service-card h3 {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            color: var(--color-text);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .service-card p {
+            color: var(--color-text-muted);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        
+        /* Clients */
+        .clients {
+            background: var(--color-dark-light);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .clients-label {
+            font-size: 12px;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 48px;
+        }
+        
+        .clients-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 48px 64px;
+            opacity: 0.7;
+        }
+        
+        .client-name {
+            font-size: 15px;
+            color: var(--color-text-muted);
+            max-width: 280px;
+            line-height: 1.5;
+        }
+        
+        /* Team */
+        .team {
+            background: var(--color-dark);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        @media (max-width: 1024px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (max-width: 640px) {
+            .team-grid { grid-template-columns: 1fr; }
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .member-avatar {
+            width: 140px;
+            height: 140px;
+            background: var(--color-dark-light);
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            color: var(--color-gold);
+            opacity: 0.6;
+            border: 1px solid var(--color-border);
+        }
+        
+        .member-name {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+        
+        .member-role {
+            font-size: 13px;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+        
+        /* Testimonial */
+        .testimonial {
+            background: var(--color-dark-light);
+            padding: 140px 0;
+            text-align: center;
+        }
+        
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-text {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            font-style: italic;
+            color: var(--color-text);
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+        
+        .testimonial-author {
+            color: var(--color-gold);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .testimonial-role {
+            color: var(--color-text-muted);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        
+        /* Contact */
+        .contact {
+            background: var(--color-dark);
+            padding: 140px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--color-border), transparent);
+        }
+        
+        .contact-title {
+            font-family: var(--font-serif);
+            font-size: clamp(32px, 4vw, 48px);
+            color: var(--color-text);
+            margin-bottom: 24px;
+        }
+        
+        .contact-text {
+            font-size: 17px;
+            color: var(--color-text-muted);
+            max-width: 560px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
+        }
+        
+        .contact-phone {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            color: var(--color-gold);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 40px;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-phone:hover {
+            opacity: 0.8;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--color-dark-light);
+            padding: 48px 0;
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+        }
+        
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            color: var(--color-text);
+            margin-bottom: 16px;
+        }
+        
+        .footer-logo span {
+            color: var(--color-gold);
+        }
+        
+        .footer-text {
+            color: var(--color-text-muted);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Арх<span>ОКН</span></a>
+                <nav class="nav">
+                    <a href="#about">О компании</a>
+                    <a href="#services">Услуги</a>
+                    <a href="#team">Команда</a>
+                    <a href="#contact">Контакты</a>
+                </nav>
+                <a href="tel:+74951234567" class="header-phone">+7 (495) 123-45-67</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <blockquote class="hero-quote">
+                «Найдется ли такой человек, на которого не произвела бы впечатления древность, засвидетельствованная столькими славнейшими памятниками?»
+                <cite class="hero-quote-author">— Марк Тулий Цицерон</cite>
+            </blockquote>
+            
+            <h1>Проектная документация по объектам культурного наследия</h1>
+            
+            <p class="hero-subtitle">
+                Разделы обеспечения сохранности • Проекты реставрации • Приспособление под современное использование
+            </p>
+            
+            <a href="#contact" class="btn-primary">Обсудить проект</a>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-label">О компании</span>
+                <h2 class="section-title">Сумма технологий сохранения</h2>
+            </header>
+            
+            <div class="about-text">
+                <p>
+                    Бюро «АрхОКН» специализируется на разработке проектной документации по объектам культурного наследия. 
+                    Мы убеждены, что работа с памятниками архитектуры — это кропотливый труд, в котором новейшие технологии 
+                    занимают важную, но далеко не решающую роль.
+                </p>
+                <p>
+                    Наибольшее внимание мы уделяем трепетному отношению к предмету работы и постоянному развитию 
+                    компетенций наших специалистов. Созерцание имплантированных технологий современной жизни в историю — 
+                    благодатный результат большой творческой команды.
+                </p>
+            </div>
+            
+            <div class="founder">
+                <p class="founder-name">Дмитрий Шапилов</p>
+                <p class="founder-role">Основатель бюро</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section services" id="services">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-label">Услуги</span>
+                <h2 class="section-title">Комплексная документация по ОКН</h2>
+            </header>
+            
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>Раздел обеспечения сохранности</h3>
+                    <p>
+                        Историко-архивные исследования, архитектурно-археологические обследования, 
+                        фотофиксация и подготовка пояснительной записки для прохождения экспертизы.
+                    </p>
+                </article>
+                
+                <article class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>Проект реставрации</h3>
+                    <p>
+                        Научно-проектная документация, проект производства работ, рабочая документация 
+                        и авторский надзор для объектов культурного наследия любой категории.
+                    </p>
+                </article>
+                
+                <article class="service-card">
+                    <div class="service-number">03</div>
+                    <h3>Проект приспособления</h3>
+                    <p>
+                        Приспособление под новые функции, интеграция инженерных систем, перепланировка 
+                        с сохранением фасадов и согласование изменений с органами охраны.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="clients">
+        <div class="container">
+            <p class="clients-label">Наши клиенты</p>
+            
+            <div class="clients-grid">
+                <div class="client-name">Государственная Третьяковская галерея</div>
+                <div class="client-name">Государственный центральный театральный музей им. А.А. Бахрушина</div>
+                <div class="client-name">Государственный музей искусства народов Востока</div>
+                <div class="client-name">Ростовский Кремль</div>
+                <div class="client-name">Центральный музей древнерусской культуры им. Андрея Рублева</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section team" id="team">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-label">Команда</span>
+                <h2 class="section-title">Эксперты, на которых опираются в сложных проектах</h2>
+            </header>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">◯</div>
+                    <p class="member-name">Александр Петров</p>
+                    <p class="member-role">Главный архитектор<br>Аттестован Минкультом РФ</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">◯</div>
+                    <p class="member-name">Елена Смирнова</p>
+                    <p class="member-role">Историк архитектуры<br>Кандидат искусствоведения</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">◯</div>
+                    <p class="member-name">Михаил Иванов</p>
+                    <p class="member-role">Главный инженер<br>Аттестован по реставрации</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">◯</div>
+                    <p class="member-name">Анна Козлова</p>
+                    <p class="member-role">Проектный менеджер<br>15 лет опыта в ОКН</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <blockquote class="testimonial-text">
+                    «Профессиональный подход, четкое соблюдение сроков и безупречное качество выполненных работ. 
+                    Компания проявила внимательное отношение к поставленной задаче.»
+                </blockquote>
+                
+                <p class="testimonial-author">Н.С. Каровская</p>
+                <p class="testimonial-role">Ростовский Кремль</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <span class="section-label">Контакты</span>
+            <h2 class="contact-title">Обсудим ваш проект</h2>
+            
+            <p class="contact-text">
+                Получите бесплатную консультацию эксперта. Оценим объект, определим перечень работ и сроки.
+            </p>
+            
+            <a href="tel:+74951234567" class="contact-phone">+7 (495) 123-45-67</a>
+            
+            <a href="mailto:info@arh-okn.ru" class="btn-primary">Написать нам</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-logo">Арх<span>ОКН</span></p>
+            <p class="footer-text">© 2026 Архитектурное бюро по ОКН. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
