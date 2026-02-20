@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проектная документация по ОКН | Раздел обеспечения сохранности | Москва</title>
+    <meta name="description" content="Разработка проектов реставрации и приспособления объектов культурного наследия. Раздел обеспечения сохранности ОКН. Согласование с Минкультом. Работаем с 2008 года.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a5f;
+            --primary-dark: #152a45;
+            --accent: #c9a227;
+            --accent-light: #e0b93d;
+            --light: #f8f9fa;
+            --dark: #0f172a;
+            --text: #334155;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text);
+            background: var(--white);
+        }
+        
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Header */
+        header { 
+            background: var(--white); 
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        
+        .header-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        
+        .logo { 
+            font-family: 'Playfair Display', serif;
+            font-size: 28px; 
+            font-weight: 700; 
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span { 
+            color: var(--accent); 
+            font-weight: 400;
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        
+        .header-phone { 
+            font-size: 18px; 
+            font-weight: 600; 
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .header-btn {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .header-btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero */
+        .hero { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white); 
+            padding: 160px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5" x="0" y="0" width="100" height="100"/></svg>');
+            background-size: 40px 40px;
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--accent-light);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 24px;
+            border: 1px solid rgba(201, 162, 39, 0.3);
+        }
+        
+        .hero h1 { 
+            font-size: 56px; 
+            font-weight: 700; 
+            margin-bottom: 24px; 
+            line-height: 1.1;
+            max-width: 800px;
+        }
+        
+        .hero-subtitle { 
+            font-size: 20px; 
+            margin-bottom: 40px; 
+            opacity: 0.9;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--white);
+        }
+        
+        .hero-stats { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 30px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .stat-item h3 { 
+            font-size: 48px; 
+            color: var(--accent); 
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-item p { 
+            font-size: 14px; 
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--light);
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .trust-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .trust-text {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+        
+        .trust-badges {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text);
+        }
+        
+        .trust-badge-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Services */
+        .services { 
+            padding: 100px 0; 
+            background: var(--white);
+        }
+        
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px; 
+        }
+        
+        .service-card { 
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .service-card:hover { 
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-color: var(--accent);
+        }
+        
+        .service-card.featured {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        .service-card.featured .service-title,
+        .service-card.featured .service-text {
+            color: var(--white);
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .service-icon { 
+            width: 70px; 
+            height: 70px; 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px; 
+            margin-bottom: 24px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: var(--white); 
+            font-size: 32px;
+            box-shadow: 0 10px 30px rgba(30, 58, 95, 0.2);
+        }
+        
+        .service-card.featured .service-icon {
+            background: var(--accent);
+            color: var(--dark);
+        }
+        
+        .service-title { 
+            font-size: 24px; 
+            color: var(--primary); 
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .service-text { 
+            font-size: 15px; 
+            color: var(--text-light);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        
+        .service-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+        
+        .service-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 14px;
+            color: var(--text);
+        }
+        
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .service-card.featured .service-list li::before {
+            color: var(--accent);
+        }
+        
+        .service-link { 
+            color: var(--primary);
+            font-weight: 600; 
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s;
+        }
+        
+        .service-link:hover {
+            gap: 12px;
+        }
+        
+        .service-card.featured .service-link {
+            color: var(--accent);
+        }
+        
+        /* Audience */
+        .audience { 
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--light) 0%, var(--white) 100%);
+        }
+        
+        .audience-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 30px; 
+        }
+        
+        .audience-card { 
+            display: flex; 
+            gap: 24px; 
+            padding: 32px; 
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        
+        .audience-card:hover {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
+        
+        .audience-icon { 
+            font-size: 48px;
+            width: 80px;
+            height: 80px;
+            background: var(--light);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .audience-content h3 { 
+            font-size: 22px; 
+            color: var(--primary); 
+            margin-bottom: 12px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .audience-content p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        .audience-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        
+        .audience-tag {
+            background: var(--light);
+            color: var(--text);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 13px;
+        }
+        
+        /* Process */
+        .process { 
+            padding: 100px 0; 
+            background: var(--white);
+        }
+        
+        .process-steps { 
+            display: flex; 
+            justify-content: space-between;
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .process-steps::before { 
+            content: ''; 
+            position: absolute; 
+            top: 40px; 
+            left: 60px; 
+            right: 60px; 
+            height: 2px; 
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 100%);
+            opacity: 0.3;
+        }
+        
+        .step { 
+            text-align: center; 
+            width: 18%; 
+            position: relative; 
+            z-index: 1; 
+        }
+        
+        .step-number { 
+            width: 80px; 
+            height: 80px; 
+            background: var(--white);
+            color: var(--primary); 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 28px; 
+            font-weight: 700; 
+            margin: 0 auto 20px; 
+            border: 3px solid var(--accent);
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 5px 20px rgba(201, 162, 39, 0.2);
+        }
+        
+        .step h4 { 
+            font-size: 18px; 
+            color: var(--primary); 
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .step p { 
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Advantages */
+        .advantages { 
+            padding: 100px 0;
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .advantages .section-title {
+            color: var(--white);
+        }
+        
+        .advantages-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 40px; 
+        }
+        
+        .advantage-item { 
+            text-align: center; 
+            padding: 20px; 
+        }
+        
+        .advantage-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(201, 162, 39, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+            border: 2px solid var(--accent);
+        }
+        
+        .advantage-item h3 { 
+            font-size: 42px; 
+            color: var(--accent); 
+            font-weight: 700; 
+            margin-bottom: 12px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .advantage-item p { 
+            font-size: 15px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Cases */
+        .cases { 
+            padding: 100px 0; 
+            background: var(--light);
+        }
+        
+        .cases-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px; 
+        }
+        
+        .case-card { 
+            background: var(--white); 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+        
+        .case-image { 
+            height: 240px; 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: var(--white);
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .case-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" x="0" y="0" width="100" height="100"/></svg>');
+            background-size: 20px 20px;
+        }
+        
+        .case-content { 
+            padding: 30px; 
+        }
+        
+        .case-content h3 { 
+            font-size: 20px; 
+            color: var(--primary); 
+            margin-bottom: 12px;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.4;
+        }
+        
+        .case-content p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .case-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .case-meta-item {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        
+        .case-meta-item strong {
+            color: var(--primary);
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .case-tag { 
+            display: inline-block; 
+            background: rgba(201, 162, 39, 0.15);
+            color: var(--primary); 
+            padding: 8px 18px; 
+            font-size: 13px; 
+            font-weight: 600; 
+            border-radius: 50px;
+            border: 1px solid rgba(201, 162, 39, 0.3);
+        }
+        
+        /* Contact */
+        .contact { 
+            padding: 100px 0; 
+            background: var(--white);
+        }
+        
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1.2fr; 
+            gap: 80px; 
+            align-items: start;
+        }
+        
+        .contact-info h2 { 
+            font-size: 42px; 
+            margin-bottom: 40px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .contact-text {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        
+        .contact-item { 
+            margin-bottom: 30px;
+            padding-left: 60px;
+            position: relative;
+        }
+        
+        .contact-item-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 44px;
+            height: 44px;
+            background: var(--light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .contact-item h4 { 
+            font-size: 13px; 
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        
+        .contact-item p { 
+            font-size: 20px; 
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .contact-form { 
+            background: var(--light);
+            padding: 48px; 
+            border-radius: 20px;
+        }
+        
+        .form-title {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .form-subtitle {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+        
+        .form-group { 
+            margin-bottom: 24px; 
+        }
+        
+        .form-group label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary);
+        }
+        
+        .form-group input, 
+        .form-group textarea { 
+            width: 100%; 
+            padding: 16px; 
+            border: 2px solid var(--border); 
+            border-radius: 12px; 
+            font-size: 16px;
+            background: var(--white);
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, 
+        .form-group textarea:focus { 
+            outline: none; 
+            border-color: var(--accent);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .submit-btn { 
+            width: 100%; 
+            background: var(--accent);
+            color: var(--dark); 
+            padding: 18px; 
+            font-size: 16px; 
+            font-weight: 700; 
+            border: none; 
+            border-radius: 12px; 
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+        
+        .form-note {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 20px;
+        }
+        
+        /* Footer */
+        footer { 
+            background: var(--dark); 
+            color: var(--white); 
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-brand p {
+            font-size: 15px;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+        
+        .footer-column h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column a {
+            color: var(--white);
+            opacity: 0.7;
+            text-decoration: none;
+            font-size: 15px;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-column a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-bottom p {
+            opacity: 0.6;
+            font-size: 14px;
+        }
+        
+        /* Mobile */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 42px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .audience-grid { grid-template-columns: 1fr; }
+            .advantages-grid { grid-template-columns: repeat(2, 1fr); }
+            .cases-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero { padding: 120px 0 60px; }
+            .hero h1 { font-size: 32px; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .hero-cta { flex-direction: column; }
+            .header-right { display: none; }
+            .process-steps { flex-direction: column; gap: 40px; }
+            .process-steps::before { display: none; }
+            .step { width: 100%; }
+            .trust-content { flex-direction: column; gap: 20px; text-align: center; }
+            .trust-badges { flex-wrap: wrap; justify-content: center; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">АРХ<span>ОКН</span></a>
+            <div class="header-right">
+                <a href="tel:+74951234567" class="header-phone">+7 (495) 123-45-67</a>
+                <a href="#contact" class="header-btn">Обсудить проект</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="hero-badge">Работаем с 2008 года</span>
+            <h1>Проектная документация по объектам культурного наследия</h1>
+            <p class="hero-subtitle">Разрабатываем разделы обеспечения сохранности, проекты реставрации и приспособления ОКН. Сопровождаем согласование с Минкультом РФ.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Получить консультацию</a>
+                <a href="#services" class="btn-secondary">Наши услуги</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>16</h3>
+                    <p>лет экспертизы<br>в проектировании ОКН</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>успешно реализованных<br>проектов</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>прохождение экспертизы<br>с первого раза</p>
+                </div>
+                <div class="stat-item">
+                    <h3>45</h3>
+                    <p>дней — средний срок<br>разработки проекта</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container trust-content">
+            <p class="trust-text">Члены СРО проектировщиков. Аттестаты Минкульта РФ. Действующие лицензии на проектирование ОКН.</p>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">📋</div>
+                    <span>СРО проектировщиков</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">🏛️</div>
+                    <span>Минкульт РФ</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">✓</div>
+                    <span>ISO 9001</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Услуги</span>
+                <h2 class="section-title">Комплексная проектная документация по ОКН</h2>
+                <p class="section-subtitle">От раздела обеспечения сохранности до полного проекта реставрации. Работаем с объектами любой категории историко-культурного значения.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3 class="service-title">Раздел обеспечения сохранности</h3>
+                    <p class="service-text">Разработка раздела ООС для проектной документации по объектам культурного наследия. Подготовка к государственной историко-культурной экспертизе.</p>
+                    <ul class="service-list">
+                        <li>Историко-архивные исследования</li>
+                        <li>Архитектурно-археологические обследования</li>
+                        <li>Фотофиксация и обмеры</li>
+                        <li>Подготовка пояснительной записки</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Рассчитать стоимость →</a>
+                </div>
+                <div class="service-card featured">
+                    <span class="service-badge">Популярное</span>
+                    <div class="service-icon">🏛️</div>
+                    <h3 class="service-title">Проект реставрации ОКН</h3>
+                    <p class="service-text">Полный комплекс проектной документации по реставрации памятников архитектуры. От обследования до получения разрешения на производство работ.</p>
+                    <ul class="service-list">
+                        <li>Научно-проектная документация</li>
+                        <li>Проект производства работ</li>
+                        <li>Рабочая документация</li>
+                        <li>Авторский надзор</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Обсудить проект →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3 class="service-title">Проект приспособления</h3>
+                    <p class="service-text">Приспособление объектов культурного наследия под современное использование. Редевелопмент с сохранением историко-культурных ценностей.</p>
+                    <ul class="service-list">
+                        <li>Проект приспособления под новые функции</li>
+                        <li>Интеграция инженерных систем</li>
+                        <li>Перепланировка с сохранением фасадов</li>
+                        <li>Согласование изменений</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Узнать подробнее →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience -->
+    <section class="audience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Клиенты</span>
+                <h2 class="section-title">Кому мы помогаем</h2>
+                <p class="section-subtitle">Работаем с девелоперами, собственниками, архитектурными бюро и юристами по всей Москве и Московской области.</p>
+            </div>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">🏢</div>
+                    <div class="audience-content">
+                        <h3>Девелоперы и инвесторы</h3>
+                        <p>Покупка исторических зданий, редевелопмент, проекты реставрации и приспособления под коммерческое использование. Полное сопровождение сделки.</p>
+                        <div class="audience-tags">
+                            <span class="audience-tag">Редевелопмент</span>
+                            <span class="audience-tag">Инвестиции</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">🏠</div>
+                    <div class="audience-content">
+                        <h3>Собственники недвижимости</h3>
+                        <p>Особняки, доходные дома, здания в центре Москвы. Перепланировка и реконструкция с соблюдением охранных требований и согласованием с ДКН.</p>
+                        <div class="audience-tags">
+                            <span class="audience-tag">Особняки</span>
+                            <span class="audience-tag">Доходные дома</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">📐</div>
+                    <div class="audience-content">
+                        <h3>Архитектурные бюро</h3>
+                        <p>Субподряд по разделу обеспечения сохранности. Работаем как надежный партнер по ОКН для бюро без лицензии Минкульта РФ.</p>
+                        <div class="audience-tags">
+                            <span class="audience-tag">Субподряд</span>
+                            <span class="audience-tag">Партнерство</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">⚖️</div>
+                    <div class="audience-content">
+                        <h3>Юристы и консультанты</h3>
+                        <p>Экспертная поддержка по ПЗЗ, сопровождение сделок, разрешение споров с ДКН, подготовка заключений для судебных разбирательств.</p>
+                        <div class="audience-tags">
+                            <span class="audience-tag">Экспертиза</span>
+                            <span class="audience-tag">Сопровождение</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Процесс</span>
+                <h2 class="section-title">Как мы работаем</h2>
+                <p class="section-subtitle">Прозрачный процесс от первой консультации до получения разрешения на производство работ.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Консультация</h4>
+                    <p>Анализ объекта и задач. Предварительная оценка стоимости и сроков.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Обследование</h4>
+                    <p>Выезд на объект. Фиксация состояния, фотофиксация, обмеры.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Проектирование</h4>
+                    <p>Разработка документации по нормативам Минкульта РФ.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Экспертиза</h4>
+                    <p>Прохождение государственной историко-культурной экспертизы.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h4>Согласование</h4>
+                    <p>Получение разрешения на производство работ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages -->
+    <section class="advantages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Преимущества</span>
+                <h2 class="section-title">Почему работают с нами</h2>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">✓</div>
+                    <h3>100%</h3>
+                    <p>Прохождение экспертизы с первого раза благодаря точной документации</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">⚡</div>
+                    <h3>30%</h3>
+                    <p>Быстрее сроки разработки проекта за счет опыта и отлаженных процессов</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🤝</div>
+                    <h3>24/7</h3>
+                    <p>Поддержка на всех этапах проекта и сопровождение согласований</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">💬</div>
+                    <h3>0₽</h3>
+                    <p>Первичная консультация и оценка объекта без обязательств</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases -->
+    <section class="cases">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Кейсы</span>
+                <h2 class="section-title">Реализованные проекты</h2>
+                <p class="section-subtitle">Примеры наших работ по проектированию объектов культурного наследия в Москве и Московской области.</p>
+            </div>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-image">Фото проекта</div>
+                    <div class="case-content">
+                        <h3>Реставрация фасада доходного дома XIX века</h3>
+                        <p>Центральный район Москвы. Полное восстановление лепного декора, окраски фасада и ремонт кровли с сохранением исторических материалов.</p>
+                        <div class="case-meta">
+                            <div class="case-meta-item">
+                                <strong>Площадь</strong>
+                                1 200 м²
+                            </div>
+                            <div class="case-meta-item">
+                                <strong>Срок</strong>
+                                3 месяца
+                            </div>
+                        </div>
+                        <span class="case-tag">Проект реставрации</span>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image">Фото проекта</div>
+                    <div class="case-content">
+                        <h3>Приспособление особняка под офисное здание</h3>
+                        <p>Сохранение исторических интерьеров, интеграция современных инженерных систем. Перепланировка с сохранением охраняемых элементов.</p>
+                        <div class="case-meta">
+                            <div class="case-meta-item">
+                                <strong>Площадь</strong>
+                                850 м²
+                            </div>
+                            <div class="case-meta-item">
+                                <strong>Срок</strong>
+                                2 месяца
+                            </div>
+                        </div>
+                        <span class="case-tag">Приспособление</span>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image">Фото проекта</div>
+                    <div class="case-content">
+                        <h3>Раздел ООС для жилого комплекса на месте завода</h3>
+                        <p>Комплексное обследование территории и разработка раздела обеспечения сохранности для крупного девелоперского проекта.</p>
+                        <div class="case-meta">
+                            <div class="case-meta-item">
+                                <strong>Площадь</strong>
+                                5 400 м²
+                            </div>
+                            <div class="case-meta-item">
+                                <strong>Срок</strong>
+                                1.5 месяца
+                            </div>
+                        </div>
+                        <span class="case-tag">Раздел ООС</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Обсудим ваш проект</h2>
+                    <p class="contact-text">Получите бесплатную консультацию эксперта. Оценим объект, определим перечень работ и рассчитаем стоимость проекта.</p>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <h4>Телефон</h4>
+                        <p>+7 (495) 123-45-67</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">✉️</div>
+                        <h4>Email</h4>
+                        <p>info@arh-okn.ru</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <h4>Адрес</h4>
+                        <p>Москва, Центральный административный округ</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🕐</div>
+                        <h4>Режим работы</h4>
+                        <p>Пн-Пт: 9:00 — 18:00</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 class="form-title">Запросить консультацию</h3>
+                    <p class="form-subtitle">Заполните форму — мы свяжемся с вами в течение рабочего дня</p>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Ваше имя</label>
+                                <input type="text" placeholder="Иван Иванов">
+                            </div>
+                            <div class="form-group">
+                                <label>Телефон</label>
+                                <input type="tel" placeholder="+7 (___) ___-__-__">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="example@mail.ru">
+                        </div>
+                        <div class="form-group">
+                            <label>Описание задачи</label>
+                            <textarea rows="4" placeholder="Кратко опишите объект (адрес, тип здания, площадь) и задачу..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Отправить заявку</button>
+                        <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">АРХ<span>ОКН</span></a>
+                    <p>Экспертный центр проектной документации по объектам культурного наследия. Работаем с 2008 года.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#">Раздел ООС</a></li>
+                        <li><a href="#">Проект реставрации</a></li>
+                        <li><a href="#">Приспособление ОКН</a></li>
+                        <li><a href="#">Согласование</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Клиентам</h4>
+                    <ul>
+                        <li><a href="#">Девелоперам</a></li>
+                        <li><a href="#">Собственникам</a></li>
+                        <li><a href="#">Архитекторам</a></li>
+                        <li><a href="#">Юристам</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Компания</h4>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Кейсы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Архитектурное бюро по ОКН. Все права защищены.</p>
+                <p>Лицензия Минкульта РФ № XX-XXXXX</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
