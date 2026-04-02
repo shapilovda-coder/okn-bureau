@@ -1,0 +1,524 @@
+<!--
+  АрхОКН — Лучшая объединенная версия
+  Берем: дизайн short dark + коммерция index + аутентичность v2 + картинки и контакты WP AI
+-->
+
+<script>
+  tailwind = tailwind || {};
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          gold: '#c9a227',
+          'gold-light': '#d4b43a',
+          'gold-dark': '#a88a1f',
+          dark: '#0a0a0a',
+          'dark-lighter': '#141414',
+          'dark-card': '#1a1a1a',
+          'dark-border': '#2a2a2a'
+        },
+        fontFamily: {
+          'display': ['Playfair Display', 'serif'],
+          'body': ['Inter', 'sans-serif']
+        }
+      }
+    }
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  .okn-landing * { scroll-behavior: smooth; box-sizing: border-box; }
+  .okn-landing {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #f5f5f5;
+    line-height: 1.6;
+  }
+  .okn-landing .font-display { font-family: 'Playfair Display', serif; }
+  .okn-hero-overlay {
+    background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.8) 70%, #0a0a0a 100%);
+  }
+  .okn-nav-link {
+    position: relative;
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+  }
+  .okn-nav-link:hover { color: #c9a227; }
+  .okn-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #c9a227;
+    transition: width 0.3s ease;
+  }
+  .okn-nav-link:hover::after { width: 100%; }
+  .okn-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #c9a227 0%, #a88a1f 100%);
+    color: #0a0a0a;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .okn-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+  }
+  .okn-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #f5f5f5;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .okn-btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #c9a227;
+    color: #c9a227;
+  }
+  .okn-card-hover { transition: all 0.4s ease; }
+  .okn-card-hover:hover { transform: translateY(-8px); border-color: #c9a227; }
+  .okn-input-field {
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    color: #f5f5f5;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  .okn-input-field:focus {
+    outline: none;
+    border-color: #c9a227;
+    box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.1);
+  }
+  .okn-input-field::placeholder { color: #6b7280; }
+  .okn-section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #2a2a2a, transparent);
+  }
+  .okn-team-photo {
+    filter: grayscale(100%);
+    transition: all 0.4s ease;
+  }
+  .okn-team-photo:hover { filter: grayscale(0%); }
+  .okn-client-logo {
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.3s ease;
+  }
+  .okn-client-logo:hover { filter: grayscale(0%) opacity(1); }
+  .okn-case-card {
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+    transition: all 0.3s;
+  }
+  .okn-case-card:hover { transform: translateY(-8px); border-color: #c9a227; }
+  .okn-case-image {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .okn-case-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .okn-case-card:hover .okn-case-image img {
+    transform: scale(1.05);
+  }
+  .okn-case-tag {
+    display: inline-block;
+    background: rgba(201, 162, 39, 0.15);
+    color: #c9a227;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 50px;
+    border: 1px solid rgba(201, 162, 39, 0.3);
+  }
+  .okn-quote-mark {
+    font-size: 5rem;
+    line-height: 1;
+    color: #c9a227;
+    opacity: 0.3;
+    font-family: 'Playfair Display', serif;
+  }
+</style>
+
+<div class="okn-landing">
+  <!-- Navigation -->
+  <nav id="okn-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: transparent;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="#" class="flex items-center space-x-3" style="text-decoration: none;">
+          <div class="w-10 h-10 border border-gold flex items-center justify-center">
+            <span class="font-display text-gold text-xl font-bold">А</span>
+          </div>
+          <span class="font-display text-xl" style="color: #f5f5f5;">Арх<span class="text-gold">ОКН</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="okn-nav-link">О нас</a>
+          <a href="#services" class="okn-nav-link">Услуги</a>
+          <a href="#clients" class="okn-nav-link">Клиенты</a>
+          <a href="#contacts" class="okn-btn-primary" style="padding: 0.625rem 1.5rem; font-size: 0.875rem;">Связаться</a>
+        </div>
+        <button id="okn-mobile-menu-btn" class="md:hidden" style="color: #f5f5f5; background: none; border: none; padding: 0.5rem; cursor: pointer;" aria-label="Открыть меню">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="okn-mobile-menu" class="hidden md:hidden" style="background: #141414; border-top: 1px solid #2a2a2a;">
+      <div class="px-4 py-6 space-y-4">
+        <a href="#about" class="block" style="color: #d1d5db; text-decoration: none; padding: 0.5rem 0;">О нас</a>
+        <a href="#services" class="block" style="color: #d1d5db; text-decoration: none; padding: 0.5rem 0;">Услуги</a>
+        <a href="#clients" class="block" style="color: #d1d5db; text-decoration: none; padding: 0.5rem 0;">Клиенты</a>
+        <a href="#contacts" class="block" style="color: #c9a227; text-decoration: none; padding: 0.5rem 0;">Связаться</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://shapilovda-bmhfa.wordpress.com/wp-content/uploads/2025/12/site-title-694e73570469f.png" alt="Историческое здание" class="w-full h-full object-cover" style="opacity: 0.35;">
+      <div class="okn-hero-overlay absolute inset-0"></div>
+    </div>
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center" style="padding-top: 5rem;">
+      <span class="inline-block border border-gold/30 text-gold px-5 py-2 rounded-full text-sm font-medium tracking-wide mb-8">Работаем с 2008 года</span>
+      <h1 class="font-display text-3xl md:text-5xl lg:text-6xl leading-tight mb-8" style="color: #f5f5f5;">Проектная документация<br>по объектам культурного наследия</h1>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed" style="color: #d1d5db;">Разрабатываем разделы обеспечения сохранности, проекты реставрации и приспособления ОКН. Сопровождаем согласование с Минкультом РФ.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
+        <a href="#contacts" class="okn-btn-primary">Получить консультацию</a>
+        <a href="#services" class="okn-btn-secondary">Наши услуги</a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10" style="border-top: 1px solid rgba(255,255,255,0.1);">
+        <div><div class="font-display text-4xl text-gold mb-2">16</div><div class="text-sm" style="color: #9ca3af;">лет экспертизы<br>в проектировании ОКН</div></div>
+        <div><div class="font-display text-4xl text-gold mb-2">200+</div><div class="text-sm" style="color: #9ca3af;">успешно реализованных<br>проектов</div></div>
+        <div><div class="font-display text-4xl text-gold mb-2">100%</div><div class="text-sm" style="color: #9ca3af;">прохождение экспертизы<br>с первого раза</div></div>
+        <div><div class="font-display text-4xl text-gold mb-2">45</div><div class="text-sm" style="color: #9ca3af;">дней — средний срок<br>разработки проекта</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="py-10" style="background: #141414; border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <p class="text-center lg:text-left max-w-2xl" style="color: #9ca3af;">Члены СРО проектировщиков. Аттестаты Минкульта РФ. Действующие лицензии на проектирование ОКН.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <div class="flex items-center gap-3 px-5 py-3 border" style="border-color: #2a2a2a; background: #1a1a1a;">
+            <div class="w-10 h-10 rounded-full border flex items-center justify-center text-gold text-lg" style="border-color: rgba(201,162,39,0.3);">✓</div>
+            <span class="text-sm font-medium" style="color: #d1d5db;">СРО проектировщиков</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 border" style="border-color: #2a2a2a; background: #1a1a1a;">
+            <div class="w-10 h-10 rounded-full border flex items-center justify-center text-gold text-lg" style="border-color: rgba(201,162,39,0.3);">🏛</div>
+            <span class="text-sm font-medium" style="color: #d1d5db;">Минкульт РФ</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 border" style="border-color: #2a2a2a; background: #1a1a1a;">
+            <div class="w-10 h-10 rounded-full border flex items-center justify-center text-gold text-lg" style="border-color: rgba(201,162,39,0.3);">★</div>
+            <span class="text-sm font-medium" style="color: #d1d5db;">ISO 9001</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Expertise -->
+  <section id="about" class="py-20 md:py-28" style="background: #0a0a0a;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div>
+          <span class="text-gold text-sm uppercase tracking-widest mb-4 block">О бюро</span>
+          <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #f5f5f5;">Наша экспертиза охраны</h2>
+          <p class="text-lg leading-relaxed mb-6" style="color: #9ca3af;">Мы применяем методики, которые позволяют сочетать сохранение исторического облика и экономическую эффективность проекта, минимизируя риск несоответствий требованиям ОКН.</p>
+          <p class="leading-relaxed" style="color: #9ca3af;">Бюро «АрхОКН» специализируется на разработке проектной документации по объектам культурного наследия. Наибольшее внимание мы уделяем трепетному отношению к предмету работы и постоянному развитию компетенций наших специалистов.</p>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/5] overflow-hidden">
+            <img src="https://shapilovda-bmhfa.wordpress.com/wp-content/uploads/2025/12/site-title-694e73570469f.png" alt="Реставрированный фасад" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -bottom-6 -left-6 p-6 border max-w-xs" style="background: #1a1a1a; border-color: #2a2a2a;">
+            <p class="font-display text-lg italic" style="color: #f5f5f5;">"Каждый объект наследия уникален и требует индивидуального подхода"</p>
+            <p class="text-gold text-sm mt-3">— Дмитрий Шапилов, основатель бюро</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gallery from WP -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="https://shapilovda-bmhfa.wordpress.com/wp-content/uploads/2025/12/site-title-694e735592081.png" alt="Архитектурные чертежи" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="https://shapilovda-bmhfa.wordpress.com/wp-content/uploads/2025/12/site-title-694e73560258e.png" alt="Макет проекта" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="https://shapilovda-bmhfa.wordpress.com/wp-content/uploads/2025/12/site-title-694e735342414.png" alt="Строительный надзор" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+      
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 text-center" style="border-top: 1px solid #2a2a2a;">
+        <div><div class="font-display text-4xl text-gold mb-2">16+</div><div class="text-sm uppercase tracking-wider" style="color: #6b7280;">лет опыта</div></div>
+        <div><div class="font-display text-4xl text-gold mb-2">200+</div><div class="text-sm uppercase tracking-wider" style="color: #6b7280;">проектов</div></div>
+        <div><div class="font-display text-4xl text-gold mb-2">100%</div><div class="text-sm uppercase tracking-wider" style="color: #6b7280;">экспертиза с 1 раза</div></div>
+        <div><div class="font-display text-4xl text-gold mb-2">45</div><div class="text-sm uppercase tracking-wider" style="color: #6b7280;">дней средний срок</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="okn-section-divider"></div>
+
+  <!-- Services -->
+  <section id="services" class="py-20 md:py-28" style="background: #141414;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-gold text-sm uppercase tracking-widest mb-4 block">Услуги</span>
+        <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #f5f5f5;">Архитектурный надзор и проектирование ОКН</h2>
+        <p style="color: #9ca3af;">Полный спектр услуг по охране наследия: от проверки соответствия архитектурным требованиям до ведения проектной документации на ОКН в Москве и области.</p>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="okn-case-card group">
+          <div class="okn-case-image">
+            <img src="https://shapilovda-bmhfa.wordpress.com/wp-content/uploads/2025/12/site-title-694e735342414.png" alt="Архитектурный надзор">
+          </div>
+          <div class="p-8">
+            <span class="okn-case-tag mb-4 inline-block">ПОПУЛЯРНОЕ</span>
+            <h3 class="font-display text-2xl mb-3" style="color: #f5f5f5;">Архитектурный надзор и раздел ООС</h3>
+            <p class="mb-4" style="color: #9ca3af;">Сопровождаем проекты на всех стадиях: от идеи до ввода в эксплуатацию. Контроль соответствия проекта уникальным условиям объектов культурного наследия и точная фиксация изменений.</p>
+            <ul class="space-y-2 text-sm" style="color: #6b7280;">
+              <li class="flex items-start gap-3"><span class="text-gold">—</span><span>Историко-культурная экспертиза</span></li>
+              <li class="flex items-start gap-3"><span class="text-gold">—</span><span>Градостроительный анализ</span></li>
+              <li class="flex items-start gap-3"><span class="text-gold">—</span><span>Согласование с органами охраны наследия</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="okn-case-card group">
+          <div class="okn-case-image">
+            <img src="https://shapilovda-bmhfa.wordpress.com/wp-content/uploads/2025/12/site-title-694e7353ebf21.png" alt="Проектная документация">
+          </div>
+          <div class="p-8">
+            <h3 class="font-display text-2xl mb-3" style="color: #f5f5f5;">Проектная документация и реставрация</h3>
+            <p class="mb-4" style="color: #9ca3af;">Глубокий анализ регуляторики, подготовка необходимой документации и взаимодействие с госорганами. Экономим время и ресурсы за счёт предсказуемых сроков реализации.</p>
+            <ul class="space-y-2 text-sm" style="color: #6b7280;">
+              <li class="flex items-start gap-3"><span class="text-gold">—</span><span>Обмерные чертежи и паспортизация</span></li>
+              <li class="flex items-start gap-3"><span class="text-gold">—</span><span>Исследования и обследования</span></li>
+              <li class="flex items-start gap-3"><span class="text-gold">—</span><span>Научно-реставрационный отчёт</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="okn-case-card group">
+          <div class="okn-case-image">
+            <img src="https://shapilovda-bmhfa.wordpress.com/wp-content/uploads/2025/12/site-title-694e7353d2602.png" alt="Приспособление здания">
+          </div>
+          <div class="p-8">
+            <h3 class="font-display text-2xl mb-3" style="color: #f5f5f5;">Приспособление и концепции сохранения</h3>
+            <p class="mb-4" style="color: #9ca3af;">Разработка концепций сохранения облика и конструктивной основы объектов с учётом исторической значимости и современных строительных норм.</p>
+            <ul class="space-y-2 text-sm" style="color: #6b7280;">
+              <li class="flex items-start gap-3"><span class="text-gold">—</span><span>Функциональное зонирование</span></li>
+              <li class="flex items-start gap-3"><span class="text-gold">—</span><span>Инженерное обеспечение</span></li>
+              <li class="flex items-start gap-3"><span class="text-gold">—</span><span>Авторский надзор</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="okn-section-divider"></div>
+
+  <!-- Clients -->
+  <section id="clients" class="py-20 md:py-28" style="background: #0a0a0a;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-gold text-sm uppercase tracking-widest mb-4 block">Клиенты</span>
+        <h2 class="font-display text-4xl md:text-5xl mb-6" style="color: #f5f5f5;">Нам доверяют лидеры культуры</h2>
+        <p style="color: #9ca3af;">Среди наших клиентов — крупнейшие музеи, государственные учреждения и частные инвесторы</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 items-center">
+        <div class="flex items-center justify-center p-5 border h-20 okn-client-logo" style="border-color: #2a2a2a;"><span class="font-display text-base text-center leading-tight" style="color: #9ca3af;">Государственная<br>Третьяковская галерея</span></div>
+        <div class="flex items-center justify-center p-5 border h-20 okn-client-logo" style="border-color: #2a2a2a;"><span class="font-display text-base text-center leading-tight" style="color: #9ca3af;">Театральный музей<br>им. А.А. Бахрушина</span></div>
+        <div class="flex items-center justify-center p-5 border h-20 okn-client-logo" style="border-color: #2a2a2a;"><span class="font-display text-base text-center leading-tight" style="color: #9ca3af;">Музей искусства<br>народов Востока</span></div>
+        <div class="flex items-center justify-center p-5 border h-20 okn-client-logo" style="border-color: #2a2a2a;"><span class="font-display text-base text-center leading-tight" style="color: #9ca3af;">Ростовский<br>Кремль</span></div>
+        <div class="flex items-center justify-center p-5 border h-20 okn-client-logo" style="border-color: #2a2a2a;"><span class="font-display text-base text-center leading-tight" style="color: #9ca3af;">Музей древнерусской<br>культуры им. Рублева</span></div>
+        <div class="flex items-center justify-center p-5 border h-20 okn-client-logo" style="border-color: #2a2a2a;"><span class="font-display text-base text-center leading-tight" style="color: #9ca3af;">Минкультуры<br>России</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="okn-section-divider"></div>
+
+  <!-- Testimonial -->
+  <section class="py-20 md:py-28" style="background: #141414;">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="okn-quote-mark mb-4">"</div>
+      <blockquote class="font-display text-2xl md:text-3xl leading-relaxed mb-8" style="color: #f5f5f5;">
+        Профессиональный подход, четкое соблюдение сроков и безупречное качество выполненных работ. Компания проявила внимательное отношение к поставленной задаче.
+      </blockquote>
+      <div class="text-gold font-medium">Н.С. Каровская</div>
+      <div class="text-sm mt-1" style="color: #6b7280;">Ростовский Кремль</div>
+    </div>
+  </section>
+
+  <div class="okn-section-divider"></div>
+
+  <!-- Contacts -->
+  <section id="contacts" class="py-20 md:py-28" style="background: #0a0a0a;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div>
+          <span class="text-gold text-sm uppercase tracking-widest mb-4 block">Контакты</span>
+          <h2 class="font-display text-4xl md:text-5xl mb-8" style="color: #f5f5f5;">Обсудим ваш проект</h2>
+          <p class="mb-10 leading-relaxed" style="color: #9ca3af;">Получите бесплатную консультацию эксперта. Оценим объект, определим перечень работ и сроки.</p>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 border flex items-center justify-center flex-shrink-0" style="border-color: rgba(201,162,39,0.3);">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div><h4 class="font-medium mb-1" style="color: #f5f5f5;">Адрес</h4><p style="color: #9ca3af;">ул. Большая Якиманка, 33, Москва</p></div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 border flex items-center justify-center flex-shrink-0" style="border-color: rgba(201,162,39,0.3);">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div><h4 class="font-medium mb-1" style="color: #f5f5f5;">Часы работы</h4><p style="color: #9ca3af;">Пн-Пт: 9:00–18:00</p></div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 border flex items-center justify-center flex-shrink-0" style="border-color: rgba(201,162,39,0.3);">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div><h4 class="font-medium mb-1" style="color: #f5f5f5;">Телефон</h4><p style="color: #9ca3af;">(495) 123-4567</p></div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 border flex items-center justify-center flex-shrink-0" style="border-color: rgba(201,162,39,0.3);">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div><h4 class="font-medium mb-1" style="color: #f5f5f5;">Email</h4><p style="color: #9ca3af;">info@arh-okn.ru</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="p-8 md:p-10 border" style="background: #1a1a1a; border-color: #2a2a2a;">
+          <h3 class="font-display text-2xl mb-8" style="color: #f5f5f5;">Отправить запрос</h3>
+          <form id="okn-contact-form-best" class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-5">
+              <div><label class="block text-sm mb-2" style="color: #9ca3af;">Имя</label><input type="text" name="name" required class="okn-input-field" placeholder="Ваше имя"></div>
+              <div><label class="block text-sm mb-2" style="color: #9ca3af;">Телефон</label><input type="tel" name="phone" required class="okn-input-field" placeholder="+7 (___) ___-__-__"></div>
+            </div>
+            <div><label class="block text-sm mb-2" style="color: #9ca3af;">Email</label><input type="email" name="email" required class="okn-input-field" placeholder="your@email.com"></div>
+            <div>
+              <label class="block text-sm mb-2" style="color: #9ca3af;">Тип услуги</label>
+              <select name="service" class="okn-input-field">
+                <option value="">Выберите услугу</option>
+                <option value="oos">Раздел ООС</option>
+                <option value="restoration">Проект реставрации</option>
+                <option value="adaptation">Приспособление ОКН</option>
+                <option value="complex">Комплексное сопровождение</option>
+              </select>
+            </div>
+            <div><label class="block text-sm mb-2" style="color: #9ca3af;">Сообщение</label><textarea name="message" rows="3" class="okn-input-field resize-none" placeholder="Опишите ваш проект..."></textarea></div>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="okn-privacy-best" name="privacy" required class="mt-1" style="width: 1rem; height: 1rem; accent-color: #c9a227;">
+              <label for="okn-privacy-best" class="text-sm" style="color: #6b7280;">Я согласен с <a href="#" class="text-gold hover:underline">политикой конфиденциальности</a> и обработкой персональных данных</label>
+            </div>
+            <button type="submit" class="okn-btn-primary w-full">Отправить запрос</button>
+          </form>
+          <div id="okn-form-success-best" class="hidden text-center py-12">
+            <div class="w-16 h-16 mx-auto mb-6 border border-gold flex items-center justify-center">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h4 class="font-display text-2xl mb-4" style="color: #f5f5f5;">Спасибо за обращение!</h4>
+            <p style="color: #9ca3af;">Мы свяжемся с вами в ближайшее время.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t" style="background: #0a0a0a; border-color: #2a2a2a;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <a href="#" class="flex items-center space-x-3" style="text-decoration: none;">
+          <div class="w-8 h-8 border border-gold flex items-center justify-center"><span class="font-display text-gold text-lg font-bold">А</span></div>
+          <span class="font-display text-lg" style="color: #f5f5f5;">Арх<span class="text-gold">ОКН</span></span>
+        </a>
+        <p class="text-sm" style="color: #4b5563;">© 2026 АрхОКН. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function() {
+    var navbar = document.getElementById('okn-navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(10,10,10,0.95)';
+        navbar.style.backdropFilter = 'blur(10px)';
+        navbar.style.borderBottom = '1px solid #2a2a2a';
+      } else {
+        navbar.style.background = 'transparent';
+        navbar.style.backdropFilter = 'none';
+        navbar.style.borderBottom = 'none';
+      }
+    });
+
+    var btn = document.getElementById('okn-mobile-menu-btn');
+    var menu = document.getElementById('okn-mobile-menu');
+    btn.addEventListener('click', function() { menu.classList.toggle('hidden'); });
+    menu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() { menu.classList.add('hidden'); });
+    });
+
+    var form = document.getElementById('okn-contact-form-best');
+    var success = document.getElementById('okn-form-success-best');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+      setTimeout(function() { form.reset(); form.classList.remove('hidden'); success.classList.add('hidden'); }, 5000);
+    });
+
+    document.querySelectorAll('.okn-landing a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  })();
+</script>
