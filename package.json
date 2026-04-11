@@ -1,0 +1,14 @@
+{
+  "name": "oknproekt-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static landing page for ОКН.Проект with a minimal Telegram lead backend.",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.js",
+    "check": "node --check server/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

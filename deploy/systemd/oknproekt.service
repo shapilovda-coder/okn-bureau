@@ -1,0 +1,21 @@
+[Unit]
+Description=OKN Proekt lead backend
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/oknproekt/current
+EnvironmentFile=/etc/oknproekt/oknproekt.env
+ExecStart=/usr/bin/node /var/www/oknproekt/current/server/server.js
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
+
