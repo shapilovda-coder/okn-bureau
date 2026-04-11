@@ -25,6 +25,8 @@ Use the default TTL, or `300` seconds while setting up the site.
 
 In the Reg.ru account, open the domain `oknproekt.ru`, then open DNS zone management and edit DNS records there. If the domain uses external DNS servers, make the same changes in that external DNS provider instead.
 
+Official Reg.ru reference: https://help.reg.ru/support/dns-servery-i-nastroyka-zony/nastroyka-resursnykh-zapisey-dns/nastroyka-resursnykh-zapisey-v-lichnom-kabinete
+
 ## Check propagation
 
 ```bash
