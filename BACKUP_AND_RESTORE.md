@@ -37,3 +37,15 @@ local server-configuration archive.
 
 Do not test the lead form with a real submission unless the recipient expects
 the Telegram notification.
+
+## Create a fresh local archive
+
+From a trusted Mac with the `okn-vps` SSH alias configured, run:
+
+```bash
+./scripts/backup_production.sh
+```
+
+The script does not restart or modify the public application. It packages the
+current site and server configuration in `/tmp`, downloads the result, verifies
+checksums, and removes the temporary VPS files.
