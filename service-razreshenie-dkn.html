@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-service-path="/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="yandex-verification" content="f9e7a04ad330b5f5">
-<title>Проект реставрации ОКН в Москве — приспособление, перепланировка, согласование</title>
-<meta name="description" content="Проект реставрации ОКН, приспособление, перепланировка, раздел обеспечения сохранности и согласование в Мосгорнаследии. Проектная документация для объектов культурного наследия в Москве.">
+<title>Разрешение ДКН на работы по сохранению ОКН — сопровождение</title>
+<meta name="description" content="Помогаем получить разрешение ДКН на проведение работ по сохранению ОКН: проверяем готовность проекта, ГИКЭ, согласование и комплект для подачи.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://oknproekt.ru/">
+<link rel="canonical" href="https://oknproekt.ru/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" href="/favicon.ico">
 <!-- OG -->
-<meta property="og:title" content="Проектирование ОКН в Москве — ОКН.Проект">
-<meta property="og:description" content="Проект реставрации объекта культурного наследия, приспособление, раздел обеспечения сохранности и сопровождение согласований.">
+<meta property="og:title" content="Разрешение ДКН на работы по сохранению ОКН — сопровождение">
+<meta property="og:description" content="Помогаем получить разрешение ДКН на проведение работ по сохранению ОКН: проверяем готовность проекта, ГИКЭ, согласование и комплект для подачи.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://oknproekt.ru/">
+<meta property="og:url" content="https://oknproekt.ru/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn">
 <meta property="og:site_name" content="ОКН.Проект">
-<meta property="og:image" content="https://oknproekt.ru/assets/img/og-image.jpg">
+<meta property="og:image" content="/assets/img/og-image.jpg">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Проектирование ОКН в Москве — ОКН.Проект">
-<meta name="twitter:description" content="Проектная документация для объектов культурного наследия: реставрация, приспособление, сохранность и авторский надзор.">
-<meta name="twitter:image" content="https://oknproekt.ru/assets/img/og-image.jpg">
+<meta name="twitter:title" content="Разрешение ДКН на работы по сохранению ОКН — сопровождение">
+<meta name="twitter:description" content="Помогаем получить разрешение ДКН на проведение работ по сохранению ОКН: проверяем готовность проекта, ГИКЭ, согласование и комплект для подачи.">
+<meta name="twitter:image" content="/assets/img/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -168,6 +167,49 @@
     color: var(--light);
     text-decoration: none;
     font-size: 13px;
+  }
+
+  .service-crosslinks {
+    background: var(--bg);
+    padding: 26px 0 18px;
+  }
+  .service-crosslinks-inner {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .service-back-link {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .service-back-link:hover { color: #A07D45; }
+  .service-links-title {
+    font-size: 13px;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 10px;
+  }
+  .service-quick-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 24px;
+  }
+  .service-quick-links a {
+    color: var(--mid);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .service-quick-links a strong { color: var(--dark); }
+  .service-quick-links a:hover strong { color: var(--gold); }
+
+  @media (max-width: 900px) {
+    .service-quick-links { grid-template-columns: 1fr; }
   }
 
   .nav-phone {
@@ -1972,7 +2014,7 @@
 </style>
 
 <!-- JSON-LD Schema -->
-<script type="application/ld+json">
+<script type="application/ld+json" id="site-schema">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -1981,121 +2023,14 @@
       "@id": "https://oknproekt.ru/#professional-service",
       "name": "ОКН.Проект",
       "url": "https://oknproekt.ru/",
-      "description": "проектирование объектов культурного наследия в Москве",
-      "areaServed": {
-        "@type": "City",
-        "name": "Москва"
-      },
+      "description": "Проектная документация и сопровождение работ с объектами культурного наследия в Москве и Московской области",
+      "areaServed": [
+        "Москва",
+        "Московская область"
+      ],
       "telephone": "+79337549879",
       "email": "oknproekt@ya.ru",
       "priceRange": "₽₽",
-      "serviceType": [
-        "проект реставрации объекта культурного наследия",
-        "раздел обеспечения сохранности объекта культурного наследия",
-        "проект приспособления объекта культурного наследия",
-        "перепланировка объекта культурного наследия",
-        "согласование проекта по ОКН в Мосгорнаследии",
-        "охранное обязательство объекта культурного наследия",
-        "капитальный ремонт объекта культурного наследия",
-        "реконструкция объекта культурного наследия",
-        "обследование объектов культурного наследия",
-        "организация и сопровождение государственной историко-культурной экспертизы",
-        "получение разрешения ДКН на проведение работ по сохранению ОКН"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Проектирование и сопровождение работ с объектами культурного наследия",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Проект реставрации объекта культурного наследия",
-              "url": "https://oknproekt.ru/proekt-restavratsii-okn"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Раздел обеспечения сохранности объекта культурного наследия",
-              "url": "https://oknproekt.ru/razdel-obespecheniya-sohrannosti-okn"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Проект приспособления объекта культурного наследия",
-              "url": "https://oknproekt.ru/proekt-prisposobleniya-okn"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Перепланировка объекта культурного наследия",
-              "url": "https://oknproekt.ru/pereplanirovka-okn"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Согласование проекта по ОКН в Мосгорнаследии",
-              "url": "https://oknproekt.ru/soglasovanie-mosgornasledie"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Охранное обязательство объекта культурного наследия",
-              "url": "https://oknproekt.ru/ohrannoe-obyazatelstvo-okn"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Капитальный ремонт объекта культурного наследия",
-              "url": "https://oknproekt.ru/kapitalnyy-remont-okn"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Реконструкция объекта культурного наследия",
-              "url": "https://oknproekt.ru/rekonstruktsiya-obekta-kulturnogo-naslediya"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Обследование объектов культурного наследия",
-              "url": "https://oknproekt.ru/obsledovanie-obektov-kulturnogo-naslediya"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Организация и сопровождение государственной историко-культурной экспертизы",
-              "url": "https://oknproekt.ru/istoriko-kulturnaya-ekspertiza-okn"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Получение разрешения ДКН на проведение работ по сохранению ОКН",
-              "url": "https://oknproekt.ru/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn"
-            }
-          }
-        ]
-      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "ул. Дзержинская, д. 13",
@@ -2113,7 +2048,6 @@
       "@id": "https://oknproekt.ru/#local-business",
       "name": "ОКН.Проект",
       "url": "https://oknproekt.ru/",
-      "description": "проектирование объектов культурного наследия в Москве",
       "telephone": "+79337549879",
       "email": "oknproekt@ya.ru",
       "address": {
@@ -2122,85 +2056,7 @@
         "addressLocality": "Дзержинский",
         "addressRegion": "Московская область",
         "addressCountry": "RU"
-      },
-      "areaServed": "Москва"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Когда нужен раздел обеспечения сохранности объекта культурного наследия?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Раздел обеспечения сохранности ОКН нужен при строительных или земляных работах в зоне влияния памятника. Его включают в проектную документацию по требованию органа охраны или ГАТИ, чтобы пройти согласование без возвратов."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Чем отличается проект реставрации от проекта приспособления?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Проект реставрации — документация на восстановление и сохранение исторического объекта: ремонт конструкций, воссоздание утраченных элементов, консервация. Проект приспособления для современного использования — дополнительный раздел, позволяющий адаптировать ОКН под актуальную функцию (офис, отель, апартаменты) без нарушения предметов охраны. Как правило, оба документа разрабатываются совместно."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Сколько стоит проект реставрации объекта культурного наследия?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Стоимость зависит от площади объекта, категории охраны, объёма исходных материалов, состава разделов и маршрута согласования. На бюджет также влияет необходимость дополнительных исследований, ГИКЭ и прохождения согласования в Мосгорнаследии. После первичного анализа объекта формируем смету по этапам и календарный план работ. Финальная стоимость фиксируется в договоре до начала проектирования."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Как проходит согласование с Департаментом культурного наследия?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Согласование в Мосгорнаследии включает несколько последовательных этапов: получение задания на проектирование реставрации, разработка проекта, прохождение государственной историко-культурной экспертизы, рассмотрение на научно-методическом совете и выдача согласования. Срок зависит от состава документации, сложности объекта и маршрута рассмотрения."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Можно ли сделать перепланировку в объекте культурного наследия?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Перепланировка объекта культурного наследия возможна, но согласовывается не в Мосжилинспекции, а в Мосгорнаследии. Ключевое условие: изменения не должны затрагивать предметы охраны — конструктивные элементы, исторические интерьеры и архитектурные детали, включённые в акт о предмете охраны. Разрабатываем проект планировочных решений с учётом этих ограничений."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Каковы сроки разработки проектной документации?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Сроки зависят от наличия исходно-разрешительной документации, категории охраны, объёма исследований, состава разделов и маршрута согласования. Оценку даём после первичного анализа объекта и исходных материалов."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "На каком этапе лучше привлекать проектировщика?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Чем раньше — тем меньше рисков. Оптимально подключаться на этапе due diligence или до подписания сделки: тогда можно оценить ограничения охраны, объём документации и реальный бюджет. Если проект уже начат — беремся за доработку существующей документации или параллельные согласования. Работаем с объектами на любой стадии."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Что делать, если по объекту действует охранное обязательство?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Если по объекту действует охранное обязательство, сначала фиксируем ограничения и предмет охраны. На этой основе определяем состав проектной документации, допустимые работы и маршрут согласования, чтобы пройти процедуру без лишних возвратов."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Работаете ли вы с объектами культурного наследия федерального значения?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Да, работаем с объектами федерального, регионального и выявленного значения. Для федеральных объектов особенно важно корректно подготовить исследования, обоснования и проектные решения под процедуру согласования. Сопровождаем документацию с учётом требований Департамента культурного наследия Москвы, НМС и ГИКЭ. При необходимости подключаемся и на этапе рабочей документации."
-          }
-        }
-      ]
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -2210,30 +2066,80 @@
           "position": 1,
           "name": "Главная",
           "item": "https://oknproekt.ru/"
-        }
-      ]
-    },
-    {
-      "@type": "ItemList",
-      "name": "Наши работы",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Городская усадьба Татарниковых",
-          "description": "Разработка научно-проектной документации по реставрации объекта культурного наследия регионального значения."
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Городская усадьба Масленниковых-Петуховых",
-          "description": "Подготовка научно-проектной документации по реставрации фасадов исторического здания."
+          "name": "Получение разрешения ДКН на проведение работ по сохранению ОКН",
+          "item": "https://oknproekt.ru/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://oknproekt.ru/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn#service",
+      "name": "Получение разрешения ДКН на проведение работ по сохранению ОКН",
+      "description": "Помогаем получить разрешение ДКН на проведение работ по сохранению ОКН: проверяем готовность проекта, ГИКЭ, согласование и комплект для подачи.",
+      "serviceType": "Получение разрешения ДКН на проведение работ по сохранению ОКН",
+      "areaServed": [
+        "Москва",
+        "Московская область"
+      ],
+      "provider": {
+        "@id": "https://oknproekt.ru/#professional-service"
+      },
+      "url": "https://oknproekt.ru/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Чем разрешение на работы отличается от согласования проекта?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Согласование относится к проектной документации. Разрешение оформляется для начала соответствующих работ после прохождения необходимых предшествующих этапов."
+          }
         },
         {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Даниловский монастырь",
-          "description": "Разработка рабочей документации по сохранению объекта культурного наследия федерального значения."
+          "@type": "Question",
+          "name": "Можно ли получить разрешение без задания ДКН?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Маршрут зависит от вида работ и исходных документов. Сначала проверяется, требуется ли задание и какие основания должны быть оформлены именно для вашей задачи."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Всегда ли нужна ГИКЭ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Необходимость экспертизы определяется объектом, видом документации и требованиями конкретной процедуры."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Кто может подать документы?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Заявителем и представителем могут выступать лица, предусмотренные действующей процедурой. Полномочия и комплект проверяются до подачи."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему документы возвращают?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Частые причины — неполный комплект, несоответствие заявленного вида работ документам, разные версии проекта и отсутствие обязательных для ситуации материалов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли начать подготовительные работы до разрешения?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Сначала нужно определить правовой режим конкретных действий. Начинать работы на ОКН без проверки необходимых разрешений рискованно."
+          }
         }
       ]
     }
@@ -2364,111 +2270,10 @@
 <main id="main-content">
 <!-- HERO -->
 <section id="hero">
-  <img
-    src="/assets/visuals/danilovsky-architectural-sketch.webp"
-    class="hero-img-bg"
-    alt=""
-    width="921"
-    height="1152"
-    aria-hidden="true"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async"
-  >
-  <!-- Blueprint SVG Background -->
-  <svg class="hero-blueprint" viewBox="0 0 800 700" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <!-- Architectural facade drawing -->
-    <!-- Base line -->
-    <line x1="50" y1="620" x2="750" y2="620" stroke="#B8965A" stroke-width="1.5"/>
-    <!-- Ground floor -->
-    <rect x="80" y="480" width="640" height="140" stroke="#B8965A" stroke-width="0.8" fill="none"/>
-    <!-- Second floor -->
-    <rect x="100" y="340" width="600" height="140" stroke="#B8965A" stroke-width="0.8" fill="none"/>
-    <!-- Third floor -->
-    <rect x="120" y="220" width="560" height="120" stroke="#B8965A" stroke-width="0.8" fill="none"/>
-    <!-- Attic -->
-    <rect x="160" y="130" width="480" height="90" stroke="#B8965A" stroke-width="0.8" fill="none"/>
-    <!-- Pediment -->
-    <polygon points="320,60 480,60 560,130 240,130" stroke="#B8965A" stroke-width="0.8" fill="none"/>
-    <!-- Columns ground floor -->
-    <line x1="150" y1="480" x2="150" y2="620" stroke="#B8965A" stroke-width="0.8"/>
-    <line x1="230" y1="480" x2="230" y2="620" stroke="#B8965A" stroke-width="0.8"/>
-    <line x1="310" y1="480" x2="310" y2="620" stroke="#B8965A" stroke-width="0.8"/>
-    <line x1="390" y1="480" x2="390" y2="620" stroke="#B8965A" stroke-width="0.8"/>
-    <line x1="470" y1="480" x2="470" y2="620" stroke="#B8965A" stroke-width="0.8"/>
-    <line x1="550" y1="480" x2="550" y2="620" stroke="#B8965A" stroke-width="0.8"/>
-    <line x1="630" y1="480" x2="630" y2="620" stroke="#B8965A" stroke-width="0.8"/>
-    <!-- Windows row 2 -->
-    <rect x="120" y="360" width="80" height="100" stroke="#B8965A" stroke-width="0.6" fill="none"/>
-    <rect x="230" y="360" width="80" height="100" stroke="#B8965A" stroke-width="0.6" fill="none"/>
-    <rect x="340" y="360" width="80" height="100" stroke="#B8965A" stroke-width="0.6" fill="none"/>
-    <rect x="450" y="360" width="80" height="100" stroke="#B8965A" stroke-width="0.6" fill="none"/>
-    <rect x="560" y="360" width="80" height="100" stroke="#B8965A" stroke-width="0.6" fill="none"/>
-    <!-- Arch windows row 2 -->
-    <path d="M 120,360 Q 160,330 200,360" stroke="#B8965A" stroke-width="0.6" fill="none"/>
-    <path d="M 230,360 Q 270,330 310,360" stroke="#B8965A" stroke-width="0.6" fill="none"/>
-    <path d="M 340,360 Q 380,330 420,360" stroke="#B8965A" stroke-width="0.6" fill="none"/>
-    <path d="M 450,360 Q 490,330 530,360" stroke="#B8965A" stroke-width="0.6" fill="none"/>
-    <path d="M 560,360 Q 600,330 640,360" stroke="#B8965A" stroke-width="0.6" fill="none"/>
-    <!-- Windows row 3 -->
-    <rect x="140" y="245" width="70" height="85" stroke="#B8965A" stroke-width="0.5" fill="none"/>
-    <rect x="240" y="245" width="70" height="85" stroke="#B8965A" stroke-width="0.5" fill="none"/>
-    <rect x="345" y="245" width="70" height="85" stroke="#B8965A" stroke-width="0.5" fill="none"/>
-    <rect x="450" y="245" width="70" height="85" stroke="#B8965A" stroke-width="0.5" fill="none"/>
-    <rect x="555" y="245" width="70" height="85" stroke="#B8965A" stroke-width="0.5" fill="none"/>
-    <!-- Dimension lines -->
-    <line x1="50" y1="130" x2="50" y2="620" stroke="#B8965A" stroke-width="0.4" stroke-dasharray="4,4"/>
-    <line x1="750" y1="130" x2="750" y2="620" stroke="#B8965A" stroke-width="0.4" stroke-dasharray="4,4"/>
-    <line x1="50" y1="70" x2="750" y2="70" stroke="#B8965A" stroke-width="0.4" stroke-dasharray="4,4"/>
-    <!-- Measurement arrows -->
-    <text x="30" y="400" font-size="9" fill="#B8965A" font-family="monospace" transform="rotate(-90,30,400)">±17.500</text>
-    <text x="380" y="45" font-size="9" fill="#B8965A" font-family="monospace">23.400</text>
-    <!-- Door -->
-    <rect x="340" y="510" width="120" height="110" stroke="#B8965A" stroke-width="0.8" fill="none"/>
-    <path d="M 340,510 Q 400,480 460,510" stroke="#B8965A" stroke-width="0.6" fill="none"/>
-  </svg>
-
+  <svg class="hero-blueprint" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="140" y="140" width="520" height="340" stroke="currentColor" stroke-width="1"/><path d="M180 480V230L400 130L620 230V480" stroke="currentColor" stroke-width="1"/><path d="M220 270H320V380H220V270ZM350 270H450V380H350V270ZM480 270H580V380H480V270Z" stroke="currentColor" stroke-width="1"/><path d="M260 430H540" stroke="currentColor" stroke-width="1"/></svg>
   <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-badge">Москва — проектирование ОКН</div>
-
-      <h1 class="hero-title">
-        Проектная документация<br>
-        для ОКН в Москве<br>
-        <em>и Московской области</em>
-      </h1>
-
-      <p class="hero-sub">
-        Проектная документация для ОКН в Москве: проект реставрации, приспособление, перепланировка объекта культурного наследия и раздел обеспечения сохранности. Сопровождаем согласование в Мосгорнаследии.
-      </p>
-
-      <div class="hero-ctas">
-        <a href="#cta-final" class="btn btn-primary">Получить консультацию по объекту</a>
-        <a href="#services" class="btn btn-outline">Смотреть услуги</a>
-      </div>
-
-      <!-- Услуги-ориентиры вместо непроверенных цифр -->
-      <div class="hero-pills">
-        <a class="hero-pill" href="/proekt-restavratsii-okn">Проект реставрации ОКН</a>
-        <a class="hero-pill" href="/razdel-obespecheniya-sohrannosti-okn">Раздел обеспечения сохранности</a>
-        <a class="hero-pill" href="/proekt-prisposobleniya-okn">Приспособление ОКН</a>
-        <a class="hero-pill" href="/soglasovanie-mosgornasledie">Согласование в Мосгорнаследии</a>
-        <span class="hero-pill hero-pill--license">Лицензия Минкультуры РФ</span>
-      </div>
-    </div>
-
-    <div class="hero-video-wrap" aria-hidden="true">
-      <div class="hero-video-frame">
-        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/assets/img/hero-video-poster.webp">
-          <source src="/assets/video/hero-okn.mp4" type="video/mp4">
-          <img src="/assets/img/hero-video-poster.webp" alt="" width="1400" height="598" decoding="async">
-        </video>
-      </div>
-      <div class="hero-video-caption">
-        <span>ОКН</span>
-        <span>Проектная трансформация</span>
-      </div>
-    </div>
+    <div class="hero-content"><div class="hero-badge">Москва — разрешение ДКН</div><h1 class="hero-title">Получение разрешения ДКН на проведение работ по сохранению ОКН<br><em>с проверкой всего маршрута</em></h1><p class="hero-sub">Проверяем, что должно быть готово до подачи, формируем комплект по виду работ и сопровождаем получение разрешения Департамента культурного наследия города Москвы.</p><div class="hero-ctas"><a href="#cta-final" class="btn btn-primary">Проверить готовность к подаче</a><a href="#services" class="btn btn-outline">Маршрут получения</a></div><div class="hero-pills"><span class="hero-pill">Задание ДКН</span><span class="hero-pill">Проектная документация</span><span class="hero-pill">ГИКЭ по необходимости</span><span class="hero-pill">Разрешение на работы</span><span class="hero-pill hero-pill--license">Лицензия Минкультуры РФ</span></div></div>
+    <div class="hero-video-wrap" aria-hidden="true"><div class="hero-video-frame"><video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/assets/img/hero-video-poster.webp"><source src="/assets/video/hero-okn.mp4" type="video/mp4"><img src="/assets/img/hero-video-poster.webp" alt="" width="1400" height="598" decoding="async"></video></div><div class="hero-video-caption"><span>ОКН</span><span>Проектная документация</span></div></div>
   </div>
 </section>
 
@@ -2523,435 +2328,83 @@
 </section>
 
 <!-- SERVICES -->
-<section id="services" aria-labelledby="services-title">
+<section id="services">
   <div class="container">
-    <div class="section-header">
-      <span class="label">Услуги</span>
-      <h2 id="services-title">Проектная документация для объектов культурного наследия</h2>
-      <p>Разрабатываем проекты реставрации, приспособления, перепланировки, капитального ремонта и реконструкции ОКН, разделы обеспечения сохранности, а также сопровождаем согласование и выполнение охранных обязательств.</p>
-    </div>
-
+    <div class="section-header"><span class="label">Услуга</span><h2>Разрешение на работы — отдельный этап, а не название всего согласования</h2><p>Задание ДКН определяет требования, проект описывает решения, ГИКЭ оценивает материалы в предусмотренных случаях, согласование подтверждает проект, а разрешение даёт основание начать соответствующие работы.</p></div>
     <div class="services-visual-row">
       <div class="services-text-intro">
-        <p class="services-intro-text">Выберите услугу, чтобы увидеть, когда она нужна и какой результат получает заказчик.</p>
+        <p class="services-intro-text">До подачи мы проверяем всю цепочку документов, потому что наличие одного согласованного тома ещё не означает готовность к производству работ.</p>
         <p class="services-license-note">Работы выполняются по лицензии Минкультуры РФ <strong>№ МКРФ 21836 от 24.12.2021</strong></p>
       </div>
-      <div class="services-building-img">
-        <img
-          src="/assets/visuals/maslennikovykh-working-drawing.webp"
-          alt="Рабочий чертёж фасада городской усадьбы Масленниковых-Петуховых"
-          width="1543"
-          height="688"
-          loading="lazy"
-          decoding="async"
-        >
-      </div>
+      <div class="services-building-img"><img src="/assets/visuals/maslennikovykh-working-drawing.webp" alt="Рабочий чертёж исторического здания" width="1543" height="688" loading="lazy" decoding="async"></div>
     </div>
     <div class="services-list">
-
       <div class="service-item active">
         <div class="service-header" role="button" tabindex="0" aria-expanded="true" onclick="toggleServiceBtn(this)" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleServiceBtn(this); }">
-          <div class="service-header-left">
-            <span class="svc-num">01</span>
-            <h3><a class="svc-title-link" href="/proekt-restavratsii-okn" onclick="event.stopPropagation();">Проект реставрации объекта культурного наследия</a></h3>
-          </div>
-          <span class="svc-tag">Работы по сохранению</span>
-          <div class="svc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
-            </svg>
-          </div>
+          <div class="service-header-left"><span class="svc-num">01</span><h3>Подготовка комплекта для разрешения ДКН</h3></div>
+          <span class="svc-tag">Перед началом работ</span>
+          <div class="svc-toggle"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></div>
         </div>
         <div class="service-body" role="region">
           <div class="service-body-inner">
-            <div class="svc-col"><span class="svc-col-label">О чём</span><p>Научно-проектная документация для сохранения объекта культурного наследия: исследования, дефектные ведомости, архитектурные и конструктивные решения, разделы по реставрации и сопровождение согласования.</p></div>
-            <div class="svc-col"><span class="svc-col-label">Когда нужен</span><ul>
-                <li>Фасады, интерьеры или конструкции требуют ремонтно-реставрационных работ</li>
-                <li>Нужно выполнить требования охранного обязательства или акта технического состояния</li>
-                <li>Объект готовят к приспособлению, капитальному ремонту или реконструкции</li>
-              </ul></div>
-            <div class="svc-col"><span class="svc-col-label">Что получаете</span><ul>
-                <li>Комплект проектной документации под статус ОКН и предмет охраны</li>
-                <li>Понятный состав исследований, обмеров и проектных разделов</li>
-                <li>Сопровождение согласования и реализации проектных решений</li>
-              </ul></div>
+            <div class="svc-col"><span class="svc-col-label">О чём</span><p>Определяем вид работ и проверяем, какие документы, согласования и сведения об исполнителях требуются для конкретной подачи.</p></div>
+            <div class="svc-col"><span class="svc-col-label">Когда нужен</span><ul><li>Проект готов и планируется выход на объект</li><li>Нужно проверить последовательность процедур</li><li>Получен возврат или запрос дополнительных материалов</li></ul></div>
+            <div class="svc-col"><span class="svc-col-label">Что получаете</span><ul><li>Проверка готовности комплекта</li><li>Список недостающих действий</li><li>Подготовленная подача по актуальной процедуре</li></ul></div>
           </div>
-          <div class="svc-cta"><a href="/proekt-restavratsii-okn" class="btn btn-outline btn-sm">Подробнее</a></div>
+          <div class="svc-cta"><a href="#cta-final" class="btn btn-outline btn-sm">Проверить комплект</a></div>
         </div>
       </div>
-
-      <div class="service-item ">
+      <div class="service-item">
         <div class="service-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleServiceBtn(this)" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleServiceBtn(this); }">
-          <div class="service-header-left">
-            <span class="svc-num">02</span>
-            <h3><a class="svc-title-link" href="/razdel-obespecheniya-sohrannosti-okn" onclick="event.stopPropagation();">Раздел обеспечения сохранности объекта культурного наследия</a></h3>
-          </div>
-          <span class="svc-tag">ОСОКН</span>
-          <div class="svc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
-            </svg>
-          </div>
+          <div class="service-header-left"><span class="svc-num">02</span><h3>Сопровождение подачи и замечаний</h3></div>
+          <span class="svc-tag">ДКН Москвы</span>
+          <div class="svc-toggle"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></div>
         </div>
         <div class="service-body" role="region">
           <div class="service-body-inner">
-            <div class="svc-col"><span class="svc-col-label">О чём</span><p>Раздел проектной документации, который оценивает влияние строительства, реконструкции, инженерных или земляных работ на ОКН и обосновывает меры по обеспечению сохранности.</p></div>
-            <div class="svc-col"><span class="svc-col-label">Когда нужен</span><ul>
-                <li>Площадка находится рядом с ОКН или в зоне его влияния</li>
-                <li>Планируются подземные, свайные, инженерные или демонтажные работы</li>
-                <li>Нужно подтвердить отсутствие угрозы для предмета охраны и конструкций памятника</li>
-              </ul></div>
-            <div class="svc-col"><span class="svc-col-label">Что получаете</span><ul>
-                <li>Анализ зоны влияния, ограничений и исходных данных</li>
-                <li>Мероприятия по обеспечению сохранности ОКН</li>
-                <li>Пакет для согласования и сопровождение замечаний</li>
-              </ul></div>
+            <div class="svc-col"><span class="svc-col-label">О чём</span><p>Сопровождаем административный этап и координируем проектные уточнения, если орган охраны запрашивает дополнительные материалы.</p></div>
+            <div class="svc-col"><span class="svc-col-label">Когда нужен</span><ul><li>Документы подаются впервые</li><li>Нужно связать проект, ГИКЭ и согласование</li><li>По подаче получены замечания</li></ul></div>
+            <div class="svc-col"><span class="svc-col-label">Что получаете</span><ul><li>Контролируемая подача</li><li>Отработанные замечания</li><li>Разрешение или понятный перечень дальнейших действий</li></ul></div>
           </div>
-          <div class="svc-cta"><a href="/razdel-obespecheniya-sohrannosti-okn" class="btn btn-outline btn-sm">Подробнее</a></div>
+          <div class="svc-cta"><a href="#cta-final" class="btn btn-outline btn-sm">Обсудить сопровождение</a></div>
         </div>
       </div>
-
-      <div class="service-item ">
-        <div class="service-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleServiceBtn(this)" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleServiceBtn(this); }">
-          <div class="service-header-left">
-            <span class="svc-num">03</span>
-            <h3><a class="svc-title-link" href="/proekt-prisposobleniya-okn" onclick="event.stopPropagation();">Проект приспособления объекта культурного наследия</a></h3>
-          </div>
-          <span class="svc-tag">Современное использование</span>
-          <div class="svc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
-            </svg>
-          </div>
-        </div>
-        <div class="service-body" role="region">
-          <div class="service-body-inner">
-            <div class="svc-col"><span class="svc-col-label">О чём</span><p>Проектная документация для адаптации ОКН под современное использование: планировочные решения, инженерные системы, доступность, пожарные требования и сохранение охраняемых элементов.</p></div>
-            <div class="svc-col"><span class="svc-col-label">Когда нужен</span><ul>
-                <li>Меняется функция здания или помещений</li>
-                <li>Нужны новые инженерные системы, входные группы или планировка</li>
-                <li>Требуется совместить коммерческую задачу с охранными ограничениями</li>
-              </ul></div>
-            <div class="svc-col"><span class="svc-col-label">Что получаете</span><ul>
-                <li>Оценку допустимости новой функции и решений</li>
-                <li>Проект приспособления с привязкой к предмету охраны</li>
-                <li>Материалы для согласования и дальнейшей реализации</li>
-              </ul></div>
-          </div>
-          <div class="svc-cta"><a href="/proekt-prisposobleniya-okn" class="btn btn-outline btn-sm">Подробнее</a></div>
-        </div>
-      </div>
-
-      <div class="service-item ">
-        <div class="service-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleServiceBtn(this)" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleServiceBtn(this); }">
-          <div class="service-header-left">
-            <span class="svc-num">04</span>
-            <h3><a class="svc-title-link" href="/pereplanirovka-okn" onclick="event.stopPropagation();">Перепланировка объекта культурного наследия в Москве</a></h3>
-          </div>
-          <span class="svc-tag">Планировочные решения</span>
-          <div class="svc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
-            </svg>
-          </div>
-        </div>
-        <div class="service-body" role="region">
-          <div class="service-body-inner">
-            <div class="svc-col"><span class="svc-col-label">О чём</span><p>Проект перепланировки ОКН с анализом допустимости вмешательств, статуса помещений, охраняемых элементов и маршрута согласования в Москве.</p></div>
-            <div class="svc-col"><span class="svc-col-label">Когда нужен</span><ul>
-                <li>Нужно изменить планировку под арендатора или новую функцию</li>
-                <li>Уже выполнены изменения и требуется легализация</li>
-                <li>Перед сделкой нужно проверить, можно ли реализовать нужную схему помещений</li>
-              </ul></div>
-            <div class="svc-col"><span class="svc-col-label">Что получаете</span><ul>
-                <li>Заключение по допустимости планировочных решений</li>
-                <li>Проект перепланировки с учётом предмета охраны</li>
-                <li>Сопровождение подачи и отработки замечаний</li>
-              </ul></div>
-          </div>
-          <div class="svc-cta"><a href="/pereplanirovka-okn" class="btn btn-outline btn-sm">Подробнее</a></div>
-        </div>
-      </div>
-
-      <div class="service-item ">
-        <div class="service-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleServiceBtn(this)" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleServiceBtn(this); }">
-          <div class="service-header-left">
-            <span class="svc-num">05</span>
-            <h3><a class="svc-title-link" href="/soglasovanie-mosgornasledie" onclick="event.stopPropagation();">Согласование проекта по ОКН в Мосгорнаследии</a></h3>
-          </div>
-          <span class="svc-tag">Сопровождение</span>
-          <div class="svc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
-            </svg>
-          </div>
-        </div>
-        <div class="service-body" role="region">
-          <div class="service-body-inner">
-            <div class="svc-col"><span class="svc-col-label">О чём</span><p>Сопровождение согласования проектной документации по ОКН: аудит комплекта, подготовка подачи, ответы на замечания, взаимодействие с Мосгорнаследием и ДКН Москвы.</p></div>
-            <div class="svc-col"><span class="svc-col-label">Когда нужен</span><ul>
-                <li>Проект готовят к первой подаче</li>
-                <li>Получены замечания или отказ</li>
-                <li>Нужно понять маршрут: задание, НМС, ГИКЭ, разрешение на работы</li>
-              </ul></div>
-            <div class="svc-col"><span class="svc-col-label">Что получаете</span><ul>
-                <li>Аудит комплекта и рисков возврата</li>
-                <li>План подачи и доработок</li>
-                <li>Сопровождение до решения по проекту</li>
-              </ul></div>
-          </div>
-          <div class="svc-cta"><a href="/soglasovanie-mosgornasledie" class="btn btn-outline btn-sm">Подробнее</a></div>
-        </div>
-      </div>
-
-      <div class="service-item ">
-        <div class="service-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleServiceBtn(this)" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleServiceBtn(this); }">
-          <div class="service-header-left">
-            <span class="svc-num">06</span>
-            <h3><a class="svc-title-link" href="/ohrannoe-obyazatelstvo-okn" onclick="event.stopPropagation();">Охранное обязательство объекта культурного наследия</a></h3>
-          </div>
-          <span class="svc-tag">Разбор требований</span>
-          <div class="svc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
-            </svg>
-          </div>
-        </div>
-        <div class="service-body" role="region">
-          <div class="service-body-inner">
-            <div class="svc-col"><span class="svc-col-label">О чём</span><p>Экспертный разбор охранного обязательства ОКН: фиксируем ограничения, обязательные мероприятия, риски предписаний и состав проектной документации под вашу задачу.</p></div>
-            <div class="svc-col"><span class="svc-col-label">Когда нужен</span><ul>
-                <li>Получено охранное обязательство или предписание</li>
-                <li>Планируется ремонт, перепланировка, реставрация или приспособление</li>
-                <li>Нужно оценить обязанности до покупки, аренды или инвестиционного решения</li>
-              </ul></div>
-            <div class="svc-col"><span class="svc-col-label">Что получаете</span><ul>
-                <li>Карту требований и ограничений по объекту</li>
-                <li>Понимание допустимых работ и нужных документов</li>
-                <li>Маршрут проектирования и согласования</li>
-              </ul></div>
-          </div>
-          <div class="svc-cta"><a href="/ohrannoe-obyazatelstvo-okn" class="btn btn-outline btn-sm">Подробнее</a></div>
-        </div>
-      </div>
-
-      <div class="service-item ">
-        <div class="service-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleServiceBtn(this)" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleServiceBtn(this); }">
-          <div class="service-header-left">
-            <span class="svc-num">07</span>
-            <h3><a class="svc-title-link" href="/kapitalnyy-remont-okn" onclick="event.stopPropagation();">Капитальный ремонт объекта культурного наследия</a></h3>
-          </div>
-          <span class="svc-tag">Проект и согласование</span>
-          <div class="svc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
-            </svg>
-          </div>
-        </div>
-        <div class="service-body" role="region">
-          <div class="service-body-inner">
-            <div class="svc-col"><span class="svc-col-label">О чём</span><p>Проектная документация для капитального ремонта ОКН: обследование, дефектная ведомость, конструктивные и инженерные решения, мероприятия по сохранению предмета охраны и сопровождение согласования.</p></div>
-            <div class="svc-col"><span class="svc-col-label">Когда нужен</span><ul>
-                <li>Изношены конструкции, фасады, кровля или инженерные системы</li>
-                <li>Нужно выполнить требования акта технического состояния или предписания</li>
-                <li>Планируется ремонт без изменения историко-культурной ценности объекта</li>
-              </ul></div>
-            <div class="svc-col"><span class="svc-col-label">Что получаете</span><ul>
-                <li>Понимание границы между капремонтом и реставрацией</li>
-                <li>Дефектную ведомость и проектные решения под ОКН</li>
-                <li>Пакет для согласования и реализации работ</li>
-              </ul></div>
-          </div>
-          <div class="svc-cta"><a href="/kapitalnyy-remont-okn" class="btn btn-outline btn-sm">Подробнее</a></div>
-        </div>
-      </div>
-
-      <div class="service-item ">
-        <div class="service-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleServiceBtn(this)" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleServiceBtn(this); }">
-          <div class="service-header-left">
-            <span class="svc-num">08</span>
-            <h3><a class="svc-title-link" href="/rekonstruktsiya-obekta-kulturnogo-naslediya" onclick="event.stopPropagation();">Реконструкция объекта культурного наследия</a></h3>
-          </div>
-          <span class="svc-tag">Оценка и проект</span>
-          <div class="svc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
-            </svg>
-          </div>
-        </div>
-        <div class="service-body" role="region">
-          <div class="service-body-inner">
-            <div class="svc-col"><span class="svc-col-label">О чём</span><p>Проектная проработка реконструкции ОКН: анализ исходных данных, обследование, проверка предмета охраны, проектные решения, разделы сохранности и сопровождение согласования.</p></div>
-            <div class="svc-col"><span class="svc-col-label">Когда нужен</span><ul>
-                <li>Планируется изменение параметров здания или его частей</li>
-                <li>Нужно совместить девелоперскую задачу с охранными ограничениями</li>
-                <li>Требуется оценить риски до покупки, инвестирования или подачи проекта</li>
-              </ul></div>
-            <div class="svc-col"><span class="svc-col-label">Что получаете</span><ul>
-                <li>Предварительную оценку допустимости реконструкции</li>
-                <li>Проектные решения с учётом предмета охраны</li>
-                <li>Маршрут согласования и перечень обязательных разделов</li>
-              </ul></div>
-          </div>
-          <div class="svc-cta"><a href="/rekonstruktsiya-obekta-kulturnogo-naslediya" class="btn btn-outline btn-sm">Подробнее</a></div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- WHEN NEEDED -->
+<section class="service-crosslinks">
+  <div class="container service-crosslinks-inner">
+    <a class="service-back-link" href="/">← На главную</a>
+    <div class="service-links-title">Связанные услуги и материалы</div>
+    <div class="service-quick-links"><a href="/blog/zadanie-na-provedenie-rabot-po-sohraneniyu-okn"><strong>Задание ДКН:</strong> что это за документ и когда его получают.</a><a href="/soglasovanie-mosgornasledie"><strong>Согласование проекта:</strong> отдельный этап до получения разрешения.</a><a href="/proekt-restavratsii-okn"><strong>Проект реставрации:</strong> документация для работ по сохранению объекта.</a><a href="/proekt-prisposobleniya-okn"><strong>Проект приспособления:</strong> решения для современной функции ОКН.</a><a href="/kapitalnyy-remont-okn"><strong>Капитальный ремонт:</strong> проект и маршрут зависят от состава вмешательств.</a></div>
+  </div>
+</section>
+
 <section id="when-needed">
   <div class="container">
-    <div class="section-header">
-      <span class="label">Типичные ситуации</span>
-      <h2>Когда нужна проектная документация</h2>
-      <p>Работы с ОКН и историческими зданиями требуют подготовленной документации и понятного маршрута согласования.</p>
-    </div>
-
-    <div class="triggers-grid">
-      <div class="trigger-card fade-up">
-        <div class="trigger-num">01</div>
-        <h3>Покупка объекта ОКН</h3>
-        <p>Перед сделкой нужно понимать охранные ограничения, состав предметов охраны и объём необходимой документации.</p>
-      </div>
-      <div class="trigger-card fade-up">
-        <div class="trigger-num">02</div>
-        <h3>Реконструкция и ремонт</h3>
-        <p>Любые строительные работы на объекте или рядом с ним требуют согласованного проекта. Без него — незаконное вмешательство в ОКН.</p>
-      </div>
-      <div class="trigger-card fade-up">
-        <div class="trigger-num">03</div>
-        <h3>Перепланировка помещений</h3>
-        <p>Перепланировка объекта культурного наследия согласовывается в Мосгорнаследии, а не через стандартную процедуру БТИ.</p>
-      </div>
-      <div class="trigger-card fade-up">
-        <div class="trigger-num">04</div>
-        <h3>Строительство рядом с ОКН</h3>
-        <p>Новый объект в охранной зоне или зоне влияния требует раздела обеспечения сохранности ОКН в составе проектной документации.</p>
-      </div>
-    </div>
+    <div class="section-header"><span class="label">Когда нужно</span><h2>Когда требуется разрешение ДКН на проведение работ</h2><p>Необходимость и комплект определяются статусом объекта, характером вмешательства и согласованной документацией.</p></div>
+    <div class="triggers-grid"><div class="trigger-card fade-up"><div class="trigger-num">01</div><h3>Реставрация</h3><p>Согласованный проект готов, определены исполнители и планируется начало работ по сохранению.</p></div><div class="trigger-card fade-up"><div class="trigger-num">02</div><h3>Приспособление</h3><p>Проект меняет функцию, планировку или инженерное оснащение исторического объекта.</p></div><div class="trigger-card fade-up"><div class="trigger-num">03</div><h3>Ремонт конструкций</h3><p>Работы затрагивают элементы ОКН и должны выполняться по установленному маршруту.</p></div><div class="trigger-card fade-up"><div class="trigger-num">04</div><h3>Возобновление работ</h3><p>Нужно проверить срок, объём и соответствие ранее оформленных документов текущей задаче.</p></div></div>
   </div>
 </section>
 
-<!-- RISKS -->
 <section id="risks">
   <div class="container">
-    <div class="section-header">
-      <span class="label">Риски</span>
-      <h2>Риски при работе с объектом культурного наследия без документации</h2>
-      <p>Ошибки в составе документации и запуск работ без согласований приводят к замечаниям, задержкам и дополнительным затратам.</p>
-    </div>
-
-    <div class="risks-grid">
-      <div class="risk-card">
-        <div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r1-c6.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Отказ в согласовании из-за некорректной документации</h3>
-        <p>Орган охраны возвращает проект на доработку, если решения не соответствуют предмету охраны, заданию на проектирование или составу материалов для Мосгорнаследия.</p>
-      </div>
-      <div class="risk-card">
-        <div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r4-c2.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Переделка и двойные затраты</h3>
-        <p>Документация без учёта требований органа охраны обычно требует переработки, повторных проверок и уточнения разделов.</p>
-      </div>
-      <div class="risk-card">
-        <div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r2-c6.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Предписания, штрафы и остановка работ</h3>
-        <p>Работы без согласованной документации ведут к предписаниям, штрафам, остановке работ и затратам на переработку проекта.</p>
-      </div>
-      <div class="risk-card">
-        <div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r4-c4.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Заморозка проекта</h3>
-        <p>Если ограничения объекта не учтены на старте, проект затягивается: приходится пересматривать концепцию, состав работ и маршрут согласования.</p>
-      </div>
-    </div>
+    <div class="section-header"><span class="label">Риски</span><h2>Почему подачу возвращают или приходится собирать заново</h2><p>Большинство проблем возникает не из-за формы заявления, а из-за разрыва между видом работ и подготовленными документами.</p></div>
+    <div class="risks-grid"><div class="risk-card"><div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r1-c6.png" alt="" loading="lazy" decoding="async"></div><h3>Смешаны разные процедуры</h3><p>Задание, согласование проекта и разрешение воспринимаются как один документ.</p></div><div class="risk-card"><div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r4-c2.png" alt="" loading="lazy" decoding="async"></div><h3>Неполный комплект</h3><p>Не хватает материалов, подтверждений или сведений, обязательных именно для заявленного вида работ.</p></div><div class="risk-card"><div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r2-c6.png" alt="" loading="lazy" decoding="async"></div><h3>Версии не совпадают</h3><p>На подачу идут проект, экспертиза и сопроводительные материалы с разными редакциями решений.</p></div><div class="risk-card"><div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r4-c4.png" alt="" loading="lazy" decoding="async"></div><h3>Работы начаты раньше</h3><p>Фактические действия на объекте опережают готовность разрешительной документации.</p></div></div>
   </div>
 </section>
 
 <!-- PROCESS -->
 <section id="process" style="position:relative; overflow:hidden;">
-  <div class="process-bg-img">
-    <img src="/assets/visuals/maslennikovykh-working-drawing.webp" alt="" role="presentation" aria-hidden="true" loading="lazy" decoding="async" width="1543" height="688">
-  </div>
-  <div class="container">
-    <div class="section-header centered">
-      <span class="label">Как работаем</span>
-      <h2>Как проходит разработка проектной документации для ОКН</h2>
-      <p>Подключаемся на любой стадии — от анализа перед покупкой до авторского надзора на стройке.</p>
-    </div>
-
-    <div class="process-track">
-      <div class="process-step">
-        <div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r2-c1.png" alt="" loading="lazy" decoding="async"></div>
-        <div class="step-num">шаг 01</div>
-        <h3>Анализ объекта</h3>
-        <p>Изучаем категорию охраны, предмет охраны, охранное обязательство и историческую документацию</p>
-      </div>
-      <div class="process-step">
-        <div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r3-c4.png" alt="" loading="lazy" decoding="async"></div>
-        <div class="step-num">шаг 02</div>
-        <h3>Состав проекта</h3>
-        <p>Определяем необходимые разделы, порядок согласований и реалистичные сроки</p>
-      </div>
-      <div class="process-step">
-        <div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r4-c3.png" alt="" loading="lazy" decoding="async"></div>
-        <div class="step-num">шаг 03</div>
-        <h3>Разработка документации</h3>
-        <p>Готовим проект реставрации, приспособления или раздел ОСН с учётом требований органа охраны</p>
-      </div>
-      <div class="process-step">
-        <div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r3-c6.png" alt="" loading="lazy" decoding="async"></div>
-        <div class="step-num">шаг 04</div>
-        <h3>Согласование</h3>
-        <p>Сопровождаем прохождение НМС, ГИКЭ и получение разрешения на производство работ</p>
-      </div>
-      <div class="process-step">
-        <div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r2-c4.png" alt="" loading="lazy" decoding="async"></div>
-        <div class="step-num">шаг 05</div>
-        <h3>Авторский надзор</h3>
-        <p>Контролируем соответствие работ проекту и требованиям охраны во время строительства</p>
-      </div>
-    </div>
-  </div>
+  <div class="process-bg-img"><img src="/assets/visuals/maslennikovykh-working-drawing.webp" alt="" role="presentation" aria-hidden="true" loading="lazy" decoding="async" width="1543" height="688"></div>
+  <div class="container"><div class="section-header centered"><span class="label">Как работаем</span><h2>Маршрут получения разрешения на работы по сохранению ОКН</h2><p>Порядок проверяется по актуальной процедуре и конкретному виду работ, а не по универсальному списку из интернета.</p></div><div class="process-track"><div class="process-step"><div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r2-c1.png" alt="" loading="lazy" decoding="async"></div><div class="step-num">шаг 01</div><h3>Определение работ</h3><p>Фиксируем, что именно планируется и какие элементы объекта затрагиваются.</p></div><div class="process-step"><div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r3-c4.png" alt="" loading="lazy" decoding="async"></div><div class="step-num">шаг 02</div><h3>Проверка оснований</h3><p>Сверяем задание, проектную документацию, согласование и необходимость ГИКЭ.</p></div><div class="process-step"><div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r4-c3.png" alt="" loading="lazy" decoding="async"></div><div class="step-num">шаг 03</div><h3>Формирование комплекта</h3><p>Собираем документы и сведения по исполнителям для конкретного типа подачи.</p></div><div class="process-step"><div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r3-c6.png" alt="" loading="lazy" decoding="async"></div><div class="step-num">шаг 04</div><h3>Подача в ДКН</h3><p>Сопровождаем рассмотрение и оперативно разбираем запросы органа охраны.</p></div><div class="process-step"><div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r2-c4.png" alt="" loading="lazy" decoding="async"></div><div class="step-num">шаг 05</div><h3>Подготовка к работам</h3><p>После результата проверяем условия разрешения и организационный старт на объекте.</p></div></div></div>
 </section>
 
-<!-- ADVANTAGES -->
 <section id="advantages">
   <div class="container">
-    <div class="section-header">
-      <span class="label">Почему с нами</span>
-      <h2>Почему выбирают нас для проектирования ОКН</h2>
-      <p>Подробнее о команде и опыте бюро — на странице <a href="/o-kompanii">ОКН.Проект</a>.</p>
-    </div>
-
-    <div class="adv-grid">
-      <div class="adv-card fade-up">
-        <img class="adv-icon-png" src="/icons/sliced-set-20260411/icon-r3-c5.png" alt="" loading="lazy" decoding="async">
-        <h3>Документация под логику согласования</h3>
-        <p>Формируем решения с учётом требований органа охраны и структуры материалов, чтобы снизить риск возвратов.</p>
-      </div>
-      <div class="adv-card fade-up">
-        <img class="adv-icon-png" src="/icons/sliced-set-20260411/icon-r4-c5.png" alt="" loading="lazy" decoding="async">
-        <h3>Понимание задач девелопера и собственника</h3>
-        <p>Учитываем охранные ограничения, сценарий будущего использования, сроки и экономику проекта.</p>
-      </div>
-      <div class="adv-card fade-up">
-        <img class="adv-icon-png" src="/icons/sliced-set-20260411/icon-r4-c4.png" alt="" loading="lazy" decoding="async">
-        <h3>Подключение на любой стадии проекта</h3>
-        <p>Подключаемся до покупки объекта, на стадии концепции, в разработке документации или перед подачей.</p>
-      </div>
-      <div class="adv-card fade-up">
-        <img class="adv-icon-png" src="/icons/sliced-set-20260411/icon-r1-c5.png" alt="" loading="lazy" decoding="async">
-        <h3>Работа с объектами разной сложности</h3>
-        <p>Ведём реставрацию, приспособление, раздел обеспечения сохранности и авторский надзор в едином проектном контуре.</p>
-      </div>
-      <div class="adv-card fade-up adv-card--license">
-        <img class="adv-icon-png" src="/icons/sliced-set-20260411/icon-r2-c5.png" alt="" loading="lazy" decoding="async">
-        <h3>Лицензия Минкультуры РФ</h3>
-        <p>Лицензия Министерства культуры Российской Федерации <strong>№ МКРФ 21836 от 24.12.2021</strong> Право выполнять работы по сохранению ОКН.</p>
-      </div>
-    </div>
+    <div class="section-header centered"><span class="label">Практический ориентир</span><h2>Что должно быть готово до подачи</h2><p>Точный состав зависит от работ, но логика проверки всегда проходит через четыре группы материалов.</p></div>
+    <div class="adv-grid"><div class="adv-card fade-up"><div class="adv-icon" aria-hidden="true">01</div><h3>Основания</h3><p>Статус ОКН, задание и документы, определяющие требования к работам.</p></div><div class="adv-card fade-up"><div class="adv-icon" aria-hidden="true">02</div><h3>Проект</h3><p>Актуальная согласованная редакция проектной документации.</p></div><div class="adv-card fade-up"><div class="adv-icon" aria-hidden="true">03</div><h3>Экспертные материалы</h3><p>ГИКЭ и связанные документы, когда они предусмотрены для задачи.</p></div><div class="adv-card fade-up"><div class="adv-icon" aria-hidden="true">04</div><h3>Исполнители и организация</h3><p>Сведения, подтверждения и документы, необходимые для заявленного производства работ.</p></div></div>
   </div>
 </section>
 
@@ -2960,8 +2413,8 @@
   <div class="container">
     <div class="section-header">
       <span class="label">Наши работы</span>
-      <h2>Наши работы по реставрации и сохранению ОКН</h2>
-      <p>Три объекта из практики бюро: фасады, кровля, конструкции, исследования и рабочая документация.</p>
+      <h2>Опыт проектирования и сохранения ОКН</h2>
+      <p>Опубликованные проекты показывают опыт работы с исследованиями, документацией, конструкциями и материалами исторических объектов.</p>
     </div>
 
     <div class="cases-grid">
@@ -3066,287 +2519,19 @@
   </div>
 </section>
 
-<!-- WHAT CLIENT GETS -->
 <section id="what-you-get" style="background: var(--white); padding: 80px 0; border-top: 1px solid var(--line);">
   <div class="container">
-    <div class="section-header centered">
-      <span class="label">Результат работы</span>
-      <h2>Что получает заказчик</h2>
-      <p>Вы получаете не просто комплект документов, а понятный маршрут от анализа объекта до разрешения на производство работ.</p>
-    </div>
-
-    <div class="what-grid">
-      <div class="what-item">
-        <div class="what-num">01</div>
-        <h3>Понятный состав документации</h3>
-        <p>До старта определяем, какие разделы действительно нужны, чтобы избежать избыточного объёма и лишних затрат.</p>
-      </div>
-      <div class="what-item">
-        <div class="what-num">02</div>
-        <h3>Документация под согласование</h3>
-        <p>Проектные решения формируем с учётом требований органа охраны и логики согласовательных процедур.</p>
-      </div>
-      <div class="what-item">
-        <div class="what-num">03</div>
-        <h3>Снижение риска возвратов</h3>
-        <p>Учитываем логику НМС и ГИКЭ, чтобы снизить вероятность замечаний и повторных доработок.</p>
-      </div>
-      <div class="what-item">
-        <div class="what-num">04</div>
-        <h3>Сопровождение следующих стадий</h3>
-        <p>Остаёмся в проекте на следующих стадиях: авторский надзор, корректировки и взаимодействие с органом охраны.</p>
-      </div>
-    </div>
+    <div class="section-header centered"><span class="label">Результат работы</span><h2>Что получает заказчик после сопровождения</h2><p>Цель — законный и управляемый выход на объект в границах согласованных решений.</p></div>
+    <div class="what-grid"><div class="what-item"><div class="what-num">01</div><h3>Проверка маршрута</h3><p>Понятно, какие этапы уже пройдены и чего не хватает.</p></div><div class="what-item"><div class="what-num">02</div><h3>Комплект для подачи</h3><p>Документы собраны по виду работ и актуальной процедуре.</p></div><div class="what-item"><div class="what-num">03</div><h3>Отработка замечаний</h3><p>Запросы ДКН переводятся в конкретные действия для проектной команды.</p></div><div class="what-item"><div class="what-num">04</div><h3>Основание для старта</h3><p>Полученный результат сопоставлен с объёмом и условиями предстоящих работ.</p></div></div>
   </div>
 </section>
-<section id="faq">
-  <div class="container">
-    <div class="faq-layout">
-      <div class="faq-aside">
-        <span class="label">Часто спрашивают</span>
-        <h2>Частые вопросы о проектировании объектов культурного наследия</h2>
-        <p>Собрали вопросы, которые чаще всего возникают до старта работ с ОКН.</p>
-        <a href="#cta-final" class="btn btn-primary">Задать свой вопрос</a>
-      </div>
 
-      <div class="faq-list">
+<section class="service-crosslinks" aria-labelledby="related-reading"><div class="container service-crosslinks-inner"><div class="service-links-title" id="related-reading">Материалы по теме</div><div class="service-quick-links"><a href="/blog/zadanie-na-provedenie-rabot-po-sohraneniyu-okn">Как получить задание на проведение работ по сохранению ОКН</a><a href="/blog/istoriko-kulturnaya-ekspertiza-okn-kogda-nuzhna-gike">Когда проекту требуется государственная историко-культурная экспертиза</a><a href="/blog/remont-v-obekte-kulturnogo-naslediya">Ремонт в ОКН: что можно делать и какой маршрут выбрать</a></div></div></section>
 
-        <div class="faq-item active">
-          <button type="button" class="faq-q" aria-expanded="true" onclick="toggleFaqBtn(this)">
-            <span>Когда нужен раздел обеспечения сохранности объекта культурного наследия?</span>
-            <div class="faq-toggle">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-a" role="region">
-            <p>Раздел обеспечения сохранности ОКН нужен при строительных или земляных работах в зоне влияния памятника. Его включают в проектную документацию по требованию органа охраны или ГАТИ, чтобы пройти согласование без возвратов.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
-            <span>Чем отличается проект реставрации от проекта приспособления?</span>
-            <div class="faq-toggle">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-a" role="region">
-            <p>Проект реставрации — документация на восстановление и сохранение исторического объекта: ремонт конструкций, воссоздание утраченных элементов, консервация. Проект приспособления для современного использования — дополнительный раздел, позволяющий адаптировать ОКН под актуальную функцию (офис, отель, апартаменты) без нарушения предметов охраны. Как правило, оба документа разрабатываются совместно.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
-            <span>Сколько стоит проект реставрации объекта культурного наследия?</span>
-            <div class="faq-toggle">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-a" role="region">
-            <p>Стоимость зависит от площади объекта, категории охраны, объёма исходных материалов, состава разделов и маршрута согласования. На бюджет также влияет необходимость дополнительных исследований, ГИКЭ и прохождения согласования в Мосгорнаследии. После первичного анализа объекта формируем смету по этапам и календарный план работ. Финальная стоимость фиксируется в договоре до начала проектирования.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
-            <span>Как проходит согласование с Департаментом культурного наследия?</span>
-            <div class="faq-toggle">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-a" role="region">
-            <p>Согласование в Мосгорнаследии включает несколько последовательных этапов: получение задания на проектирование реставрации, разработка проекта, прохождение государственной историко-культурной экспертизы, рассмотрение на научно-методическом совете и выдача согласования. Срок зависит от состава документации, сложности объекта и маршрута рассмотрения.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
-            <span>Можно ли сделать перепланировку в объекте культурного наследия?</span>
-            <div class="faq-toggle">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-a" role="region">
-            <p>Перепланировка объекта культурного наследия возможна, но согласовывается не в Мосжилинспекции, а в Мосгорнаследии. Ключевое условие: изменения не должны затрагивать предметы охраны — конструктивные элементы, исторические интерьеры и архитектурные детали, включённые в акт о предмете охраны. Разрабатываем проект планировочных решений с учётом этих ограничений.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
-            <span>Каковы сроки разработки проектной документации?</span>
-            <div class="faq-toggle">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-a" role="region">
-            <p>Сроки зависят от наличия исходно-разрешительной документации, категории охраны, объёма исследований, состава разделов и маршрута согласования. Оценку даём после первичного анализа объекта и исходных материалов.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
-            <span>На каком этапе лучше привлекать проектировщика?</span>
-            <div class="faq-toggle">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-a" role="region">
-            <p>Чем раньше — тем меньше рисков. Оптимально подключаться на этапе due diligence или до подписания сделки: тогда можно оценить ограничения охраны, объём документации и реальный бюджет. Если проект уже начат — беремся за доработку существующей документации или параллельные согласования. Работаем с объектами на любой стадии.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
-            <span>Что делать, если по объекту действует охранное обязательство?</span>
-            <div class="faq-toggle">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-a" role="region">
-            <p>Если по объекту действует охранное обязательство, сначала фиксируем ограничения и предмет охраны. На этой основе определяем состав проектной документации, допустимые работы и маршрут согласования, чтобы пройти процедуру без лишних возвратов.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
-            <span>Работаете ли вы с объектами культурного наследия федерального значения?</span>
-            <div class="faq-toggle">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-a" role="region">
-            <p>Да, работаем с объектами федерального, регионального и выявленного значения. Для федеральных объектов особенно важно корректно подготовить исследования, обоснования и проектные решения под процедуру согласования. Сопровождаем документацию с учётом требований Департамента культурного наследия Москвы, НМС и ГИКЭ. При необходимости подключаемся и на этапе рабочей документации.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
+<section id="faq"><div class="container"><div class="faq-layout"><div class="faq-aside"><span class="label">Часто спрашивают</span><h2>Частые вопросы о разрешении ДКН</h2><p>Различия между заданием, проектом, экспертизой, согласованием и разрешением.</p><a href="#cta-final" class="btn btn-primary">Задать свой вопрос</a></div><div class="faq-list"><div class="faq-item active"><button type="button" class="faq-q" aria-expanded="true" onclick="toggleFaqBtn(this)"><span>Чем разрешение на работы отличается от согласования проекта?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div></button><div class="faq-a" role="region"><p>Согласование относится к проектной документации. Разрешение оформляется для начала соответствующих работ после прохождения необходимых предшествующих этапов.</p></div></div><div class="faq-item"><button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)"><span>Можно ли получить разрешение без задания ДКН?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div></button><div class="faq-a" role="region"><p>Маршрут зависит от вида работ и исходных документов. Сначала проверяется, требуется ли задание и какие основания должны быть оформлены именно для вашей задачи.</p></div></div><div class="faq-item"><button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)"><span>Всегда ли нужна ГИКЭ?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div></button><div class="faq-a" role="region"><p>Нет. Необходимость экспертизы определяется объектом, видом документации и требованиями конкретной процедуры.</p></div></div><div class="faq-item"><button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)"><span>Кто может подать документы?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div></button><div class="faq-a" role="region"><p>Заявителем и представителем могут выступать лица, предусмотренные действующей процедурой. Полномочия и комплект проверяются до подачи.</p></div></div><div class="faq-item"><button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)"><span>Почему документы возвращают?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div></button><div class="faq-a" role="region"><p>Частые причины — неполный комплект, несоответствие заявленного вида работ документам, разные версии проекта и отсутствие обязательных для ситуации материалов.</p></div></div><div class="faq-item"><button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)"><span>Можно ли начать подготовительные работы до разрешения?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div></button><div class="faq-a" role="region"><p>Сначала нужно определить правовой режим конкретных действий. Начинать работы на ОКН без проверки необходимых разрешений рискованно.</p></div></div></div></div></div></section>
 
 <!-- CTA FINAL -->
-<section id="cta-final">
-  <div class="container">
-    <div class="cta-layout">
-      <div class="cta-left">
-        <span class="label">Связаться</span>
-        <h2>Разберём ваш объект бесплатно</h2>
-        <p>Расскажите об объекте — определим состав проектной документации, требования охранного обязательства и рабочий маршрут согласования.</p>
-
-        <div class="contact-list">
-          <a href="tel:+79337549879" class="contact-item">
-            <div class="contact-icon">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3">
-                <path d="M3 3l2.5 5L3 10a12 12 0 005 5l2-2.5L15 15c.5 1-1 3-3 3C5 18 0 12.5 0 6c0-2 2-3.5 3-3z"/>
-              </svg>
-            </div>
-            +7 933 754-98-79
-          </a>
-          <a href="mailto:oknproekt@ya.ru" class="contact-item">
-            <div class="contact-icon">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3">
-                <rect x="1" y="4" width="16" height="11" rx="0"/><path d="M1 4l8 7 8-7"/>
-              </svg>
-            </div>
-            oknproekt@ya.ru
-          </a>
-          <address class="contact-item">
-            <div class="contact-icon">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3">
-                <path d="M9 16s5-4.7 5-9A5 5 0 004 7c0 4.3 5 9 5 9z"/><circle cx="9" cy="7" r="1.6"/>
-              </svg>
-            </div>
-            Московская обл., г. Дзержинский, ул. Дзержинская, д. 13
-          </address>
-        </div>
-
-        <div class="messenger-btns" style="margin-top: 28px;">
-          <a href="https://t.me/vladislav_okn" target="_blank" rel="noopener" class="btn btn-sm btn-tg"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.697l-2.95-.924c-.642-.204-.657-.642.136-.953l11.57-4.461c.537-.194 1.006.131.326.889z"/></svg> Написать в Telegram</a>
-          <a href="https://max.ru/u/f9LHodD0cOIuvT3MGY3kozoYT3VnmzDZCpGZ56uAix4_Z9UCyUNVdOsdTGY" target="_blank" rel="noopener" class="btn btn-sm btn-max">Написать в Max</a>
-        </div>
-      </div>
-
-      <div class="contact-form" id="contactForm">
-        <div class="form-title">Запрос по объекту</div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fname">Имя <span aria-hidden="true" style="color:var(--gold)">*</span></label>
-            <input type="text" id="fname" name="name" placeholder="Иван Петров" required autocomplete="name">
-          </div>
-          <div class="form-group">
-            <label for="fphone">Телефон <span aria-hidden="true" style="color:var(--gold)">*</span></label>
-            <input type="tel" id="fphone" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="ftype">Тип задачи</label>
-          <select id="ftype" name="service">
-            <option value="">Выберите услугу</option>
-            <option>Проект реставрации ОКН</option>
-            <option>Раздел обеспечения сохранности</option>
-            <option>Проект приспособления ОКН</option>
-            <option>Согласование проекта</option>
-            <option>Обследование ОКН</option>
-            <option>Организация и сопровождение ГИКЭ</option>
-            <option>Разрешение ДКН на работы</option>
-            <option>Авторский надзор</option>
-            <option>Не знаю — нужна консультация</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="fdesc">Опишите объект</label>
-          <textarea id="fdesc" name="description" placeholder="Адрес, категория охраны, что планируете делать..."></textarea>
-        </div>
-
-        
-          <!-- Honeypot anti-spam (hidden from users) -->
-          <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
-            <label for="website_url">Website</label>
-            <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
-          </div>
-        <button type="submit" class="btn btn-primary" id="submitBtn" onclick="submitForm(event)" style="width:100%; justify-content:center;">
-          Отправить запрос
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M3 8h10M9 4l4 4-4 4"/>
-          </svg>
-        </button>
-        <p class="form-note">Отвечаем в течение 2 часов в рабочее время. Не продаём и не передаём данные третьим лицам.</p>
-      </div>
-
-      <div class="form-success" id="formSuccess" style="display:none; background:#fff; border:1px solid #DDD0B0; padding:60px 40px; text-align:center;">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#B8965A" stroke-width="1.5" style="margin-bottom:24px;">
-          <circle cx="28" cy="28" r="24"/><path d="M18 28l6 6 14-14"/>
-        </svg>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:12px;">Запрос получен</h3>
-        <p style="color:#8A847C;">Свяжемся с вами в течение 2 рабочих часов для первичного анализа объекта.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-</main>
+<section id="cta-final"><div class="container"><div class="cta-layout"><div class="cta-left"><span class="label">Связаться</span><h2>Проверим, готов ли проект к получению разрешения ДКН</h2><p>Разберём вид работ, проект, ГИКЭ и согласование. Вы получите перечень недостающих шагов и понятный маршрут подачи.</p><div class="contact-list"><a class="contact-item" href="tel:+79337549879"><span class="contact-icon">☎</span>+7 933 754-98-79</a><a class="contact-item" href="mailto:oknproekt@ya.ru"><span class="contact-icon">@</span>oknproekt@ya.ru</a><a class="contact-item" href="https://t.me/vladislav_okn" target="_blank" rel="noopener"><span class="contact-icon">TG</span>Telegram</a></div></div><form class="contact-form" id="contactForm"><div class="form-title">Запрос по услуге: Получение разрешения ДКН на работы</div><div class="form-row"><div class="form-group"><label for="fname">Имя</label><input id="fname" name="name" type="text" autocomplete="name" required></div><div class="form-group"><label for="fphone">Телефон</label><input id="fphone" name="phone" type="tel" autocomplete="tel" required></div></div><div class="form-group"><label for="ftype">Тип задачи</label><select id="ftype" name="service"><option value="">Выберите услугу</option><option>Проект реставрации ОКН</option><option>Раздел обеспечения сохранности</option><option>Проект приспособления ОКН</option><option>Перепланировка ОКН</option><option>Согласование проекта</option><option>Охранное обязательство ОКН</option><option>Капитальный ремонт ОКН</option><option>Реконструкция ОКН</option><option>Обследование ОКН</option><option>Организация и сопровождение ГИКЭ</option><option selected>Разрешение ДКН на работы</option><option>Авторский надзор</option><option>Не знаю — нужна консультация</option></select></div><div class="form-group"><label for="fdesc">Описание объекта</label><textarea id="fdesc" name="description" placeholder="Адрес, статус объекта, что планируете делать..."></textarea></div><input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true"><button type="submit" class="btn btn-primary">Отправить запрос</button><p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p><div class="form-success" id="formSuccess"><h3>Запрос отправлен</h3><p>Мы свяжемся с вами после первичного просмотра задачи.</p></div></form></div></div></section>
 
 <!-- FOOTER -->
 <footer>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Страница не найдена — ОКН.Проект</title>
+<meta name="description" content="Страница не найдена на сайте ОКН.Проект. Перейдите на главную или к разделу услуг.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://oknproekt.ru/404.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #B8965A;
+    --gold-light: #D4AF78;
+    --gold-pale: #F5EDD8;
+    --bg: #FAFAF8;
+    --bg2: #F3F1EC;
+    --dark: #1C1A17;
+    --mid: #4A4640;
+    --light: #8A847C;
+    --line: #DDD9D0;
+    --white: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    min-height: 100vh;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .blueprint-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(to right, rgba(184,150,90,0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(184,150,90,0.08) 1px, transparent 1px),
+      radial-gradient(circle at 15% 20%, rgba(184,150,90,0.15), transparent 36%),
+      radial-gradient(circle at 82% 74%, rgba(184,150,90,0.12), transparent 34%);
+    background-size: 56px 56px, 56px 56px, auto, auto;
+    z-index: 0;
+  }
+
+  .blueprint-lines {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.2;
+  }
+
+  main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 48px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card {
+    width: min(780px, 100%);
+    background: rgba(255,255,255,0.86);
+    backdrop-filter: blur(2px);
+    border: 1px solid var(--line);
+    box-shadow: 0 22px 50px rgba(28,26,23,0.08);
+    padding: clamp(32px, 6vw, 62px);
+  }
+
+  .label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    display: inline-block;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    font-size: clamp(36px, 6vw, 64px);
+    margin-bottom: 16px;
+  }
+
+  .lead {
+    color: var(--mid);
+    font-size: clamp(16px, 2.2vw, 20px);
+    line-height: 1.7;
+    max-width: 58ch;
+    margin-bottom: 12px;
+  }
+
+  .secondary {
+    color: var(--light);
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 1.75;
+    max-width: 62ch;
+    margin-bottom: 34px;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 28px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--white);
+    border: 1px solid var(--gold);
+  }
+
+  .btn-primary:hover {
+    background: #A07D45;
+    border-color: #A07D45;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+  }
+
+  .btn-outline:hover {
+    background: var(--gold-pale);
+  }
+
+  .caption {
+    color: var(--light);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 700px) {
+    .card { padding: 28px 22px; }
+    .actions { flex-direction: column; }
+    .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="blueprint-overlay" aria-hidden="true"></div>
+<svg class="blueprint-lines" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g fill="none" stroke="rgba(184,150,90,0.45)" stroke-width="1">
+    <rect x="130" y="120" width="440" height="220"/>
+    <rect x="1040" y="110" width="320" height="260"/>
+    <rect x="180" y="520" width="300" height="180"/>
+    <rect x="860" y="530" width="520" height="210"/>
+    <line x1="130" y1="120" x2="570" y2="340"/>
+    <line x1="1040" y1="110" x2="1360" y2="370"/>
+    <line x1="180" y1="700" x2="480" y2="520"/>
+    <line x1="860" y1="530" x2="1380" y2="740"/>
+    <circle cx="720" cy="280" r="84"/>
+    <circle cx="760" cy="600" r="62"/>
+  </g>
+</svg>
+<main>
+  <section class="card" aria-labelledby="not-found-title">
+    <span class="label">404 / проектная навигация</span>
+    <h1 id="not-found-title">Объект не найден</h1>
+    <p class="lead">Запрашиваемая страница отсутствует в проектной документации или была перемещена.</p>
+    <p class="secondary">Проверьте адрес или перейдите к актуальным разделам сайта.</p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="/">Перейти на главную</a>
+      <a class="btn btn-outline" href="/#services">Смотреть услуги</a>
+    </div>
+
+    <p class="caption">ОКН.Проект — проектирование объектов культурного наследия</p>
+  </section>
+</main>
+</body>
+</html>

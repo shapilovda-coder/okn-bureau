@@ -1,0 +1,2923 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Блог ОКН.Проект — аналитика по проектированию, инвестициям и рискам в ОКН</title>
+<meta name="description" content="Экспертные статьи ОКН.Проект для инвесторов, собственников и девелоперов: проектирование, инвестиционная логика, риски, согласование и работа с объектами культурного наследия.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://oknproekt.ru/blog">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico">
+<!-- OG -->
+<meta property="og:title" content="Блог ОКН.Проект — аналитика по проектированию, инвестициям и рискам в ОКН">
+<meta property="og:description" content="Экспертные статьи ОКН.Проект для инвесторов, собственников и девелоперов: проектирование, инвестиционная логика, риски и согласование ОКН.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oknproekt.ru/blog">
+<meta property="og:site_name" content="ОКН.Проект">
+<meta property="og:image" content="/assets/img/og-image.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Блог ОКН.Проект — аналитика по проектированию, инвестициям и рискам в ОКН">
+<meta name="twitter:description" content="Экспертные статьи ОКН.Проект: инвестиционная логика, документация, согласование и работа с объектами культурного наследия.">
+<meta name="twitter:image" content="/assets/img/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --gold: #B8965A;
+    --gold-light: #D4AF78;
+    --gold-pale: #F5EDD8;
+    --bg: #FAFAF8;
+    --bg2: #F3F1EC;
+    --dark: #1C1A17;
+    --mid: #4A4640;
+    --light: #8A847C;
+    --line: #DDD9D0;
+    --danger: #A0341E;
+    --white: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body.menu-open { overflow: hidden; }
+
+  /* ─── TYPOGRAPHY ─── */
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--dark);
+  }
+
+  h1 { font-size: clamp(36px, 5.5vw, 64px); font-weight: 400; }
+  h2 { font-size: clamp(28px, 3.5vw, 46px); font-weight: 400; }
+  h3 { font-size: clamp(20px, 2.2vw, 28px); }
+  h4 { font-size: 18px; }
+
+  p { color: var(--mid); line-height: 1.75; }
+
+  .label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  /* ─── LAYOUT ─── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+  @media (max-width: 768px) { .container { padding: 0 20px; } }
+
+  section { padding: 100px 0; }
+  @media (max-width: 768px) { section { padding: 64px 0; } }
+
+  /* ─── HEADER ─── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,250,248,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: env(safe-area-inset-top) 40px 0;
+    height: calc(70px + env(safe-area-inset-top));
+    box-sizing: border-box;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--dark);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    line-height: 1;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .logo span { color: var(--gold); }
+
+  nav { display: flex; gap: 24px; align-items: center; }
+  nav a {
+    font-size: 13px; font-weight: 400; color: var(--mid);
+    text-decoration: none; letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--gold); }
+
+  .nav-services { position: relative; padding: 10px 0; margin: -10px 0; }
+  .services-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 320px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    box-shadow: 0 20px 40px rgba(28,26,23,0.12);
+    display: none;
+    z-index: 120;
+  }
+  .services-dropdown a {
+    display: block;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+  }
+  .services-dropdown a:last-child { border-bottom: none; }
+  .nav-services:hover .services-dropdown, .nav-services:focus-within .services-dropdown { display: block; }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 16px;
+    margin: 4px 0;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.72);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .mobile-service-links { margin-top: 8px; }
+  .mobile-service-links a {
+    display: block;
+    padding: 8px 0 8px 16px;
+    color: var(--light);
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  .nav-phone {
+    font-size: 13px; font-weight: 500;
+    color: var(--dark) !important;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-phone:hover { color: var(--gold) !important; }
+
+  @media (max-width: 768px) { nav { display: none; } }
+
+  /* ─── BUTTONS ─── */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 32px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px; font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--white);
+  }
+  .btn-primary:hover { background: #A07D45; }
+
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+  }
+  .btn-outline:hover { background: var(--gold); color: var(--white); }
+
+  .btn-sm { padding: 10px 22px; font-size: 13px; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 70px 0 0;
+    background: var(--white);
+  }
+
+  .hero-blueprint {
+    position: absolute;
+    top: -4%; right: 0;
+    width: min(72vw, 1040px);
+    height: 112%;
+    opacity: 0.055;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    width: 100%;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 0 clamp(80px, 6vw, 112px);
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(520px, 0.98fr);
+    align-items: center;
+    gap: clamp(40px, 5vw, 84px);
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 680px;
+    padding: 80px 0;
+  }
+
+  .hero-video-wrap {
+    position: relative;
+    justify-self: end;
+    width: 100%;
+    max-width: min(48vw, 820px);
+    isolation: isolate;
+  }
+
+  .hero-video-frame {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    min-height: 430px;
+    border: 1px solid rgba(184,150,90,0.28);
+    border-radius: 26px;
+    background: var(--bg2);
+    box-shadow: 0 28px 80px rgba(28,26,23,0.12);
+  }
+
+  .hero-video-frame::before {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .hero-video-caption {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    color: var(--light);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 1180px) and (min-width: 769px) {
+    .hero-inner {
+      grid-template-columns: minmax(0, 0.9fr) minmax(430px, 0.82fr);
+      gap: 36px;
+      padding: 0 clamp(48px, 5vw, 72px);
+    }
+
+    .hero-video-wrap {
+      max-width: 620px;
+    }
+
+    .hero-video-frame {
+      min-height: 350px;
+    }
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold-pale);
+    border: 1px solid #DDD0B0;
+    padding: 7px 16px;
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 36px;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .hero-title { margin-bottom: 28px; }
+  .hero-title em { font-style: italic; color: var(--gold); }
+
+  .hero-sub {
+    font-size: 17px; color: var(--mid);
+    max-width: 600px; margin-bottom: 48px;
+    line-height: 1.8;
+  }
+
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 64px; }
+
+  .hero-pills {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+
+  .hero-pill {
+    display: inline-flex; align-items: center;
+    padding: 8px 16px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    font-size: 12px; font-weight: 400;
+    color: var(--mid); letter-spacing: 0.03em;
+  }
+
+  .hero-pill--license {
+    background: var(--gold-pale);
+    border-color: #D4AF78;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .hero-pill--license::before { background: var(--gold); }
+
+  .hero-pill::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 600px) {
+    .hero-ctas { flex-direction: column; }
+    .btn { width: 100%; justify-content: center; }
+    .hero-pills { gap: 8px; }
+    .hero-pill { width: 100%; min-height: 42px; }
+  }
+
+  /* ─── SECTION HEADERS ─── */
+  .section-header { max-width: 700px; margin-bottom: 64px; }
+  .section-header.centered { margin: 0 auto 64px; text-align: center; }
+  .section-header p { font-size: 17px; margin-top: 16px; }
+
+  /* ─── FOR WHOM ─── */
+  #for-whom {
+    background: var(--bg2);
+    position: relative;
+    overflow: hidden;
+    padding-top: 0;
+  }
+
+  #for-whom .container {
+    position: relative;
+    z-index: 1;
+    padding-top: clamp(130px, 12vw, 180px);
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .audience-card {
+    background: var(--white);
+    padding: 36px 28px;
+    transition: background 0.2s;
+  }
+
+  .audience-card:hover { background: var(--gold-pale); }
+
+  .audience-icon {
+    width: 40px; height: 40px;
+    margin-bottom: 20px;
+    color: var(--gold);
+  }
+
+  /* Audience decorative line icons */
+  .audience-icon-img {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: var(--gold-pale);
+    border: 1px solid #E8DFC0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .audience-icon-svg {
+    width: 40px;
+    height: 40px;
+    color: var(--gold);
+    opacity: 0.95;
+  }
+
+  .audience-icon-png {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.95;
+  }
+
+  .audience-card h3,
+  .audience-card h4 {
+    margin-bottom: 10px;
+    min-height: 2.5em;
+    line-height: 1.2;
+  }
+
+  .audience-card p { font-size: 13px; color: var(--light); }
+
+  @media (max-width: 900px) {
+    .audience-grid { grid-template-columns: repeat(2, 1fr); }
+    .audience-card h3,
+    .audience-card h4 { min-height: 0; }
+  }
+  @media (max-width: 500px) {
+    .audience-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── SERVICES ─── */
+  #services { background: var(--white); }
+
+  .services-list { display: flex; flex-direction: column; gap: 2px; }
+
+  .service-item {
+    border: 1px solid var(--line);
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .service-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 32px 40px;
+    cursor: pointer;
+    transition: background 0.2s;
+    gap: 20px;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+  }
+
+  .service-header:hover { background: var(--bg); }
+  .service-item.active .service-header { background: var(--dark); }
+  .service-item.active .service-header h3,
+  .service-item.active .service-header .svc-num { color: var(--white); }
+  .service-item.active .service-header .svc-tag { color: rgba(255,255,255,0.5); }
+
+  .service-header-left { display: flex; align-items: center; gap: 28px; flex: 1; }
+
+  .svc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px; color: var(--light);
+    min-width: 28px; letter-spacing: 0.06em;
+  }
+
+  .service-header h3 { font-size: clamp(17px, 2vw, 22px); font-weight: 500; }
+
+  .svc-title-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dashed transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .svc-title-link:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  .service-item.active .svc-title-link:hover {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold-light);
+  }
+
+  .svc-tag {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--light); white-space: nowrap;
+  }
+
+  .svc-toggle {
+    width: 36px; height: 36px;
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.25s;
+  }
+
+  .service-item.active .svc-toggle {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .svc-toggle svg { color: var(--mid); transition: color 0.2s; }
+  .service-item.active .svc-toggle svg { color: var(--white); }
+
+  .service-body {
+    display: none;
+    border-top: 1px solid var(--line);
+  }
+
+  .service-item.active .service-body { display: block; }
+
+  .service-body-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .svc-col {
+    padding: 36px 40px;
+    border-right: 1px solid var(--line);
+  }
+
+  .svc-col:last-child { border-right: none; }
+
+  .svc-col-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+    display: block;
+  }
+
+  .svc-col p { font-size: 14px; color: var(--mid); }
+
+  .svc-col ul {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+
+  .svc-col ul li {
+    font-size: 13px; color: var(--mid);
+    padding-left: 16px; position: relative;
+  }
+
+  .svc-col ul li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--gold);
+  }
+
+  .svc-cta {
+    padding: 24px 40px;
+    border-top: 1px solid var(--line);
+    background: var(--bg);
+  }
+
+  @media (max-width: 900px) {
+    .service-body-inner { grid-template-columns: 1fr; }
+    .svc-col { border-right: none; border-bottom: 1px solid var(--line); }
+    .svc-col:last-child { border-bottom: none; }
+    .service-header { padding: 24px 20px; }
+    .svc-col { padding: 24px 20px; }
+    .svc-cta { padding: 20px; }
+  }
+
+  /* ─── WHEN NEEDED ─── */
+  #when-needed { background: var(--bg2); }
+  #when-needed .section-header p { margin-top: 24px; }
+
+  .triggers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .trigger-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trigger-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+
+  .trigger-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px; font-weight: 300;
+    color: var(--line);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .trigger-card h3,
+  .trigger-card h4 {
+    font-size: 17px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .trigger-card p { font-size: 13px; color: var(--light); }
+
+  @media (max-width: 900px) {
+    .triggers-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 500px) {
+    .triggers-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── RISKS ─── */
+  #risks {
+    background: var(--dark);
+    color: var(--white);
+    padding: 72px 0;
+  }
+
+  #risks .label { color: #C08060; }
+  #risks h2 { color: var(--white); }
+  #risks .section-header p { color: rgba(255,255,255,0.6); }
+  #risks .section-header {
+    max-width: 820px;
+    margin-bottom: 38px;
+  }
+
+  .risks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .risk-card {
+    background: #231F1A;
+    padding: 28px 24px 30px;
+    position: relative;
+  }
+
+  .risk-icon {
+    width: 34px; height: 34px;
+    border: 1px solid #A0341E;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    color: #C0542E;
+  }
+
+  .risk-icon-png {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.95;
+  }
+
+  .risk-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.18;
+    min-height: 3.54em;
+  }
+
+  .risk-card p { font-size: 13px; line-height: 1.62; color: rgba(255,255,255,0.52); }
+
+  @media (max-width: 1100px) {
+    .risks-grid { grid-template-columns: repeat(2, 1fr); }
+    .risk-card h3 { min-height: auto; }
+  }
+
+  @media (max-width: 700px) {
+    .risks-grid { grid-template-columns: 1fr; }
+    .risk-card { padding: 24px 20px; }
+  }
+
+  /* ─── PROCESS ─── */
+  #process { background: var(--white); }
+
+  .process-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+  }
+
+  .process-track::before {
+    content: '';
+    position: absolute;
+    top: 36px; left: 10%;
+    width: 80%; height: 1px;
+    background: var(--line);
+  }
+
+  .process-step {
+    padding: 0 20px 40px;
+    text-align: center;
+    position: relative;
+  }
+
+  .step-dot {
+    width: 72px; height: 72px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+    position: relative; z-index: 1;
+    transition: all 0.3s;
+    color: var(--gold);
+  }
+
+  .step-dot-png {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.95;
+  }
+
+  .process-step:hover .step-dot {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--white);
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px; color: var(--light);
+    letter-spacing: 0.12em; margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .process-step h3,
+  .process-step h4 {
+    font-size: 15px;
+    margin-bottom: 8px;
+    min-height: 2.4em;
+    line-height: 1.2;
+  }
+  .process-step p { font-size: 13px; color: var(--light); }
+
+  @media (max-width: 900px) {
+    .process-track {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+    .process-track::before { display: none; }
+    .process-step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 20px;
+      text-align: left;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+    .step-dot { margin: 0; }
+    .process-step:last-child { border-bottom: none; }
+  }
+
+  /* ─── ADVANTAGES ─── */
+  #advantages { background: var(--bg2); }
+
+  .adv-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .adv-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 36px 28px;
+  }
+
+  .adv-icon {
+    width: 48px; height: 48px;
+    margin-bottom: 20px;
+    color: var(--gold);
+  }
+
+  .adv-icon-png {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.95;
+    margin-bottom: 14px;
+  }
+
+  .adv-card h3,
+  .adv-card h4 {
+    font-size: 17px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    min-height: 3.6em;
+  }
+  .adv-card p { font-size: 13px; color: var(--light); }
+
+  .adv-card--license {
+    background: var(--gold-pale);
+    border-color: #D4AF78;
+    grid-column: span 1;
+  }
+
+  .adv-card--license h3,
+  .adv-card--license h4 { color: var(--dark); }
+  .adv-card--license .adv-icon { color: var(--gold); }
+  .adv-card--license strong { color: var(--gold); font-weight: 600; }
+
+  @media (min-width: 1101px) {
+    .adv-grid {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .adv-card {
+      padding: 30px 22px;
+    }
+
+    .adv-icon {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 18px;
+    }
+  }
+
+  @media (min-width: 901px) and (max-width: 1100px) {
+    .adv-grid { grid-template-columns: repeat(3, 1fr); }
+    .adv-card h3,
+    .adv-card h4 { min-height: 0; }
+  }
+
+  @media (max-width: 900px) { .adv-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .adv-grid { grid-template-columns: 1fr; } }
+
+  /* ─── FAQ ─── */
+  #faq { background: var(--white); }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .faq-aside { position: sticky; top: 100px; }
+  .faq-aside h2 { margin-bottom: 20px; }
+  .faq-aside p { font-size: 15px; color: var(--light); margin-bottom: 32px; }
+
+  .faq-list { display: flex; flex-direction: column; }
+
+  .faq-item { border-top: 1px solid var(--line); }
+  .faq-item:last-child { border-bottom: 1px solid var(--line); }
+
+  .faq-q {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 0;
+    cursor: pointer;
+    gap: 20px;
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: inherit;
+    text-align: left;
+  }
+
+  .faq-q span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px; font-weight: 500;
+    color: var(--dark);
+    line-height: 1.3;
+  }
+
+  .faq-item.active .faq-q { padding-bottom: 14px; }
+
+  .faq-toggle {
+    width: 28px; height: 28px;
+    flex-shrink: 0;
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.25s;
+    color: var(--mid);
+  }
+
+  .faq-item.active .faq-toggle {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--white);
+    transform: rotate(45deg);
+  }
+
+  .faq-a {
+    display: none;
+    padding-bottom: 24px;
+  }
+
+  .faq-item.active .faq-a { display: block; }
+  .faq-a p {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.65;
+    background: #F7F4EC;
+    border-left: 2px solid var(--gold);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+
+  @media (max-width: 900px) {
+    .faq-layout { grid-template-columns: 1fr; gap: 40px; }
+    .faq-aside { position: static; }
+  }
+
+  /* ─── CTA FINAL ─── */
+  #cta-final {
+    background: var(--gold-pale);
+    border-top: 1px solid #DDD0B0;
+    border-bottom: 1px solid #DDD0B0;
+  }
+
+  .cta-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .cta-left h2 { margin-bottom: 16px; }
+  .cta-left p { font-size: 16px; margin-bottom: 36px; }
+
+  .contact-list { display: flex; flex-direction: column; gap: 16px; }
+
+  .contact-item {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none; color: var(--dark);
+    font-size: 16px;
+    font-style: normal;
+    transition: color 0.2s;
+  }
+
+  .contact-item:hover { color: var(--gold); }
+
+  .contact-icon {
+    width: 40px; height: 40px;
+    border: 1px solid #DDD0B0;
+    background: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold);
+  }
+
+  /* FORM */
+  .contact-form { background: var(--white); padding: 40px; border: 1px solid #DDD0B0; }
+
+  .form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; margin-bottom: 28px;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+
+  .form-group label { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; color: var(--light); text-transform: uppercase; }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: var(--dark);
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--gold);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-note { font-size: 12px; color: var(--light); margin-top: 12px; }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .form-success h3 { font-size: 24px; margin-bottom: 12px; }
+  .form-success p { color: var(--light); }
+
+  @media (max-width: 900px) {
+    .cta-layout { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form { padding: 24px; }
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--dark);
+    padding: 48px 0;
+    color: rgba(255,255,255,0.4);
+    font-size: 13px;
+  }
+
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; color: var(--white);
+    text-decoration: none;
+  }
+
+  .footer-logo span { color: var(--gold); }
+  .footer-license {
+    color: rgba(255,255,255,0.5) !important;
+    font-size: 11px !important;
+    letter-spacing: 0.04em;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 12px;
+    margin-top: 4px;
+  }
+  footer p { color: rgba(255,255,255,0.35); font-size: 12px; }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-up:nth-child(2) { transition-delay: 0.1s; }
+  .fade-up:nth-child(3) { transition-delay: 0.2s; }
+  .fade-up:nth-child(4) { transition-delay: 0.3s; }
+  .fade-up:nth-child(5) { transition-delay: 0.4s; }
+
+  /* ─── STICKY CTA BAR ─── */
+
+
+
+
+
+
+
+  @media (max-width: 600px) {
+  
+  
+  }
+
+  /* ─── HERO IMAGE BACKGROUND ─── */
+  .hero-img-bg {
+    position: absolute;
+    top: 0; right: 0;
+    width: min(64vw, 980px);
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: multiply;
+  }
+
+  /* The existing SVG blueprint sits on top */
+  .hero-blueprint {
+    z-index: 1;
+  }
+
+  .hero-content {
+    z-index: 2;
+  }
+
+  /* ─── SECTION ILLUSTRATION (for-whom) ─── */
+  .section-illustration {
+    width: 100%;
+    margin-bottom: 0;
+    overflow: hidden;
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 540px;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(135deg, rgba(246, 240, 224, 0.35), rgba(250, 249, 245, 0.96)),
+      repeating-linear-gradient(0deg, rgba(181, 149, 92, 0.08) 0 1px, transparent 1px 22px),
+      repeating-linear-gradient(90deg, rgba(181, 149, 92, 0.06) 0 1px, transparent 1px 22px);
+  }
+
+  .section-illus-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: 0.28;
+    display: block;
+    filter: grayscale(0.08) contrast(0.92);
+  }
+
+  /* Overlay gradient so text header below reads cleanly */
+  .section-illustration::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(246, 245, 240, 0.02) 0%, rgba(246, 245, 240, 0.20) 42%, var(--bg2) 100%),
+      linear-gradient(90deg, var(--bg2) 0%, rgba(246, 245, 240, 0.32) 16%, rgba(246, 245, 240, 0.18) 84%, var(--bg2) 100%);
+    pointer-events: none;
+  }
+
+  /* ─── SERVICES: visual row with building ─── */
+  .services-visual-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 40px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+
+  .services-text-intro {
+    padding: 48px 44px;
+    background: var(--bg);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    border-right: 1px solid var(--line);
+  }
+
+  .services-intro-text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--mid);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .services-license-note {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--mid);
+    max-width: 460px;
+  }
+
+  .services-license-note strong {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .services-building-img {
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .services-building-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    opacity: 0.92;
+    transition: transform 0.5s ease;
+  }
+
+  .services-building-img:hover img {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 768px) {
+    .services-visual-row { grid-template-columns: 1fr; }
+    .services-text-intro { border-right: none; border-bottom: 1px solid var(--line); padding: 28px 20px; }
+    .services-building-img { height: 200px; }
+    .services-license-note { font-size: 12px; }
+  }
+
+  /* ─── AUDIENCE ICONS STRIP ─── */
+  .audience-icons-strip {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto 52px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .icons-strip-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 0;
+    opacity: 0.95;
+  }
+
+  /* ─── PROCESS: atmospheric background image ─── */
+  .process-bg-img {
+    position: absolute;
+    top: 0; right: -5%;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .process-bg-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+    opacity: 0.07;
+    mix-blend-mode: multiply;
+  }
+
+  #process .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .hero-img-bg { width: 100%; opacity: 0.08; }
+    #for-whom .container { padding-top: 120px; }
+    .section-illustration { height: 340px; }
+    .section-illus-img { object-position: center top; opacity: 0.22; }
+    .audience-icons-strip { max-width: 340px; }
+    .process-bg-img { width: 80%; opacity: 0.05; }
+  }
+
+
+  /* Process decorative line icons */
+  .step-dot-img {
+    overflow: hidden;
+    background: var(--white);
+    padding: 0;
+  }
+
+  .step-dot-svg {
+    width: 40px;
+    height: 40px;
+    color: inherit;
+    opacity: 0.92;
+  }
+
+  /* ─── MESSENGER BUTTONS ─── */
+  .btn-tg {
+    background: #229ED9;
+    color: #fff;
+    border: none;
+  }
+  .btn-tg:hover { background: #1A8BBF; color: #fff; }
+
+  .btn-max {
+    background: #2F394F;
+    color: #fff;
+    border: none;
+  }
+  .btn-max:hover { background: #232B3C; color: #fff; }
+
+  .messenger-btns {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .messenger-btns .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  @media (max-width: 600px) {
+    .messenger-btns { flex-direction: column; width: 100%; }
+    .messenger-btns .btn { width: 100%; justify-content: center; }
+  }
+
+
+  /* ─── BURGER / MOBILE MENU ─── */
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.72);
+    border: 1px solid var(--line);
+    cursor: pointer;
+    padding: 8px;
+    z-index: 200;
+    flex-shrink: 0;
+  }
+
+  .burger span {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--dark);
+    transition: all 0.25s ease;
+    transform-origin: center;
+  }
+
+  .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: calc(70px + env(safe-area-inset-top)); left: 0; right: 0;
+    background: rgba(250,250,248,0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+    z-index: 99;
+    transform: translateY(-10px);
+    opacity: 0;
+    max-height: calc(100dvh - (70px + env(safe-area-inset-top)));
+    overflow-y: auto;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .mobile-menu-inner {
+    padding: 32px 24px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dark);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .mobile-nav-link:hover { color: var(--gold); }
+
+  .mobile-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mobile-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--dark);
+    background: var(--bg);
+    transition: background 0.2s;
+  }
+
+  .mobile-contact-item:hover { background: var(--gold-pale); }
+  .mobile-contact-item.btn-tg {
+    background: rgba(34,158,217,0.08);
+    color: #167EB0;
+    border-color: rgba(34,158,217,0.35);
+  }
+  .mobile-contact-item.btn-max {
+    background: rgba(47,57,79,0.08);
+    color: #2F394F;
+    border-color: rgba(47,57,79,0.35);
+  }
+
+
+  .mobile-sticky-bar { display: none; }
+
+  .mobile-sticky-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 10px 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--dark);
+  }
+
+  .mobile-sticky-link.is-tg {
+    background: rgba(34,158,217,0.08);
+    color: #167EB0;
+    border-color: rgba(34,158,217,0.24);
+  }
+
+  .mobile-sticky-link.is-max {
+    background: rgba(47,57,79,0.08);
+    color: #2F394F;
+    border-color: rgba(47,57,79,0.24);
+  }
+
+  .mobile-sticky-link.is-phone {
+    background: var(--gold);
+    color: var(--white);
+    border-color: var(--gold);
+  }
+
+  /* Show burger on mobile, hide desktop nav */
+  @media (max-width: 900px) {
+    .burger { display: flex; }
+    #desktopNav { display: none; }
+    .mobile-menu { display: block; }
+    header { padding: env(safe-area-inset-top) 20px 0; }
+  }
+
+  /* ─── MOBILE RESPONSIVENESS ─── */
+  @media (max-width: 768px) {
+    /* Hero */
+    #hero { min-height: auto; padding: 100px 0 60px; }
+    .hero-inner { display: flex; flex-direction: column; gap: 32px; padding: 0 20px; }
+    .hero-content { padding: 32px 0 0; }
+    .hero-badge { font-size: 10px; margin-bottom: 24px; }
+    .hero-title { margin-bottom: 22px; }
+    .hero-sub { font-size: 15px; line-height: 1.72; margin-bottom: 34px; }
+    .hero-ctas { flex-direction: column; gap: 12px; margin-bottom: 0; }
+    .hero-ctas .btn { width: 100%; justify-content: center; text-align: center; }
+    .hero-pills { gap: 8px; margin-top: 28px; padding-top: 28px; }
+    .hero-pill { font-size: 11px; padding: 8px 12px; }
+    .hero-img-bg { display: none; }
+    .hero-blueprint { display: none; }
+    .hero-video-wrap { width: 100%; max-width: none; align-self: stretch; }
+    .hero-video-frame { border-radius: 18px; aspect-ratio: 16 / 10; min-height: 0; box-shadow: 0 10px 28px rgba(28,26,23,0.08); }
+    .hero-video-frame::before { display: none; }
+    .hero-video-caption { display: none; }
+
+    /* Sections */
+    .section-header { margin-bottom: 36px; }
+    .section-header p { font-size: 15px; }
+
+    /* Audience */
+    .audience-grid { grid-template-columns: 1fr 1fr; }
+    .audience-card { padding: 24px 18px; }
+    .audience-icon-img { width: 56px; height: 56px; }
+
+    /* Services accordion */
+    .service-header { padding: 20px 16px; gap: 12px; }
+    .service-header h3 { font-size: 16px; }
+    .service-header-left { gap: 12px; }
+    .svc-num { min-width: 34px; }
+    .svc-tag { display: none; }
+    .service-body-inner { grid-template-columns: 1fr; }
+    .svc-col { padding: 20px 16px; border-right: none; border-bottom: 1px solid var(--line); }
+    .svc-cta { padding: 16px; }
+
+    /* Triggers / When needed */
+    .triggers-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .trigger-card { padding: 24px 18px; }
+    .trigger-num { font-size: 40px; }
+
+    /* Risks */
+    #risks { padding: 56px 0; }
+    .risks-grid { grid-template-columns: 1fr; }
+    .risk-card { padding: 24px 20px; }
+
+    /* Process */
+    .process-track { grid-template-columns: 1fr; gap: 0; }
+    .process-track::before { display: none; }
+    .process-step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 16px;
+      text-align: left;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+    .step-dot { margin: 0; }
+
+    /* Advantages */
+    .adv-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .adv-card { padding: 24px 18px; }
+
+    /* What client gets */
+    #what-you-get > .container > div[style*="grid"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* FAQ */
+    .faq-layout { grid-template-columns: 1fr; gap: 32px; }
+    .faq-aside { position: static; }
+    .faq-q span { font-size: 16px; }
+    .faq-q { min-height: 56px; padding: 18px 0; }
+    .faq-item.active .faq-q { padding-bottom: 12px; }
+    .faq-a p { padding: 14px 14px; }
+
+    /* CTA */
+    .cta-layout { grid-template-columns: 1fr; gap: 32px; }
+    .contact-form { padding: 24px 16px; }
+    .form-row { grid-template-columns: 1fr; }
+
+    /* Section illustrations */
+    #for-whom .container { padding-top: 110px; }
+    .section-illustration { height: 300px; margin-bottom: 0; }
+    .services-visual-row { grid-template-columns: 1fr; }
+    .services-building-img { height: 160px; }
+    .cases-grid { grid-template-columns: 1fr; gap: 18px; }
+    .case-gallery { height: 190px; }
+    .case-body { padding: 24px 20px 28px; }
+    body { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
+    .mobile-sticky-bar {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: calc(12px + env(safe-area-inset-bottom));
+      z-index: 98;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(250,250,248,0.94);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 14px 30px rgba(28,26,23,0.12);
+    }
+    footer { padding-bottom: calc(36px + 84px + env(safe-area-inset-bottom)); }
+  }
+
+  @media (max-width: 480px) {
+    .audience-grid { grid-template-columns: 1fr; }
+    .adv-grid { grid-template-columns: 1fr; }
+    .triggers-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 26px; }
+    header { padding: env(safe-area-inset-top) 16px 0; }
+    .logo { font-size: 18px; }
+    .mobile-menu-inner { padding: 28px 18px 34px; }
+    .section-header.centered { text-align: left; }
+  }
+
+
+  /* ─── CASE STUDIES ─── */
+  #cases { background: var(--bg2); }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .case-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.25s;
+  }
+
+  .case-card:hover {
+    box-shadow: 0 8px 32px rgba(28,26,23,0.08);
+  }
+
+  .case-gallery {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background: #FDFDFB;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+
+  .case-gallery-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  .case-gallery-track::-webkit-scrollbar { display: none; }
+
+  .case-slide {
+    position: relative;
+    flex: 0 0 100%;
+    height: 100%;
+    margin: 0;
+    scroll-snap-align: start;
+    background: #FDFDFB;
+  }
+
+  .case-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: var(--bg2);
+  }
+
+  .case-photo--drawing {
+    object-fit: contain;
+    padding: 18px;
+    background: #FDFDFB;
+  }
+
+  .case-slide-label {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    padding: 5px 10px;
+    background: rgba(250,250,248,0.86);
+    border: 1px solid rgba(184,150,90,0.28);
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+  }
+
+  .case-gallery-control {
+    position: absolute;
+    top: 50%;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(184,150,90,0.35);
+    background: rgba(250,250,248,0.88);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    z-index: 2;
+  }
+
+  .case-gallery-control:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--white);
+  }
+
+  .case-gallery-control.prev { left: 12px; }
+  .case-gallery-control.next { right: 12px; }
+
+  .case-gallery-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    display: flex;
+    gap: 7px;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .case-gallery-dot {
+    width: 7px;
+    height: 7px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.78);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .case-gallery-dot.active {
+    background: var(--gold);
+  }
+
+  .case-body {
+    padding: 28px 28px 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .case-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--gold-pale);
+    border: 1px solid #D4AF78;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    align-self: flex-start;
+  }
+
+  .case-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--dark);
+  }
+
+  .case-meta {
+    font-size: 11px;
+    color: var(--light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+    .case-type {
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .case-desc {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .case-result {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--light);
+    line-height: 1.6;
+  }
+
+  .case-result strong {
+    color: var(--dark);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .cases-grid { grid-template-columns: 1fr; }
+    .case-gallery { height: 190px; }
+  }
+
+
+  /* ─── WHAT CLIENT GETS (improved) ─── */
+  .what-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .what-item {
+    background: var(--bg);
+    padding: 36px 28px;
+    transition: background 0.2s;
+  }
+
+  .what-item:hover { background: var(--gold-pale); }
+
+  .what-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--line);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .what-item h3,
+  .what-item h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    min-height: 2.4em;
+  }
+  .what-item p { font-size: 13px; color: var(--light); }
+
+  @media (max-width: 768px) {
+    .what-grid { grid-template-columns: 1fr 1fr; }
+    .what-item h3,
+    .what-item h4 { min-height: 0; }
+  }
+  @media (max-width: 480px) {
+    .what-grid { grid-template-columns: 1fr; }
+  }
+
+
+  /* ─── SKIP LINK (accessibility) ─── */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: var(--dark);
+    color: var(--white);
+    padding: 8px 16px;
+    font-size: 13px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 16px; }
+
+
+  /* ─── FORM VALIDATION STATES ─── */
+  .input-error {
+    border-color: #C0392B !important;
+    background: #fff8f7 !important;
+  }
+
+  .field-error {
+    display: block;
+    font-size: 11px;
+    color: #C0392B;
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  #submitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(184,150,90,0.12);
+  }
+
+
+  /* Process mobile readability fix */
+  @media (max-width: 900px) {
+    #process .process-step {
+      grid-template-columns: 72px minmax(0, 1fr);
+      grid-template-areas:
+        "icon num"
+        "icon title"
+        "icon desc";
+      align-items: start;
+      row-gap: 6px;
+      column-gap: 16px;
+    }
+
+    #process .process-step .step-dot {
+      grid-area: icon;
+      margin: 0;
+      align-self: start;
+    }
+
+    #process .process-step .step-num {
+      grid-area: num;
+      margin: 0;
+      align-self: center;
+    }
+
+    #process .process-step h3,
+    #process .process-step h4 {
+      grid-area: title;
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.04;
+      min-height: 0;
+    }
+
+    #process .process-step p {
+      grid-area: desc;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--light);
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+  }
+
+
+  .blog-hero .hero-inner {
+    align-items: center;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .blog-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 32px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(28,26,23,0.08);
+  }
+
+  .blog-card-meta,
+  .article-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-bottom: 18px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light);
+  }
+
+  .blog-card h3 {
+    font-size: clamp(24px, 2.4vw, 34px);
+    margin-bottom: 16px;
+  }
+
+  .blog-card h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .blog-card h3 a:hover {
+    color: var(--gold);
+  }
+
+  .blog-card p {
+    max-width: 780px;
+    margin-bottom: 22px;
+  }
+
+  .blog-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .blog-card-tags span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    font-size: 12px;
+    color: var(--mid);
+  }
+
+  .blog-card-link,
+  .article-related a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .blog-card-link:hover,
+  .article-related a:hover {
+    color: #A07D45;
+    border-color: currentColor;
+  }
+
+  .article-section {
+    padding-top: 72px;
+  }
+
+  .article-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+
+  .article-aside {
+    position: sticky;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .article-aside-card {
+    border: 1px solid var(--line);
+    background: var(--white);
+    padding: 20px 18px;
+  }
+
+  .article-aside-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  .article-toc,
+  .article-related-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .article-toc a,
+  .article-related-links a {
+    color: var(--mid);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .article-toc a:hover,
+  .article-related-links a:hover {
+    color: var(--gold);
+  }
+
+  .article-prose {
+    min-width: 0;
+  }
+
+  .article-lead {
+    font-size: 20px;
+    line-height: 1.8;
+    color: var(--dark);
+    margin-bottom: 28px;
+  }
+
+  .article-prose h2 {
+    font-size: clamp(28px, 3vw, 40px);
+    margin: 52px 0 18px;
+  }
+
+  .article-prose p {
+    margin-bottom: 18px;
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .article-prose a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184,150,90,0.4);
+  }
+
+  .article-prose a:hover {
+    color: #A07D45;
+    border-color: currentColor;
+  }
+
+  .article-callout {
+    margin: 28px 0;
+    padding: 22px 24px;
+    border: 1px solid #DDD0B0;
+    background: var(--gold-pale);
+    color: var(--mid);
+  }
+
+  .article-callout strong {
+    color: var(--dark);
+  }
+
+  @media (max-width: 980px) {
+    .article-shell {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .article-aside {
+      position: static;
+      order: 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .blog-card,
+    .article-aside-card {
+      padding: 24px 20px;
+    }
+
+    .article-prose p {
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .article-lead {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+  }
+</style>
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json" id="site-schema">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://oknproekt.ru/#professional-service",
+      "name": "ОКН.Проект",
+      "url": "https://oknproekt.ru/",
+      "description": "Проектирование объектов культурного наследия в Москве",
+      "areaServed": { "@type": "City", "name": "Москва" },
+      "telephone": "+79337549879",
+      "email": "oknproekt@ya.ru",
+      "priceRange": "₽₽",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Дзержинская, д. 13",
+        "addressLocality": "Дзержинский",
+        "addressRegion": "Московская область",
+        "addressCountry": "RU"
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Лицензия Министерства культуры Российской Федерации № МКРФ 21836 от 24.12.2021"
+      }
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://oknproekt.ru/blog#blog",
+      "name": "Блог ОКН.Проект",
+      "url": "https://oknproekt.ru/blog",
+      "description": "Экспертные статьи о проектировании, согласовании и инвестиционной логике объектов культурного наследия.",
+      "publisher": { "@id": "https://oknproekt.ru/#professional-service" }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://oknproekt.ru/blog#collection-page",
+      "name": "Блог ОКН.Проект",
+      "url": "https://oknproekt.ru/blog",
+      "mainEntity": { "@id": "https://oknproekt.ru/blog#blog" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://oknproekt.ru/" },
+        { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://oknproekt.ru/blog" }
+      ]
+    }
+  ]
+}
+</script>
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108697214', 'ym');
+
+    ym(108697214, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGYTL1MPJB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZGYTL1MPJB');
+</script>
+</head>
+
+<body>
+<noscript><div><img src="https://mc.yandex.ru/watch/108697214" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<a href="#main-content" class="skip-link">Перейти к содержанию</a>
+
+<!-- HEADER -->
+<header>
+  <a href="/" class="logo" aria-label="ОКН.Проект — главная страница">ОКН<span>.</span>Проект</a>
+  <nav id="desktopNav" aria-label="Основная навигация">
+    <div class="nav-services">
+      <a href="/#services">Услуги</a>
+      <div class="services-dropdown" aria-label="Страницы услуг">
+        <a href="/proekt-restavratsii-okn">Проект реставрации ОКН</a>
+        <a href="/razdel-obespecheniya-sohrannosti-okn">Раздел обеспечения сохранности ОКН</a>
+        <a href="/proekt-prisposobleniya-okn">Проект приспособления ОКН</a>
+        <a href="/pereplanirovka-okn">Перепланировка ОКН</a>
+        <a href="/soglasovanie-mosgornasledie">Согласование в Мосгорнаследии</a>
+        <a href="/ohrannoe-obyazatelstvo-okn">Охранное обязательство ОКН</a>
+        <a href="/kapitalnyy-remont-okn">Капитальный ремонт ОКН</a>
+        <a href="/rekonstruktsiya-obekta-kulturnogo-naslediya">Реконструкция ОКН</a>
+        <a href="/obsledovanie-obektov-kulturnogo-naslediya">Обследование ОКН</a>
+        <a href="/istoriko-kulturnaya-ekspertiza-okn">Сопровождение ГИКЭ</a>
+        <a href="/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn">Разрешение ДКН на работы</a>
+      </div>
+    </div>
+    <a href="/#process">Процесс</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/blog">Блог</a>
+    <a href="/o-kompanii">О нас</a>
+    <a href="/contacts">Контакты</a>
+    <a href="tel:+79337549879" class="nav-phone">+7 933 754-98-79</a>
+    <a href="https://t.me/vladislav_okn" target="_blank" rel="noopener" class="btn btn-sm btn-tg" title="Telegram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.697l-2.95-.924c-.642-.204-.657-.642.136-.953l11.57-4.461c.537-.194 1.006.131.326.889z"/></svg> Telegram</a>
+    <a href="https://max.ru/u/f9LHodD0cOIuvT3MGY3kozoYT3VnmzDZCpGZ56uAix4_Z9UCyUNVdOsdTGY" target="_blank" rel="noopener" class="btn btn-sm btn-max" title="Max">Написать в Max</a>
+    <a href="#cta-final" class="btn btn-outline btn-sm">Обсудить объект</a>
+  </nav>
+  <!-- Burger для мобильных -->
+  <button type="button" class="burger" id="burgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Открыть меню">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <nav class="mobile-nav" aria-label="Мобильная навигация">
+      <a href="/#services" class="mobile-nav-link">Услуги</a>
+      <div class="mobile-service-links">
+        <a href="/proekt-restavratsii-okn">Проект реставрации ОКН</a>
+        <a href="/razdel-obespecheniya-sohrannosti-okn">Раздел обеспечения сохранности ОКН</a>
+        <a href="/proekt-prisposobleniya-okn">Проект приспособления ОКН</a>
+        <a href="/pereplanirovka-okn">Перепланировка ОКН</a>
+        <a href="/soglasovanie-mosgornasledie">Согласование в Мосгорнаследии</a>
+        <a href="/ohrannoe-obyazatelstvo-okn">Охранное обязательство ОКН</a>
+        <a href="/kapitalnyy-remont-okn">Капитальный ремонт ОКН</a>
+        <a href="/rekonstruktsiya-obekta-kulturnogo-naslediya">Реконструкция ОКН</a>
+        <a href="/obsledovanie-obektov-kulturnogo-naslediya">Обследование ОКН</a>
+        <a href="/istoriko-kulturnaya-ekspertiza-okn">Сопровождение ГИКЭ</a>
+        <a href="/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn">Разрешение ДКН на работы</a>
+        <a href="/cases">Кейсы</a>
+        <a href="/blog">Блог</a>
+    <a href="/contacts">Контакты</a>
+      </div>
+      <a href="/#process" class="mobile-nav-link">Процесс</a>
+      <a href="/#faq" class="mobile-nav-link">FAQ</a>
+      <a href="/blog" class="mobile-nav-link">Блог</a>
+      <a href="/o-kompanii">О нас</a>
+    <a href="/contacts" class="mobile-nav-link">Контакты</a>
+    </nav>
+    <div class="mobile-contacts">
+      <a href="tel:+79337549879" class="mobile-contact-item">
+        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 3l2.5 5L3 10a12 12 0 005 5l2-2.5L15 15c.5 1-1 3-3 3C5 18 0 12.5 0 6c0-2 2-3.5 3-3z"/></svg>
+        +7 933 754-98-79
+      </a>
+      <a href="https://t.me/vladislav_okn" target="_blank" rel="noopener" class="mobile-contact-item btn-tg">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.697l-2.95-.924c-.642-.204-.657-.642.136-.953l11.57-4.461c.537-.194 1.006.131.326.889z"/></svg> Telegram
+      </a>
+      <a href="https://max.ru/u/f9LHodD0cOIuvT3MGY3kozoYT3VnmzDZCpGZ56uAix4_Z9UCyUNVdOsdTGY" target="_blank" rel="noopener" class="mobile-contact-item btn-max">
+        Написать в Max
+      </a>
+    </div>
+    <a href="#cta-final" class="btn btn-primary" style="width:100%;justify-content:center;">Обсудить объект</a>
+  </div>
+</div>
+
+<div class="mobile-sticky-bar" aria-label="Быстрая связь">
+  <a href="https://t.me/vladislav_okn" target="_blank" rel="noopener" class="mobile-sticky-link is-tg">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.697l-2.95-.924c-.642-.204-.657-.642.136-.953l11.57-4.461c.537-.194 1.006.131.326.889z"/></svg>
+    <span>Telegram</span>
+  </a>
+  <a href="https://max.ru/u/f9LHodD0cOIuvT3MGY3kozoYT3VnmzDZCpGZ56uAix4_Z9UCyUNVdOsdTGY" target="_blank" rel="noopener" class="mobile-sticky-link is-max">
+    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 4.5h7.5a2.5 2.5 0 0 1 0 5H9l-3 3V9.5H4a2.5 2.5 0 1 1 0-5Z"/></svg>
+    <span>Max</span>
+  </a>
+  <a href="tel:+79337549879" class="mobile-sticky-link is-phone">
+    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3 3l2.5 5L3 10a12 12 0 0 0 5 5l2-2.5L15 15c.5 1-1 3-3 3C5 18 0 12.5 0 6c0-2 2-3.5 3-3Z"/></svg>
+    <span>Позвонить</span>
+  </a>
+</div>
+
+<main id="main-content">
+<section id="hero" class="blog-hero">
+  <img
+    src="/assets/visuals/danilovsky-architectural-sketch.webp"
+    class="hero-img-bg"
+    alt=""
+    width="921"
+    height="1152"
+    aria-hidden="true"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async"
+  >
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Блог ОКН.Проект</div>
+      <h1 class="hero-title">
+        Экспертные статьи<br>
+        о проектировании,<br>
+        <em>инвестициях и рисках в ОКН</em>
+      </h1>
+      <p class="hero-sub">
+        Пишем для инвесторов, собственников и девелоперов о том, как заходить в объекты культурного наследия без иллюзий: где скрыта цена ошибки, как собирать проектный контур и на чём держится экономика таких активов.
+      </p>
+      <div class="hero-ctas">
+        <a href="#blog-list" class="btn btn-primary">Читать статьи</a>
+        <a href="#cta-final" class="btn btn-outline">Обсудить объект</a>
+      </div>
+      <div class="hero-pills">
+        <span class="hero-pill">Инвестиционная логика ОКН</span>
+        <span class="hero-pill">Маршрут согласования</span>
+        <span class="hero-pill">Проектная стратегия</span>
+        <span class="hero-pill hero-pill--license">Лицензия МКРФ 21836</span>
+      </div>
+    </div>
+
+    <div class="hero-video-wrap" aria-hidden="true">
+      <div class="hero-video-frame">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/assets/img/hero-video-poster.webp">
+          <source src="/assets/video/hero-okn.mp4" type="video/mp4">
+          <img src="/assets/img/hero-video-poster.webp" alt="" width="1400" height="598" decoding="async">
+        </video>
+      </div>
+      <div class="hero-video-caption">
+        <span>ОКН</span>
+        <span>Экспертная аналитика по объектам культурного наследия</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="blog-list">
+  <div class="container">
+    <div class="blog-grid">
+      <article class="blog-card fade-up" onclick="window.location.href='/blog/zadanie-na-provedenie-rabot-po-sohraneniyu-okn'" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/blog/zadanie-na-provedenie-rabot-po-sohraneniyu-okn'}" role="link" aria-label="Открыть статью о задании на проведение работ по сохранению ОКН">
+        <div class="blog-card-meta">
+          <span>30 июля 2026</span>
+          <span>Документы · ДКН</span>
+        </div>
+        <h3><a href="/blog/zadanie-na-provedenie-rabot-po-sohraneniyu-okn" onclick="event.stopPropagation()">Задание на проведение работ по сохранению ОКН: как получить и что делать дальше</a></h3>
+        <p>Разбираем, кто выдаёт задание ДКН, какие документы нужны, как проверить состав проектных работ и почему задание не заменяет разрешение.</p>
+        <div class="blog-card-tags">
+          <span>Задание ДКН</span>
+          <span>Проектирование</span>
+          <span>Согласование</span>
+        </div>
+        <a class="blog-card-link" href="/blog/zadanie-na-provedenie-rabot-po-sohraneniyu-okn">Читать статью</a>
+      </article>
+
+      <article class="blog-card fade-up" onclick="window.location.href='/blog/istoriko-kulturnaya-ekspertiza-okn-kogda-nuzhna-gike'" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/blog/istoriko-kulturnaya-ekspertiza-okn-kogda-nuzhna-gike'}" role="link" aria-label="Открыть статью об историко-культурной экспертизе ОКН">
+        <div class="blog-card-meta">
+          <span>19 июля 2026</span>
+          <span>ГИКЭ · Согласование</span>
+        </div>
+        <h3><a href="/blog/istoriko-kulturnaya-ekspertiza-okn-kogda-nuzhna-gike" onclick="event.stopPropagation()">Историко-культурная экспертиза ОКН: когда нужна ГИКЭ</a></h3>
+        <p>Разбираем, когда нужна государственная историко-культурная экспертиза, что входит в акт ГИКЭ и как связать экспертизу с проектом, ОСОКН и согласованием.</p>
+        <div class="blog-card-tags">
+          <span>ГИКЭ</span>
+          <span>Акт экспертизы</span>
+          <span>ОСОКН</span>
+        </div>
+        <a class="blog-card-link" href="/blog/istoriko-kulturnaya-ekspertiza-okn-kogda-nuzhna-gike">Читать статью</a>
+      </article>
+
+      <article class="blog-card fade-up" onclick="window.location.href='/blog/remont-v-obekte-kulturnogo-naslediya'" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/blog/remont-v-obekte-kulturnogo-naslediya'}" role="link" aria-label="Открыть статью о ремонте в объекте культурного наследия">
+        <div class="blog-card-meta">
+          <span>15 июля 2026</span>
+          <span>Собственники · Ремонт</span>
+        </div>
+        <h3><a href="/blog/remont-v-obekte-kulturnogo-naslediya" onclick="event.stopPropagation()">Ремонт в объекте культурного наследия: когда нужно согласование</a></h3>
+        <p>Разбираем, когда ремонт в ОКН можно делать по уведомлению, а когда нужен проект, разрешение и согласование в ДКН. Практический гид для собственников и арендаторов.</p>
+        <div class="blog-card-tags">
+          <span>Ремонт ОКН</span>
+          <span>Согласование</span>
+          <span>ДКН</span>
+        </div>
+        <a class="blog-card-link" href="/blog/remont-v-obekte-kulturnogo-naslediya">Читать статью</a>
+      </article>
+
+      <article class="blog-card fade-up" onclick="window.location.href='/blog/sobstvennik-obekta-kulturnogo-naslediya-chto-delat'" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/blog/sobstvennik-obekta-kulturnogo-naslediya-chto-delat'}" role="link" aria-label="Открыть статью об обязанностях собственника объекта культурного наследия">
+        <div class="blog-card-meta">
+          <span>13 июля 2026</span>
+          <span>Собственникам · Документы</span>
+        </div>
+        <h3><a href="/blog/sobstvennik-obekta-kulturnogo-naslediya-chto-delat" onclick="event.stopPropagation()">Собственник объекта культурного наследия: обязанности, документы и порядок действий</a></h3>
+        <p>Практический план для владельца ОКН: как проверить статус и документы, оценить техническое состояние и определить маршрут ремонта, реставрации или приспособления.</p>
+        <div class="blog-card-tags">
+          <span>Собственник ОКН</span>
+          <span>Охранное обязательство</span>
+          <span>Порядок работ</span>
+        </div>
+        <a class="blog-card-link" href="/blog/sobstvennik-obekta-kulturnogo-naslediya-chto-delat">Читать статью</a>
+      </article>
+
+      <article class="blog-card fade-up" onclick="window.location.href='/blog/arendator-obekta-kulturnogo-naslediya'" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/blog/arendator-obekta-kulturnogo-naslediya'}" role="link" aria-label="Открыть статью об арендаторе объекта культурного наследия">
+        <div class="blog-card-meta">
+          <span>1 июля 2026</span>
+          <span>Арендаторы · Риски</span>
+        </div>
+        <h3><a href="/blog/arendator-obekta-kulturnogo-naslediya" onclick="event.stopPropagation()">Арендатор в объекте культурного наследия: права, ограничения и риски</a></h3>
+        <p>Разбираем, что проверить до подписания договора аренды, какие документы запросить у собственника и почему ремонт, вывеска или вентиляция в ОКН требуют отдельной проверки.</p>
+        <div class="blog-card-tags">
+          <span>Аренда в ОКН</span>
+          <span>Ремонт</span>
+          <span>Согласование</span>
+        </div>
+        <a class="blog-card-link" href="/blog/arendator-obekta-kulturnogo-naslediya">Читать статью</a>
+      </article>
+
+      <article class="blog-card fade-up" onclick="window.location.href='/blog/federalnyy-zakon-180-fz-okn-2027'" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/blog/federalnyy-zakon-180-fz-okn-2027'}" role="link" aria-label="Открыть статью о Федеральном законе № 180-ФЗ и работах с ОКН">
+        <div class="blog-card-meta">
+          <span>29 июня 2026</span>
+          <span>Законодательство · ОКН</span>
+        </div>
+        <h3><a href="/blog/federalnyy-zakon-180-fz-okn-2027" onclick="event.stopPropagation()">Федеральный закон № 180-ФЗ: что изменится в работах с ОКН с 2027 года</a></h3>
+        <p>Разбираем новый порядок работ с объектами культурного наследия: отмену ГИКЭ проектной документации, реестры заданий и разрешений, акт технического состояния и риски для собственников.</p>
+        <div class="blog-card-tags">
+          <span>180-ФЗ</span>
+          <span>Работы с ОКН</span>
+          <span>Согласование</span>
+        </div>
+        <a class="blog-card-link" href="/blog/federalnyy-zakon-180-fz-okn-2027">Читать статью</a>
+      </article>
+
+      <article class="blog-card fade-up" onclick="window.location.href='/blog/investicii-v-obekty-kulturnogo-naslediya-kak-klass-aktivov'" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/blog/investicii-v-obekty-kulturnogo-naslediya-kak-klass-aktivov'}" role="link" aria-label="Открыть статью об инвестициях в ОКН">
+        <div class="blog-card-meta">
+          <span>15 апреля 2026</span>
+          <span>Инвестиции · ОКН</span>
+        </div>
+        <h3><a href="/blog/investicii-v-obekty-kulturnogo-naslediya-kak-klass-aktivov" onclick="event.stopPropagation()">Инвестиции в объекты культурного наследия как отдельный класс активов</a></h3>
+        <p>Разбираем, почему ОКН нельзя оценивать как обычную недвижимость, где инвестор реально теряет деньги и какую роль в модели проекта играют реставрация, приспособление, сохранность и согласование.</p>
+        <div class="blog-card-tags">
+          <span>Due diligence</span>
+          <span>Проектная стратегия</span>
+          <span>Риск-модель</span>
+        </div>
+        <a class="blog-card-link" href="/blog/investicii-v-obekty-kulturnogo-naslediya-kak-klass-aktivov">Читать статью</a>
+      </article>
+
+      <article class="blog-card fade-up" onclick="window.location.href='/blog/predpisaniya-i-shtrafy-po-okn-chto-delat-sobstvenniku'" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/blog/predpisaniya-i-shtrafy-po-okn-chto-delat-sobstvenniku'}" role="link" aria-label="Открыть статью о предписаниях и штрафах по ОКН">
+        <div class="blog-card-meta">
+          <span>22 апреля 2026</span>
+          <span>Собственники · Риски</span>
+        </div>
+        <h3><a href="/blog/predpisaniya-i-shtrafy-po-okn-chto-delat-sobstvenniku" onclick="event.stopPropagation()">Предписания и штрафы по ОКН: что делать собственнику</a></h3>
+        <p>Разбираем, что означает предписание по ОКН, почему штраф не исчерпывает риск и как собственнику быстро понять, когда нужна проектная документация, согласование и пересборка решений.</p>
+        <div class="blog-card-tags">
+          <span>Предписание</span>
+          <span>Штрафы</span>
+          <span>План действий</span>
+        </div>
+        <a class="blog-card-link" href="/blog/predpisaniya-i-shtrafy-po-okn-chto-delat-sobstvenniku">Читать статью</a>
+      </article>
+
+      <article class="blog-card fade-up" onclick="window.location.href='/blog/predmet-ohrany-okn'" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/blog/predmet-ohrany-okn'}" role="link" aria-label="Открыть статью о предмете охраны ОКН">
+        <div class="blog-card-meta">
+          <span>26 апреля 2026</span>
+          <span>Собственники · Ограничения</span>
+        </div>
+        <h3><a href="/blog/predmet-ohrany-okn" onclick="event.stopPropagation()">Предмет охраны ОКН: что это и какие ограничения</a></h3>
+        <p>Объясняем, какие элементы здания подлежат обязательному сохранению, где проверить предмет охраны и почему без этого нельзя планировать ремонт, перепланировку или приспособление ОКН.</p>
+        <div class="blog-card-tags">
+          <span>Предмет охраны</span>
+          <span>Перепланировка</span>
+          <span>Согласование</span>
+        </div>
+        <a class="blog-card-link" href="/blog/predmet-ohrany-okn">Читать статью</a>
+      </article>
+
+      <article class="blog-card fade-up" onclick="window.location.href='/blog/akt-tehnicheskogo-sostoyaniya-okn'" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/blog/akt-tehnicheskogo-sostoyaniya-okn'}" role="link" aria-label="Открыть статью об акте технического состояния ОКН">
+        <div class="blog-card-meta">
+          <span>5 мая 2026</span>
+          <span>Собственники · Обследование</span>
+        </div>
+        <h3><a href="/blog/akt-tehnicheskogo-sostoyaniya-okn" onclick="event.stopPropagation()">Акт технического состояния ОКН: когда нужен и что проверяют</a></h3>
+        <p>Объясняем, зачем нужен акт технического состояния объекта культурного наследия, кто участвует в подготовке материалов и как он связан с реставрацией, приспособлением и согласованием работ.</p>
+        <div class="blog-card-tags">
+          <span>АТС ОКН</span>
+          <span>Обследование</span>
+          <span>Проектный маршрут</span>
+        </div>
+        <a class="blog-card-link" href="/blog/akt-tehnicheskogo-sostoyaniya-okn">Читать статью</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="cta-final">
+  <div class="container">
+    <div class="cta-layout">
+      <div class="cta-left">
+        <span class="label">Связаться</span>
+        <h2>Если вы оцениваете ОКН как потенциальную инвестицию — разберём объект до входа в сделку</h2>
+        <p>Поможем понять ограничения, состав документации и реалистичный сценарий использования до того, как объект превратится в дорогую ошибку.</p>
+
+        <div class="contact-list">
+          <a href="tel:+79337549879" class="contact-item">
+            <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 3l2.5 5L3 10a12 12 0 005 5l2-2.5L15 15c.5 1-1 3-3 3C5 18 0 12.5 0 6c0-2 2-3.5 3-3z"/></svg></div>
+            +7 933 754-98-79
+          </a>
+          <a href="mailto:oknproekt@ya.ru" class="contact-item">
+            <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="1" y="4" width="16" height="11" rx="0"/><path d="M1 4l8 7 8-7"/></svg></div>
+            oknproekt@ya.ru
+          </a>
+          <address class="contact-item">
+            <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 16s5-4.7 5-9A5 5 0 004 7c0 4.3 5 9 5 9z"/><circle cx="9" cy="7" r="1.6"/></svg></div>
+            Московская обл., г. Дзержинский, ул. Дзержинская, д. 13
+          </address>
+        </div>
+      </div>
+
+      <div class="contact-form" id="contactForm">
+        <div class="form-title">Запрос по объекту</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Имя <span aria-hidden="true" style="color:var(--gold)">*</span></label>
+            <input type="text" id="fname" name="name" placeholder="Иван Петров" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="fphone">Телефон <span aria-hidden="true" style="color:var(--gold)">*</span></label>
+            <input type="tel" id="fphone" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ftype">Тип задачи</label>
+          <select id="ftype" name="service">
+            <option value="">Выберите услугу</option>
+            <option>Инвестиционный анализ объекта ОКН</option>
+            <option>Проект реставрации ОКН</option>
+            <option>Проект приспособления ОКН</option>
+            <option>Раздел обеспечения сохранности</option>
+            <option>Согласование проекта</option>
+            <option>Не знаю — нужна консультация</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fdesc">Опишите объект</label>
+          <textarea id="fdesc" name="description" placeholder="Адрес, статус объекта, текущий сценарий сделки, планируемая функция..."></textarea>
+        </div>
+        <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+          <label for="website_url">Website</label>
+          <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn" onclick="submitForm(event)" style="width:100%; justify-content:center;">
+          Отправить запрос
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+        <p class="form-note">Отвечаем в течение 2 часов в рабочее время. Не передаём данные третьим лицам.</p>
+      </div>
+
+      <div class="form-success" id="formSuccess" style="display:none; background:#fff; border:1px solid #DDD0B0; padding:60px 40px; text-align:center;">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#B8965A" stroke-width="1.5" style="margin-bottom:24px;"><circle cx="28" cy="28" r="24"/><path d="M18 28l6 6 14-14"/></svg>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:12px;">Запрос получен</h3>
+        <p style="color:#8A847C;">Свяжемся с вами в течение 2 рабочих часов и обсудим объект.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">ОКН<span>.</span>Проект</a>
+      <div class="footer-links">
+        <a href="/#services">Все услуги</a>
+        <a href="/proekt-restavratsii-okn">Реставрация</a>
+        <a href="/razdel-obespecheniya-sohrannosti-okn">Сохранность</a>
+        <a href="/proekt-prisposobleniya-okn">Приспособление</a>
+        <a href="/pereplanirovka-okn">Перепланировка</a>
+        <a href="/soglasovanie-mosgornasledie">Согласование</a>
+        <a href="/ohrannoe-obyazatelstvo-okn">Охранное обязательство</a>
+        <a href="/kapitalnyy-remont-okn">Капремонт ОКН</a>
+        <a href="/rekonstruktsiya-obekta-kulturnogo-naslediya">Реконструкция</a>
+        <a href="/cases">Кейсы</a>
+        <a href="/blog">Блог</a>
+    <a href="/o-kompanii">О нас</a>
+    <a href="/contacts">Контакты</a>
+      </div>
+      <p>Разработка проектной документации для объектов культурного наследия · Московская обл., г. Дзержинский, ул. Дзержинская, д. 13 · oknproekt@ya.ru</p>
+      <p class="footer-license">Лицензия Министерства культуры Российской Федерации № МКРФ 21836 от 24.12.2021</p>
+      <p>© 2026 Все права защищены</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ─── SERVICE ACCORDION ───
+  function toggleServiceBtn(btn) {
+    const item = btn.parentElement;
+    const isActive = item.classList.contains('active');
+    // Close all
+    document.querySelectorAll('.service-item').forEach(s => {
+      s.classList.remove('active');
+      const hdr = s.querySelector('.service-header');
+      if (hdr) hdr.setAttribute('aria-expanded', 'false');
+    });
+    // Open clicked
+    if (!isActive) {
+      item.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // ─── FAQ ACCORDION ───
+  function toggleFaqBtn(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('active');
+    item.classList.toggle('active');
+    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  }
+
+  // ─── ANALYTICS EVENTS ───
+  function trackEvent(eventName, params = {}) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params);
+    }
+  }
+
+  function bindContactAnalytics() {
+    document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+      link.addEventListener('click', () => trackEvent('click_phone', {
+        link_url: link.getAttribute('href') || '',
+        page_path: window.location.pathname
+      }));
+    });
+
+    document.querySelectorAll('a[href*="t.me/vladislav_okn"]').forEach((link) => {
+      link.addEventListener('click', () => trackEvent('click_telegram', {
+        link_url: link.getAttribute('href') || '',
+        page_path: window.location.pathname
+      }));
+    });
+
+    document.querySelectorAll('a[href*="max.ru/u/f9LHodD0cOIuvT3MGY3kozoYT3VnmzDZCpGZ56uAix4_Z9UCyUNVdOsdTGY"]').forEach((link) => {
+      link.addEventListener('click', () => trackEvent('click_max', {
+        link_url: link.getAttribute('href') || '',
+        page_path: window.location.pathname
+      }));
+    });
+  }
+
+  bindContactAnalytics();
+
+  // ─── FORM SUBMIT ───
+  const FORM_ENDPOINT = '/api/lead';
+
+  async function submitForm(e) {
+    if (e) e.preventDefault();
+
+    const nameEl = document.getElementById('fname');
+    const phoneEl = document.getElementById('fphone');
+    const honeypot = document.getElementById('website_url');
+    const btn = document.getElementById('submitBtn');
+
+    // Honeypot check (bot filled hidden field)
+    if (honeypot && honeypot.value) return;
+
+    // Clear previous errors
+    clearErrors();
+
+    let valid = true;
+
+    if (!nameEl.value.trim()) {
+      showError(nameEl, 'Укажите ваше имя');
+      valid = false;
+    }
+
+    const phoneVal = phoneEl.value.trim();
+    if (!phoneVal) {
+      showError(phoneEl, 'Укажите номер телефона');
+      valid = false;
+    } else if (!/^[\d\s\+\(\)\-]{7,}$/.test(phoneVal)) {
+      showError(phoneEl, 'Проверьте формат номера');
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    btn.disabled = true;
+    btn.dataset.originalHtml = btn.innerHTML;
+    btn.textContent = 'Отправляем…';
+
+    const type = document.getElementById('ftype').value;
+    const desc = document.getElementById('fdesc').value.trim();
+
+    if (FORM_ENDPOINT) {
+      try {
+        const response = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name: nameEl.value.trim(),
+            phone: phoneVal, service: type, description: desc
+          })
+        });
+
+        if (!response.ok) {
+          let apiError = '';
+          try {
+            const payload = await response.json();
+            apiError = payload?.error || '';
+          } catch {}
+          throw new Error(apiError || 'Lead API failed');
+        }
+      } catch(err) {
+        console.warn('Form submit error:', err);
+        alert('Не удалось отправить запрос. Попробуйте еще раз или напишите нам в Telegram.');
+        btn.disabled = false;
+        btn.innerHTML = btn.dataset.originalHtml || 'Отправить запрос';
+        return;
+      }
+    }
+
+    trackEvent('generate_lead', {
+      form_type: type || 'Не указано',
+      page_path: window.location.pathname
+    });
+
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+
+  function showError(el, msg) {
+    el.classList.add('input-error');
+    const err = document.createElement('span');
+    err.className = 'field-error';
+    err.textContent = msg;
+    err.setAttribute('role', 'alert');
+    el.parentNode.appendChild(err);
+    el.focus();
+  }
+
+  function clearErrors() {
+    document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+    document.querySelectorAll('.field-error').forEach(el => el.remove());
+  }
+
+  // ─── SCROLL ANIMATIONS ───
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+
+  // ─── CASE GALLERIES ───
+  document.querySelectorAll('[data-case-gallery]').forEach(gallery => {
+    const track = gallery.querySelector('.case-gallery-track');
+    const slides = gallery.querySelectorAll('.case-slide');
+    const prev = gallery.querySelector('.case-gallery-control.prev');
+    const next = gallery.querySelector('.case-gallery-control.next');
+    const dots = gallery.querySelectorAll('[data-gallery-dot]');
+
+    if (!track || slides.length < 2) return;
+
+    const setActive = index => {
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('active', dotIndex === index);
+      });
+    };
+
+    const goTo = index => {
+      const targetIndex = (index + slides.length) % slides.length;
+      track.scrollTo({
+        left: targetIndex * track.clientWidth,
+        behavior: 'smooth'
+      });
+      setActive(targetIndex);
+    };
+
+    const getCurrent = () => Math.round(track.scrollLeft / track.clientWidth);
+
+    prev?.addEventListener('click', () => goTo(getCurrent() - 1));
+    next?.addEventListener('click', () => goTo(getCurrent() + 1));
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goTo(index));
+    });
+
+    track.addEventListener('scroll', () => {
+      window.requestAnimationFrame(() => setActive(getCurrent()));
+    }, { passive: true });
+
+    track.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft') goTo(getCurrent() - 1);
+      if (event.key === 'ArrowRight') goTo(getCurrent() + 1);
+    });
+  });
+
+
+  // ─── BURGER MENU ───
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function closeMobileMenu() {
+    burgerBtn.classList.remove('open');
+    burgerBtn.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('menu-open');
+  }
+
+  if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener('click', () => {
+      const isOpen = burgerBtn.classList.contains('open');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        burgerBtn.classList.add('open');
+        burgerBtn.setAttribute('aria-expanded', 'true');
+        mobileMenu.classList.add('open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('menu-open');
+      }
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!burgerBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+  }
+
+</script>
+</body>
+</html>
