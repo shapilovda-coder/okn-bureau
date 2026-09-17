@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Проект реставрации ОКН в Москве — разработка, согласование, надзор</title>
-<meta name="description" content="Разрабатываем проект реставрации объекта культурного наследия: научно-проектная документация, предмет охраны, согласование и сопровождение работ.">
+<title>Проект реставрации ОКН в Москве — фасады и согласование</title>
+<meta name="description" content="Разрабатываем проектную документацию для ремонта и реставрации фасадов ОКН: обследования, дефектные ведомости, проектные решения, ГИКЭ и согласование в ДКН.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://oknproekt.ru/proekt-restavratsii-okn">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" href="/favicon.ico">
 <!-- OG -->
-<meta property="og:title" content="Проект реставрации ОКН в Москве — разработка, согласование, надзор">
-<meta property="og:description" content="Разрабатываем проект реставрации объекта культурного наследия: научно-проектная документация, предмет охраны, согласование и сопровождение работ.">
+<meta property="og:title" content="Проект реставрации ОКН в Москве — фасады и согласование">
+<meta property="og:description" content="Проектная документация для ремонта и реставрации фасадов ОКН: исследования, проектные решения, ГИКЭ и сопровождение в ДКН.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://oknproekt.ru/proekt-restavratsii-okn">
 <meta property="og:site_name" content="ОКН.Проект">
 <meta property="og:image" content="/assets/img/og-image.jpg">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Проект реставрации ОКН в Москве — разработка, согласование, надзор">
-<meta name="twitter:description" content="Разрабатываем проект реставрации объекта культурного наследия: научно-проектная документация, предмет охраны, согласование и сопровождение работ.">
+<meta name="twitter:title" content="Проект реставрации ОКН в Москве — фасады и согласование">
+<meta name="twitter:description" content="Проектная документация для ремонта и реставрации фасадов ОКН: исследования, проектные решения, ГИКЭ и сопровождение в ДКН.">
 <meta name="twitter:image" content="/assets/img/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -647,6 +647,107 @@
     .service-header { padding: 24px 20px; }
     .svc-col { padding: 24px 20px; }
     .svc-cta { padding: 20px; }
+  }
+
+  /* ─── FACADE PROJECT GUIDE ─── */
+  #facade-project { background: var(--white); border-top: 1px solid var(--line); }
+  #facade-project .section-header { max-width: 880px; }
+
+  .facade-intro {
+    max-width: 920px;
+    margin: -28px 0 42px;
+    padding: 22px 26px;
+    background: var(--gold-pale);
+    border-left: 2px solid var(--gold);
+  }
+
+  .facade-intro p { font-size: 15px; }
+
+  .facade-scope-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line);
+    background: var(--line);
+    gap: 1px;
+  }
+
+  .facade-scope {
+    background: var(--bg);
+    padding: 34px 32px;
+  }
+
+  .facade-scope h3 { margin-bottom: 18px; }
+  .facade-scope p { font-size: 14px; margin-bottom: 18px; }
+
+  .facade-list {
+    list-style: none;
+    display: grid;
+    gap: 11px;
+  }
+
+  .facade-list li {
+    position: relative;
+    padding-left: 18px;
+    color: var(--mid);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .facade-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  .facade-table-wrap { margin-top: 40px; overflow-x: auto; }
+  .facade-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+  }
+
+  .facade-table th,
+  .facade-table td {
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+    color: var(--mid);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .facade-table th {
+    width: 24%;
+    background: var(--bg2);
+    color: var(--dark);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .facade-note {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1px;
+    border: 1px solid var(--line);
+    background: var(--line);
+  }
+
+  .facade-note > div { background: var(--white); padding: 28px 30px; }
+  .facade-note h3 { margin-bottom: 12px; }
+  .facade-note p { font-size: 14px; }
+  .facade-note .facade-note-cta { background: var(--gold-pale); }
+  .facade-note .btn { margin-top: 20px; }
+
+  @media (max-width: 800px) {
+    .facade-intro { margin-top: -12px; padding: 18px 20px; }
+    .facade-scope-grid,
+    .facade-note { grid-template-columns: 1fr; }
+    .facade-scope,
+    .facade-note > div { padding: 26px 22px; }
   }
 
   /* ─── WHEN NEEDED ─── */
@@ -2043,14 +2144,11 @@
       ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "ул. Дзержинская, д. 13",
-        "addressLocality": "Дзержинский",
-        "addressRegion": "Московская область",
+        "streetAddress": "ул. Садовая-Спасская, д. 13, стр. 2, помещ. 1/2",
+        "addressLocality": "Москва",
+        "addressRegion": "Москва",
+        "postalCode": "107078",
         "addressCountry": "RU"
-      },
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Лицензия Министерства культуры Российской Федерации № МКРФ 21836 от 24.12.2021"
       }
     },
     {
@@ -2063,9 +2161,10 @@
       "email": "oknproekt@ya.ru",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "ул. Дзержинская, д. 13",
-        "addressLocality": "Дзержинский",
-        "addressRegion": "Московская область",
+        "streetAddress": "ул. Садовая-Спасская, д. 13, стр. 2, помещ. 1/2",
+        "addressLocality": "Москва",
+        "addressRegion": "Москва",
+        "postalCode": "107078",
         "addressCountry": "RU"
       },
       "areaServed": "Москва"
@@ -2091,7 +2190,7 @@
       "@type": "Service",
       "@id": "https://oknproekt.ru/proekt-restavratsii-okn#service",
       "name": "Проект реставрации объекта культурного наследия",
-      "description": "Разрабатываем проект реставрации объекта культурного наследия: научно-проектная документация, предмет охраны, согласование и сопровождение работ.",
+      "description": "Разрабатываем проектную документацию для ремонта и реставрации объектов культурного наследия, включая фасады: исследования, дефектные ведомости, проектные решения, ГИКЭ и согласование в ДКН.",
       "serviceType": "Проект реставрации объекта культурного наследия",
       "areaServed": "Москва",
       "provider": {
@@ -2141,6 +2240,30 @@
             "@type": "Answer",
             "text": "Да, при необходимости ведём авторский надзор, участвуем в корректировках и помогаем подготовить материалы для сдачи работ органу охраны."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли покрасить или отремонтировать фасад ОКН без проекта?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Универсального ответа нет. До начала работ нужно проверить предмет охраны, характер дефектов и предполагаемое вмешательство. Если меняются исторические материалы, цветовое решение, декор, заполнения или конструктивные элементы, обычно требуется проектный маршрут и согласование."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что входит в проект реставрации фасада ОКН?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Состав зависит от объекта и задания. Обычно проверяют исходные документы, выполняют фотофиксацию, обмеры и исследования, составляют картограммы дефектов и разрабатывают архитектурные, конструктивные и технологические решения."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "От чего зависит стоимость проекта фасада?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "На стоимость влияют площадь и сложность фасада, состояние материалов, количество декора, необходимость обмеров и лабораторных исследований, состав проектной и рабочей документации, экспертиза и сопровождение согласования."
+          }
         }
       ]
     }
@@ -2168,6 +2291,7 @@
 
   gtag('config', 'G-ZGYTL1MPJB');
 </script>
+<link rel="stylesheet" href="/assets/css/breadcrumbs.css">
 </head>
 
 <body>
@@ -2187,6 +2311,8 @@
         <a href="/pereplanirovka-okn">Перепланировка ОКН</a>
         <a href="/soglasovanie-mosgornasledie">Согласование в Мосгорнаследии</a>
         <a href="/ohrannoe-obyazatelstvo-okn">Охранное обязательство ОКН</a>
+        <a href="/remont-okn">Ремонт ОКН</a>
+        <a href="/remont-fasada-okn">Ремонт фасада ОКН</a>
         <a href="/kapitalnyy-remont-okn">Капитальный ремонт ОКН</a>
         <a href="/rekonstruktsiya-obekta-kulturnogo-naslediya">Реконструкция ОКН</a>
         <a href="/obsledovanie-obektov-kulturnogo-naslediya">Обследование ОКН</a>
@@ -2222,6 +2348,8 @@
         <a href="/pereplanirovka-okn">Перепланировка ОКН</a>
         <a href="/soglasovanie-mosgornasledie">Согласование в Мосгорнаследии</a>
         <a href="/ohrannoe-obyazatelstvo-okn">Охранное обязательство ОКН</a>
+        <a href="/remont-okn">Ремонт ОКН</a>
+        <a href="/remont-fasada-okn">Ремонт фасада ОКН</a>
         <a href="/kapitalnyy-remont-okn">Капитальный ремонт ОКН</a>
         <a href="/rekonstruktsiya-obekta-kulturnogo-naslediya">Реконструкция ОКН</a>
         <a href="/obsledovanie-obektov-kulturnogo-naslediya">Обследование ОКН</a>
@@ -2269,6 +2397,13 @@
 </div>
 
 <main id="main-content">
+<nav class="page-breadcrumbs" aria-label="Хлебные крошки">
+  <div class="page-breadcrumbs-inner">
+      <a href="/">Главная</a>
+      <span class="page-breadcrumbs-separator" aria-hidden="true">/</span>
+      <span class="page-breadcrumbs-current" aria-current="page">Проект реставрации ОКН</span>
+  </div>
+</nav>
 <!-- HERO -->
 <section id="hero">
   <svg class="hero-blueprint" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -2281,7 +2416,7 @@
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge">Москва — проект реставрации ОКН</div>
-      <h1 class="hero-title">Проект реставрации<br>объекта культурного наследия</h1>
+      <h1 class="hero-title">Проект реставрации<br> объекта культурного наследия</h1>
       <p class="hero-sub">Готовим научно-проектную документацию для работ по сохранению ОКН: обследования, проектные решения, согласование и сопровождение реализации.</p>
       <div class="hero-ctas">
         <a href="#cta-final" class="btn btn-primary">Обсудить проект реставрации</a>
@@ -2311,55 +2446,6 @@
   </div>
 </section>
 
-<!-- FOR WHOM -->
-<section id="for-whom">
-  <div class="section-illustration">
-    <img
-      src="/assets/visuals/tatarnikovykh-working-drawing.webp"
-      alt="Рабочий чертёж фасада городской усадьбы Татарниковых"
-      class="section-illus-img"
-      width="1544"
-      height="688"
-      loading="lazy"
-      decoding="async"
-    >
-  </div>
-  <div class="container">
-    <div class="section-header">
-      <span class="label">Целевая аудитория</span>
-      <h2>Кто работает с нами</h2>
-      <p>Разрабатываем документацию под задачи объекта — от анализа ограничений до сопровождения работ по сохранению.</p>
-    </div>
-
-    <div class="audience-grid">
-      <div class="audience-card fade-up">
-        <div class="audience-icon-img" aria-hidden="true"><img class="audience-icon-png" src="/icons/sliced-set-20260411/icon-r1-c1.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Девелоперы</h3>
-        <p>Готовим пакет документации для реконструкции и приспособления в логике девелоперского проекта.</p>
-      </div>
-      <div class="audience-card fade-up">
-        <div class="audience-icon-img" aria-hidden="true"><img class="audience-icon-png" src="/icons/sliced-set-20260411/icon-r1-c2.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Инвесторы</h3>
-        <p>Оцениваем риски, состав работ и маршрут согласования до инвестиционного решения.</p>
-      </div>
-      <div class="audience-card fade-up">
-        <div class="audience-icon-img" aria-hidden="true"><img class="audience-icon-png" src="/icons/sliced-set-20260411/icon-r1-c3.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Собственники</h3>
-        <p>Легализация перепланировок и получение разрешений на работы в объектах культурного наследия</p>
-      </div>
-      <div class="audience-card fade-up">
-        <div class="audience-icon-img" aria-hidden="true"><img class="audience-icon-png" src="/icons/sliced-set-20260411/icon-r1-c4.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Архитекторы</h3>
-        <p>Берём разделы ОКН в субподряд внутри комплексных проектов реконструкции.</p>
-      </div>
-      <div class="audience-card fade-up">
-        <div class="audience-icon-img" aria-hidden="true"><img class="audience-icon-png" src="/icons/sliced-set-20260411/icon-r1-c5.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Юридические компании</h3>
-        <p>Готовим техническую документацию для согласований и обоснования позиции в спорах.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- SERVICES -->
 <section id="services">
@@ -2373,7 +2459,7 @@
     <div class="services-visual-row">
       <div class="services-text-intro">
         <p class="services-intro-text">Проект реставрации связывает техническое состояние здания, предмет охраны, архивные материалы и допустимые проектные решения.</p>
-        <p class="services-license-note">Работы выполняются по лицензии Минкультуры РФ <strong>№ МКРФ 21836 от 24.12.2021</strong></p>
+        <p class="services-license-note">Работы выполняются на основании лицензии Минкультуры России <strong>№ МКРФ 21571 от 10 августа 2021 года</strong></p>
       </div>
       <div class="services-building-img">
         <img src="/assets/visuals/maslennikovykh-working-drawing.webp" alt="Рабочий чертёж фасада исторического здания" width="1543" height="688" loading="lazy" decoding="async">
@@ -2423,11 +2509,90 @@
   </div>
 </section>
 
+<section id="facade-project" aria-labelledby="facade-project-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Фасады ОКН</span>
+      <h2 id="facade-project-title">Ремонт и реставрация фасада объекта культурного наследия</h2>
+      <p>Запрос «нужно отремонтировать фасад» ещё не определяет вид документации. Сначала проверяем статус объекта, предмет охраны, техническое состояние и характер вмешательства, а затем формируем проектный маршрут.</p>
+    </div>
+
+    <div class="facade-intro">
+      <p><strong>Практический принцип:</strong> квалификация работ определяется не бытовым названием задачи, а тем, какие элементы фасада затрагиваются, каково их состояние и относятся ли они к предмету охраны. Окраска, ремонт штукатурки, восстановление кладки, декора, оконных и дверных заполнений могут требовать разного состава исследований и проектных решений.</p>
+    </div>
+
+    <div class="facade-scope-grid">
+      <div class="facade-scope">
+        <span class="label">Что проверяем</span>
+        <h3>Исходная задача и ограничения</h3>
+        <ul class="facade-list">
+          <li>предмет охраны, охранное обязательство и ранее выданные документы;</li>
+          <li>трещины, отслоения, увлажнение, разрушение кладки и штукатурки;</li>
+          <li>состояние архитектурного декора, карнизов, цоколя и заполнений;</li>
+          <li>исторические материалы, колористику и поздние вмешательства;</li>
+          <li>связь фасадных работ с кровлей, конструкциями и инженерными системами.</li>
+        </ul>
+      </div>
+      <div class="facade-scope">
+        <span class="label">Что разрабатываем</span>
+        <h3>Состав проектной документации</h3>
+        <ul class="facade-list">
+          <li>фотофиксацию, обмерные материалы и картограммы дефектов;</li>
+          <li>историко-архивные, натурные и специальные исследования по заданию;</li>
+          <li>архитектурные, конструктивные и технологические решения;</li>
+          <li>ведомости работ, требования к материалам и методам реставрации;</li>
+          <li>рабочую и сметную документацию, если она предусмотрена составом проекта.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="facade-table-wrap">
+      <table class="facade-table" aria-label="Как бытовая задача по фасаду переводится в проектный маршрут">
+        <tbody>
+          <tr>
+            <th scope="row">Покраска и штукатурка</th>
+            <td>Проверяем историческое цветовое решение, материалы основания, дефекты и принадлежность отделки к предмету охраны. Простая формулировка «обновить фасад» не означает, что достаточно обычной сметы на ремонт.</td>
+          </tr>
+          <tr>
+            <th scope="row">Трещины и разрушение кладки</th>
+            <td>Может потребоваться обследование причин деформаций, конструктивные решения, картограммы и технология восстановления, а не только локальная заделка повреждений.</td>
+          </tr>
+          <tr>
+            <th scope="row">Лепнина и декор</th>
+            <td>Фиксируем сохранность подлинных элементов, определяем методы расчистки, консервации, реставрации или воссоздания и отражаем решения в проекте.</td>
+          </tr>
+          <tr>
+            <th scope="row">Окна, двери и витрины</th>
+            <td>Проверяем рисунок, материал, цвет, пропорции и охранный статус заполнений. Замена или изменение геометрии может затрагивать архитектурный облик фасада.</td>
+          </tr>
+          <tr>
+            <th scope="row">Кровля, карнизы и водоотвод</th>
+            <td>Увязываем фасадные решения с причинами намокания, состоянием карнизов, парапетов, водосточной системы и конструкций крыши.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="facade-note">
+      <div>
+        <h3>Что потребуется для предварительной оценки</h3>
+        <p>Адрес объекта, фотографии фасадов и дефектов, предмет охраны, охранное обязательство, акт технического состояния, имеющиеся планы, обмеры и сведения о ранее выполненных работах.</p>
+      </div>
+      <div class="facade-note-cta">
+        <h3>От чего зависит стоимость</h3>
+        <p>От площади и сложности фасада, состояния материалов, количества декора, объёма обмеров и исследований, состава проектной и рабочей документации, необходимости ГИКЭ и сопровождения в ДКН.</p>
+        <a href="#cta-final" class="btn btn-primary">Отправить материалы на оценку</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="service-crosslinks">
   <div class="container service-crosslinks-inner">
     <a class="service-back-link" href="/#services">← Все услуги по ОКН</a>
     <div class="service-links-title">Другие услуги</div>
     <div class="service-quick-links">
+      <a href="/remont-fasada-okn"><strong>Фасад ОКН:</strong> Проект ремонта или реставрации фасада с обследованием, дефектной ведомостью и колористическими решениями.</a>
       <a href="/razdel-obespecheniya-sohrannosti-okn"><strong>Сохранность:</strong> Раздел обеспечения сохранности объекта культурного наследия.</a>
       <a href="/proekt-prisposobleniya-okn"><strong>Приспособление:</strong> Проект приспособления объекта культурного наследия.</a>
       <a href="/pereplanirovka-okn"><strong>Перепланировка:</strong> Перепланировка объекта культурного наследия в Москве.</a>
@@ -2472,86 +2637,7 @@
   </div>
 </section>
 
-<!-- RISKS -->
-<section id="risks">
-  <div class="container">
-    <div class="section-header">
-      <span class="label">Риски</span>
-      <h2>Риски при работе с объектом культурного наследия без документации</h2>
-      <p>Ошибки в составе документации и запуск работ без согласований приводят к замечаниям, задержкам и дополнительным затратам.</p>
-    </div>
 
-    <div class="risks-grid">
-      <div class="risk-card">
-        <div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r1-c6.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Отказ в согласовании из-за некорректной документации</h3>
-        <p>Орган охраны возвращает проект на доработку, если решения не соответствуют предмету охраны, заданию на проектирование или составу материалов для Мосгорнаследия.</p>
-      </div>
-      <div class="risk-card">
-        <div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r4-c2.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Переделка и двойные затраты</h3>
-        <p>Документация без учёта требований органа охраны обычно требует переработки, повторных проверок и уточнения разделов.</p>
-      </div>
-      <div class="risk-card">
-        <div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r2-c6.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Предписания, штрафы и остановка работ</h3>
-        <p>Работы без согласованной документации ведут к предписаниям, штрафам, остановке работ и затратам на переработку проекта.</p>
-      </div>
-      <div class="risk-card">
-        <div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r4-c4.png" alt="" loading="lazy" decoding="async"></div>
-        <h3>Заморозка проекта</h3>
-        <p>Если ограничения объекта не учтены на старте, проект затягивается: приходится пересматривать концепцию, состав работ и маршрут согласования.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="process" style="position:relative; overflow:hidden;">
-  <div class="process-bg-img">
-    <img src="/assets/visuals/maslennikovykh-working-drawing.webp" alt="" role="presentation" aria-hidden="true" loading="lazy" decoding="async" width="1543" height="688">
-  </div>
-  <div class="container">
-    <div class="section-header centered">
-      <span class="label">Как работаем</span>
-      <h2>Как проходит разработка проектной документации для ОКН</h2>
-      <p>Подключаемся на любой стадии — от анализа перед покупкой до авторского надзора на стройке.</p>
-    </div>
-
-    <div class="process-track">
-      <div class="process-step">
-        <div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r2-c1.png" alt="" loading="lazy" decoding="async"></div>
-        <div class="step-num">шаг 01</div>
-        <h3>Анализ объекта</h3>
-        <p>Изучаем категорию охраны, предмет охраны, охранное обязательство и историческую документацию</p>
-      </div>
-      <div class="process-step">
-        <div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r3-c4.png" alt="" loading="lazy" decoding="async"></div>
-        <div class="step-num">шаг 02</div>
-        <h3>Состав проекта</h3>
-        <p>Определяем необходимые разделы, порядок согласований и реалистичные сроки</p>
-      </div>
-      <div class="process-step">
-        <div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r4-c3.png" alt="" loading="lazy" decoding="async"></div>
-        <div class="step-num">шаг 03</div>
-        <h3>Разработка документации</h3>
-        <p>Готовим проект реставрации, приспособления или раздел ОСН с учётом требований органа охраны</p>
-      </div>
-      <div class="process-step">
-        <div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r3-c6.png" alt="" loading="lazy" decoding="async"></div>
-        <div class="step-num">шаг 04</div>
-        <h3>Согласование</h3>
-        <p>Сопровождаем прохождение НМС, ГИКЭ и получение разрешения на производство работ</p>
-      </div>
-      <div class="process-step">
-        <div class="step-dot step-dot-img" aria-hidden="true"><img class="step-dot-png" src="/icons/sliced-set-20260411/icon-r2-c4.png" alt="" loading="lazy" decoding="async"></div>
-        <div class="step-num">шаг 05</div>
-        <h3>Авторский надзор</h3>
-        <p>Контролируем соответствие работ проекту и требованиям охраны во время строительства</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ADVANTAGES -->
 <section id="advantages">
@@ -2585,7 +2671,7 @@
       <div class="adv-card adv-card--license fade-up">
         <div class="adv-icon" aria-hidden="true">Л</div>
         <h3>Лицензия Минкультуры РФ</h3>
-        <p>Работы выполняются по лицензии <strong>№ МКРФ 21836 от 24.12.2021</strong>.</p>
+        <p>Работы выполняются на основании лицензии <strong>№ МКРФ 21571 от 10 августа 2021 года</strong>.</p>
       </div>
     </div>
   </div>
@@ -2741,6 +2827,7 @@
       <a href="/blog/federalnyy-zakon-180-fz-okn-2027">Федеральный закон № 180-ФЗ: что меняется в работах с ОКН</a>
       <a href="/blog/predmet-ohrany-okn">Предмет охраны ОКН: ограничения для проектных решений</a>
       <a href="/blog/akt-tehnicheskogo-sostoyaniya-okn">Акт технического состояния ОКН перед проектированием</a>
+      <a href="/blog/remont-i-restavratsiya-fasada-okn">Ремонт и реставрация фасада ОКН: какой проект нужен</a>
     </div>
   </div>
 </section>
@@ -2809,6 +2896,39 @@
             </div>
           </button>
           <div class="faq-a" role="region"><p>Да, при необходимости ведём авторский надзор, участвуем в корректировках и помогаем подготовить материалы для сдачи работ органу охраны.</p></div>
+        </div>
+        <div class="faq-item ">
+          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
+            <span>Можно ли покрасить или отремонтировать фасад ОКН без проекта?</span>
+            <div class="faq-toggle">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-a" role="region"><p>Универсального ответа нет. До начала работ нужно проверить предмет охраны, характер дефектов и предполагаемое вмешательство. Если меняются исторические материалы, цветовое решение, декор, заполнения или конструктивные элементы, обычно требуется проектный маршрут и согласование.</p></div>
+        </div>
+        <div class="faq-item ">
+          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
+            <span>Что входит в проект реставрации фасада ОКН?</span>
+            <div class="faq-toggle">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-a" role="region"><p>Состав зависит от объекта и задания. Обычно проверяют исходные документы, выполняют фотофиксацию, обмеры и исследования, составляют картограммы дефектов и разрабатывают архитектурные, конструктивные и технологические решения.</p></div>
+        </div>
+        <div class="faq-item ">
+          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
+            <span>От чего зависит стоимость проекта фасада?</span>
+            <div class="faq-toggle">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-a" role="region"><p>На стоимость влияют площадь и сложность фасада, состояние материалов, количество декора, необходимость обмеров и лабораторных исследований, состав проектной и рабочей документации, экспертиза и сопровождение согласования.</p></div>
         </div>
       </div>
     </div>
@@ -2896,8 +3016,8 @@
         <a href="/o-kompanii">О нас</a>
     <a href="/contacts">Контакты</a>
       </div>
-      <p>Разработка проектной документации для объектов культурного наследия · Московская обл., г. Дзержинский, ул. Дзержинская, д. 13 · oknproekt@ya.ru</p>
-      <p class="footer-license">Лицензия Министерства культуры Российской Федерации № МКРФ 21836 от 24.12.2021</p>
+      <p>ОКН.Проект · 107078, г. Москва, ул. Садовая-Спасская, д. 13, стр. 2, помещ. 1/2 · oknproekt@ya.ru</p>
+      <p class="footer-license">Лицензия Министерства культуры Российской Федерации № МКРФ 21571 от 10 августа 2021 года</p>
       <p>© 2026 Все права защищены</p>
     </div>
   </div>
