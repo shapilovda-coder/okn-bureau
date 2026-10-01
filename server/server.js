@@ -15,6 +15,7 @@ const RATE_LIMIT = 5;
 const routeMap = new Map([
   ["/", "index.html"],
   ["/blog", "blog-static.html"],
+  ["/blog/okn-v-proektah-krt-chto-uchityvat-developeru", "blog-okn-krt.html"],
   ["/blog/arendator-obekta-kulturnogo-naslediya", "blog-arendator-okn.html"],
   ["/blog/sobstvennik-obekta-kulturnogo-naslediya-chto-delat", "blog-sobstvennik-okn.html"],
   ["/blog/federalnyy-zakon-180-fz-okn-2027", "blog-180-fz-okn-2027.html"],
