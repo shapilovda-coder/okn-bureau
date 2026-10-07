@@ -12,9 +12,37 @@ const MAX_BODY_BYTES = 16 * 1024;
 const RATE_WINDOW_MS = 60 * 1000;
 const RATE_LIMIT = 5;
 
+const CONTENT_SECURITY_POLICY_REPORT_ONLY = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'self'",
+  "form-action 'self'",
+  "script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://yastatic.net https://www.googletagmanager.com",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' data: https://fonts.gstatic.com",
+  "img-src 'self' data: https://mc.yandex.ru https://*.mc.yandex.ru https://www.google-analytics.com https://*.google-analytics.com",
+  "media-src 'self'",
+  "connect-src 'self' https://mc.yandex.ru https://*.mc.yandex.ru https://yandex.ru https://*.yandex.ru https://www.google-analytics.com https://*.google-analytics.com https://stats.g.doubleclick.net",
+  "frame-src 'self' https://mc.yandex.ru https://yandex.ru",
+  "worker-src 'self' blob:",
+  "manifest-src 'self'",
+].join("; ");
+
+const SECURITY_HEADERS = {
+  "Strict-Transport-Security": "max-age=31536000",
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "SAMEORIGIN",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+  "Content-Security-Policy-Report-Only": CONTENT_SECURITY_POLICY_REPORT_ONLY,
+};
+
 const routeMap = new Map([
   ["/", "index.html"],
   ["/blog", "blog-static.html"],
+  ["/blog/zony-ohrany-i-zashchitnye-zony-okn", "blog-zony-ohrany-okn.html"],
+  ["/blog/okn-v-proektah-krt", "blog-okn-krt.html"],
   ["/blog/arendator-obekta-kulturnogo-naslediya", "blog-arendator-okn.html"],
   ["/blog/sobstvennik-obekta-kulturnogo-naslediya-chto-delat", "blog-sobstvennik-okn.html"],
   ["/blog/federalnyy-zakon-180-fz-okn-2027", "blog-180-fz-okn-2027.html"],
@@ -25,6 +53,7 @@ const routeMap = new Map([
   ["/blog/remont-v-obekte-kulturnogo-naslediya", "blog-remont-okn.html"],
   ["/blog/istoriko-kulturnaya-ekspertiza-okn-kogda-nuzhna-gike", "blog-gike-okn.html"],
   ["/blog/zadanie-na-provedenie-rabot-po-sohraneniyu-okn", "blog-zadanie-na-raboty-okn.html"],
+  ["/blog/remont-i-restavratsiya-fasada-okn", "blog-fasad-okn.html"],
   ["/cases", "cases-static.html"],
   ["/contacts", "contacts-static.html"],
   ["/pereplanirovka-okn", "service-pereplanirovka.html"],
@@ -34,8 +63,13 @@ const routeMap = new Map([
   ["/soglasovanie-mosgornasledie", "service-soglasovanie.html"],
   ["/ohrannoe-obyazatelstvo-okn", "service-ohrannoe.html"],
   ["/kapitalnyy-remont-okn", "service-kapremont.html"],
+  ["/remont-okn", "service-remont.html"],
+  ["/remont-fasada-okn", "service-remont-fasada.html"],
   ["/rekonstruktsiya-obekta-kulturnogo-naslediya", "service-rekonstruktsiya.html"],
   ["/obsledovanie-obektov-kulturnogo-naslediya", "service-obsledovanie.html"],
+  ["/tehnicheskoe-obsledovanie-zdaniy", "service-technical-survey.html"],
+  ["/tehnicheskoe-zaklyuchenie", "service-technical-conclusion.html"],
+  ["/lazernoe-skanirovanie-zdaniy", "service-laser-scanning.html"],
   ["/istoriko-kulturnaya-ekspertiza-okn", "service-gike.html"],
   ["/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn", "service-razreshenie-dkn.html"],
   ["/o-kompanii", "about-static.html"]
@@ -59,7 +93,7 @@ const contentTypes = {
 
 const rateStore = new Map();
 function sendJson(res, status, payload) {
-  res.writeHead(status, {"Content-Type": "application/json; charset=utf-8","Cache-Control": "no-store","X-Content-Type-Options": "nosniff"});
+  res.writeHead(status, { ...SECURITY_HEADERS, "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" });
   res.end(JSON.stringify(payload));
 }
 function getClientIp(req) {
@@ -133,15 +167,15 @@ async function serveStatic(req, res) {
     const file = await readFile(filePath);
     const ext = extname(filePath).toLowerCase();
     const cacheControl = ext === ".html" ? "no-cache" : "public, max-age=31536000, immutable";
-    res.writeHead(200, {"Content-Type": contentTypes[ext] || "application/octet-stream","Cache-Control": cacheControl,"X-Content-Type-Options": "nosniff"});
+    res.writeHead(200, { ...SECURITY_HEADERS, "Content-Type": contentTypes[ext] || "application/octet-stream", "Cache-Control": cacheControl });
     res.end(file);
   } catch {
     try {
       const fallback404 = await readFile(join(PUBLIC_DIR, "404.html"));
-      res.writeHead(404, {"Content-Type": contentTypes[".html"],"Cache-Control": "no-cache","X-Content-Type-Options": "nosniff"});
+      res.writeHead(404, { ...SECURITY_HEADERS, "Content-Type": contentTypes[".html"], "Cache-Control": "no-cache" });
       res.end(fallback404);
     } catch {
-      res.writeHead(404, {"Content-Type": "text/plain; charset=utf-8","Cache-Control": "no-cache","X-Content-Type-Options": "nosniff"});
+      res.writeHead(404, { ...SECURITY_HEADERS, "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-cache" });
       res.end("Not Found");
     }
   }

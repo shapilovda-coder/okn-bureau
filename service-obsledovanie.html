@@ -176,7 +176,8 @@
   .service-crosslinks-inner {
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-    padding: 18px 0;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
   .service-back-link {
     display: inline-block;
@@ -772,14 +773,6 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0;
-  }
-
-  .process-track::before {
-    content: '';
-    position: absolute;
-    top: 36px; left: 10%;
-    width: 80%; height: 1px;
-    background: var(--line);
   }
 
   .process-step {
@@ -2190,6 +2183,9 @@
         <a href="/kapitalnyy-remont-okn">Капитальный ремонт ОКН</a>
         <a href="/rekonstruktsiya-obekta-kulturnogo-naslediya">Реконструкция ОКН</a>
         <a href="/obsledovanie-obektov-kulturnogo-naslediya">Обследование ОКН</a>
+        <a href="/tehnicheskoe-obsledovanie-zdaniy">Техническое обследование зданий</a>
+        <a href="/tehnicheskoe-zaklyuchenie">Техническое заключение</a>
+        <a href="/lazernoe-skanirovanie-zdaniy">Лазерное сканирование зданий</a>
         <a href="/istoriko-kulturnaya-ekspertiza-okn">Сопровождение ГИКЭ</a>
         <a href="/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn">Разрешение ДКН на работы</a>
       </div>
@@ -2227,6 +2223,9 @@
         <a href="/kapitalnyy-remont-okn">Капитальный ремонт ОКН</a>
         <a href="/rekonstruktsiya-obekta-kulturnogo-naslediya">Реконструкция ОКН</a>
         <a href="/obsledovanie-obektov-kulturnogo-naslediya">Обследование ОКН</a>
+        <a href="/tehnicheskoe-obsledovanie-zdaniy">Техническое обследование зданий</a>
+        <a href="/tehnicheskoe-zaklyuchenie">Техническое заключение</a>
+        <a href="/lazernoe-skanirovanie-zdaniy">Лазерное сканирование зданий</a>
         <a href="/istoriko-kulturnaya-ekspertiza-okn">Сопровождение ГИКЭ</a>
         <a href="/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn">Разрешение ДКН на работы</a>
         <a href="/cases">Кейсы</a>
@@ -2338,7 +2337,7 @@
   <div class="container service-crosslinks-inner">
     <a class="service-back-link" href="/">← На главную</a>
     <div class="service-links-title">Связанные услуги и материалы</div>
-    <div class="service-quick-links"><a href="/blog/akt-tehnicheskogo-sostoyaniya-okn"><strong>Акт технического состояния:</strong> когда нужен отдельный документ о состоянии ОКН.</a><a href="/proekt-restavratsii-okn"><strong>Проект реставрации:</strong> использует результаты исследований как основу решений.</a><a href="/proekt-prisposobleniya-okn"><strong>Приспособление:</strong> увязывает новую функцию с ограничениями объекта.</a><a href="/kapitalnyy-remont-okn"><strong>Капитальный ремонт:</strong> требует обоснованных решений по конструкциям и материалам.</a></div>
+    <div class="service-quick-links"><a href="/tehnicheskoe-obsledovanie-zdaniy"><strong>Техническое обследование здания:</strong> общий инженерный интент без специальной программы по ОКН.</a><a href="/tehnicheskoe-zaklyuchenie"><strong>Техническое заключение:</strong> выводы о состоянии конструкций по результатам обследования.</a><a href="/lazernoe-skanirovanie-zdaniy"><strong>Лазерное сканирование:</strong> геометрическая основа для обмеров, чертежей и BIM.</a><a href="/blog/akt-tehnicheskogo-sostoyaniya-okn"><strong>Акт технического состояния:</strong> когда нужен отдельный документ о состоянии ОКН.</a><a href="/proekt-restavratsii-okn"><strong>Проект реставрации:</strong> использует результаты исследований как основу решений.</a><a href="/proekt-prisposobleniya-okn"><strong>Приспособление:</strong> увязывает новую функцию с ограничениями объекта.</a><a href="/kapitalnyy-remont-okn"><strong>Капитальный ремонт:</strong> требует обоснованных решений по конструкциям и материалам.</a></div>
   </div>
 </section>
 
@@ -2353,6 +2352,19 @@
   <div class="container">
     <div class="section-header"><span class="label">Риски</span><h2>Что происходит, если проектировать без достаточных исследований</h2><p>Неполные исходные данные превращаются в переделки уже после начала проектирования или работ.</p></div>
     <div class="risks-grid"><div class="risk-card"><div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r1-c6.png" alt="" loading="lazy" decoding="async"></div><h3>Неверная оценка состояния</h3><p>Скрытые повреждения или особенности исторических конструкций обнаруживаются слишком поздно.</p></div><div class="risk-card"><div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r4-c2.png" alt="" loading="lazy" decoding="async"></div><h3>Необоснованные решения</h3><p>Проектировщику не хватает данных, чтобы защитить выбранный способ ремонта или реставрации.</p></div><div class="risk-card"><div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r2-c6.png" alt="" loading="lazy" decoding="async"></div><h3>Повторные выезды и вскрытия</h3><p>Исследования приходится заказывать заново, когда состав проекта уже сформирован.</p></div><div class="risk-card"><div class="risk-icon"><img class="risk-icon-png" src="/icons/sliced-set-20260411/icon-r4-c4.png" alt="" loading="lazy" decoding="async"></div><h3>Рост объёма переделок</h3><p>Проект и смета корректируются после уточнения материалов, дефектов и конструктивной схемы.</p></div></div>
+  </div>
+</section>
+
+<section id="comprehensive-research">
+  <div class="container">
+    <div class="section-header centered"><span class="label">Состав работ</span><h2>Что входит в комплексные научные исследования ОКН</h2><p>Состав формируется под объект и будущий проект. Не каждый комплект требует одинаковой глубины исследований, но основные направления должны давать проектировщикам согласованную картину здания.</p></div>
+    <div class="what-grid">
+      <div class="what-item"><div class="what-num">01</div><h3>Историко-архивные исследования</h3><p>Архивные, библиографические и иконографические материалы, сведения о строительных периодах и изменениях объекта.</p></div>
+      <div class="what-item"><div class="what-num">02</div><h3>Историко-архитектурные натурные исследования</h3><p>Фиксация планировки, конструкций, отделки, архитектурных элементов и следов перестроек непосредственно на объекте.</p></div>
+      <div class="what-item"><div class="what-num">03</div><h3>Инженерно-технические исследования</h3><p>Оценка конструктивной схемы, состояния элементов, дефектов и факторов, влияющих на возможность дальнейших работ.</p></div>
+      <div class="what-item"><div class="what-num">04</div><h3>Исследования материалов</h3><p>Инженерные химико-технологические и лабораторные исследования назначаются там, где нужно определить состав, состояние и совместимость материалов.</p></div>
+      <div class="what-item"><div class="what-num">05</div><h3>Сводный отчёт</h3><p>Результаты объединяются в комплект исходных данных и выводов для проекта реставрации, ремонта или приспособления.</p></div>
+    </div>
   </div>
 </section>
 
@@ -2399,6 +2411,8 @@
         <a href="/ohrannoe-obyazatelstvo-okn">Охранное обязательство</a>
         <a href="/kapitalnyy-remont-okn">Капремонт ОКН</a>
         <a href="/rekonstruktsiya-obekta-kulturnogo-naslediya">Реконструкция</a>
+        <a href="/tehnicheskoe-obsledovanie-zdaniy">Техническое обследование</a>
+        <a href="/lazernoe-skanirovanie-zdaniy">Лазерное сканирование</a>
         <a href="/cases">Кейсы</a>
         <a href="/blog">Блог</a>
         <a href="/o-kompanii">О нас</a>

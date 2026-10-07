@@ -1,0 +1,160 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog-static.html"
+    },
+    {
+      "source": "/blog/zony-ohrany-i-zashchitnye-zony-okn",
+      "destination": "/blog-zony-ohrany-okn.html"
+    },
+    {
+      "source": "/blog/okn-v-proektah-krt",
+      "destination": "/blog-okn-krt.html"
+    },
+    {
+      "source": "/blog/arendator-obekta-kulturnogo-naslediya",
+      "destination": "/blog-arendator-okn.html"
+    },
+    {
+      "source": "/blog/sobstvennik-obekta-kulturnogo-naslediya-chto-delat",
+      "destination": "/blog-sobstvennik-okn.html"
+    },
+    {
+      "source": "/blog/federalnyy-zakon-180-fz-okn-2027",
+      "destination": "/blog-180-fz-okn-2027.html"
+    },
+    {
+      "source": "/blog/investicii-v-obekty-kulturnogo-naslediya-kak-klass-aktivov",
+      "destination": "/blog-investicii-okn.html"
+    },
+    {
+      "source": "/blog/predpisaniya-i-shtrafy-po-okn-chto-delat-sobstvenniku",
+      "destination": "/blog-predpisaniya-okn.html"
+    },
+    {
+      "source": "/blog/predmet-ohrany-okn",
+      "destination": "/blog-predmet-ohrany-okn.html"
+    },
+    {
+      "source": "/blog/akt-tehnicheskogo-sostoyaniya-okn",
+      "destination": "/blog-akt-tehsostoyaniya-okn.html"
+    },
+    {
+      "source": "/blog/remont-v-obekte-kulturnogo-naslediya",
+      "destination": "/blog-remont-okn.html"
+    },
+    {
+      "source": "/blog/istoriko-kulturnaya-ekspertiza-okn-kogda-nuzhna-gike",
+      "destination": "/blog-gike-okn.html"
+    },
+    {
+      "source": "/blog/zadanie-na-provedenie-rabot-po-sohraneniyu-okn",
+      "destination": "/blog-zadanie-na-raboty-okn.html"
+    },
+    {
+      "source": "/blog/remont-i-restavratsiya-fasada-okn",
+      "destination": "/blog-fasad-okn.html"
+    },
+    {
+      "source": "/cases",
+      "destination": "/cases-static.html"
+    },
+    {
+      "source": "/contacts",
+      "destination": "/contacts-static.html"
+    },
+    {
+      "source": "/pereplanirovka-okn",
+      "destination": "/service-pereplanirovka.html"
+    },
+    {
+      "source": "/razdel-obespecheniya-sohrannosti-okn",
+      "destination": "/service-sohrannost.html"
+    },
+    {
+      "source": "/proekt-restavratsii-okn",
+      "destination": "/service-restavratsiya.html"
+    },
+    {
+      "source": "/proekt-prisposobleniya-okn",
+      "destination": "/service-prisposoblenie.html"
+    },
+    {
+      "source": "/soglasovanie-mosgornasledie",
+      "destination": "/service-soglasovanie.html"
+    },
+    {
+      "source": "/ohrannoe-obyazatelstvo-okn",
+      "destination": "/service-ohrannoe.html"
+    },
+    {
+      "source": "/kapitalnyy-remont-okn",
+      "destination": "/service-kapremont.html"
+    },
+    {
+      "source": "/remont-okn",
+      "destination": "/service-remont.html"
+    },
+    {
+      "source": "/remont-fasada-okn",
+      "destination": "/service-remont-fasada.html"
+    },
+    {
+      "source": "/rekonstruktsiya-obekta-kulturnogo-naslediya",
+      "destination": "/service-rekonstruktsiya.html"
+    },
+    {
+      "source": "/obsledovanie-obektov-kulturnogo-naslediya",
+      "destination": "/service-obsledovanie.html"
+    },
+    {
+      "source": "/tehnicheskoe-obsledovanie-zdaniy",
+      "destination": "/service-technical-survey.html"
+    },
+    {
+      "source": "/tehnicheskoe-zaklyuchenie",
+      "destination": "/service-technical-conclusion.html"
+    },
+    {
+      "source": "/lazernoe-skanirovanie-zdaniy",
+      "destination": "/service-laser-scanning.html"
+    },
+    {
+      "source": "/istoriko-kulturnaya-ekspertiza-okn",
+      "destination": "/service-gike.html"
+    },
+    {
+      "source": "/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn",
+      "destination": "/service-razreshenie-dkn.html"
+    },
+    {
+      "source": "/o-kompanii",
+      "destination": "/about-static.html"
+    }
+  ]
+}
