@@ -30,6 +30,16 @@ function decodeText(value) {
     .trim();
 }
 
+function visibleText(html) {
+  const body = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || html;
+  return decodeText(
+    body
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
+      .replace(/<template\b[^>]*>[\s\S]*?<\/template>/gi, " "),
+  );
+}
+
 async function exists(path) {
   try {
     await access(path, constants.F_OK);
@@ -48,7 +58,7 @@ for (const { source: route, destination } of routes) {
   if (extname(destination) !== ".html") continue;
 
   const html = await readFile(destination, "utf8");
-  const text = decodeText(html);
+  const text = visibleText(html);
   const h1Count = count(html, /<h1\b/gi);
   const titleCount = count(html, /<title\b/gi);
   const canonicalMatches = [...html.matchAll(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/gi)];

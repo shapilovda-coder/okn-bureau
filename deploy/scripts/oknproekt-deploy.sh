@@ -12,6 +12,8 @@ STAMP="$(date +%Y%m%d-%H%M%S)"
 RELEASE="$BASE/releases/git-$SHA"
 STAGE="$BASE/releases/.git-$SHA-$STAMP.tmp"
 BACKUP="$BASE/backups/github-$STAMP-${SHA:0:12}"
+KEEP_BACKUPS=12
+KEEP_RELEASES=6
 PREVIOUS=""
 PREVIOUS_WAS_DIRECTORY=0
 SWITCHED=0
@@ -39,6 +41,30 @@ rollback() {
 
 trap rollback ERR
 
+prune_old_artifacts() {
+  local current_target=""
+  local path=""
+  local -a backups=()
+  local -a releases=()
+
+  if [[ -L "$CURRENT" ]]; then
+    current_target="$(readlink -f "$CURRENT")"
+  fi
+
+  mapfile -t backups < <(find "$BASE/backups" -mindepth 1 -maxdepth 1 -type d -name 'github-*' -printf '%T@ %p\n' | sort -rn | cut -d' ' -f2-)
+  for path in "${backups[@]:$KEEP_BACKUPS}"; do
+    [[ "$path" == "$BASE/backups/github-"* ]] || continue
+    rm -rf -- "$path"
+  done
+
+  mapfile -t releases < <(find "$BASE/releases" -mindepth 1 -maxdepth 1 -type d -name 'git-*' -printf '%T@ %p\n' | sort -rn | cut -d' ' -f2-)
+  for path in "${releases[@]:$KEEP_RELEASES}"; do
+    [[ "$path" == "$BASE/releases/git-"* ]] || continue
+    [[ "$path" == "$current_target" || "$path" == "$PREVIOUS" ]] && continue
+    rm -rf -- "$path"
+  done
+}
+
 [[ "$EUID" -eq 0 ]] || die "run through sudo"
 [[ "${SUDO_USER:-}" == "okn-deploy" ]] || die "unexpected deploy user"
 [[ "$SHA" =~ ^[0-9a-f]{40}$ ]] || die "invalid commit SHA"
@@ -52,27 +78,39 @@ if tar -tzf "$ARCHIVE" | grep -Eq '(^/|(^|/)\.\.(/|$))'; then
   die "unsafe archive path"
 fi
 
+if [[ -d "$RELEASE" ]]; then
+  [[ -f "$RELEASE/REVISION" && "$(<"$RELEASE/REVISION")" == "$SHA" ]] || die "existing release has unexpected revision"
+  [[ -f "$RELEASE/RELEASE_ARCHIVE_SHA256" && "$(<"$RELEASE/RELEASE_ARCHIVE_SHA256")" == "$EXPECTED_SHA256" ]] || die "existing release has unexpected checksum"
+  if [[ -L "$CURRENT" && "$(readlink -f "$CURRENT")" == "$RELEASE" ]]; then
+    systemctl is-active --quiet oknproekt.service
+    printf 'DEPLOY=ALREADY_CURRENT\nRELEASE=%s\n' "$RELEASE"
+    exit 0
+  fi
+fi
+
 mkdir -p "$BASE/releases" "$BASE/backups" "$BACKUP"
 tar -C "$CURRENT" -czf "$BACKUP/site.tar.gz" .
 sha256sum "$BACKUP/site.tar.gz" > "$BACKUP/SHA256SUMS"
 printf 'commit=%s\narchive_sha256=%s\ncreated=%s\n' "$SHA" "$EXPECTED_SHA256" "$STAMP" > "$BACKUP/MANIFEST.txt"
 
-mkdir -p "$STAGE"
-tar -xzf "$ARCHIVE" -C "$STAGE"
+if [[ ! -d "$RELEASE" ]]; then
+  mkdir -p "$STAGE"
+  tar -xzf "$ARCHIVE" -C "$STAGE"
 
-[[ -f "$STAGE/index.html" ]] || die "index.html missing"
-[[ -f "$STAGE/sitemap.xml" ]] || die "sitemap.xml missing"
-[[ -f "$STAGE/server/server.js" ]] || die "server.js missing"
-[[ -f "$STAGE/package.json" ]] || die "package.json missing"
-if find "$STAGE" -type l -print -quit | grep -q .; then die "symlinks are not allowed in release"; fi
-if find "$STAGE" -type f -name '.env*' ! -name '.env.example' -print -quit | grep -q .; then die "environment file found in release"; fi
-if find "$STAGE" -type f \( -name '*.bak*' -o -name '*.rollback-*' \) -print -quit | grep -q .; then die "backup artifact found in release"; fi
+  [[ -f "$STAGE/index.html" ]] || die "index.html missing"
+  [[ -f "$STAGE/sitemap.xml" ]] || die "sitemap.xml missing"
+  [[ -f "$STAGE/server/server.js" ]] || die "server.js missing"
+  [[ -f "$STAGE/package.json" ]] || die "package.json missing"
+  if find "$STAGE" -type l -print -quit | grep -q .; then die "symlinks are not allowed in release"; fi
+  if find "$STAGE" -type f -name '.env*' ! -name '.env.example' -print -quit | grep -q .; then die "environment file found in release"; fi
+  if find "$STAGE" -type f \( -name '*.bak*' -o -name '*.rollback-*' \) -print -quit | grep -q .; then die "backup artifact found in release"; fi
 
-(cd "$STAGE" && node --check server/server.js)
-printf '%s\n' "$EXPECTED_SHA256" > "$STAGE/RELEASE_ARCHIVE_SHA256"
-printf '%s\n' "$SHA" > "$STAGE/REVISION"
-chown -R www-data:www-data "$STAGE"
-mv "$STAGE" "$RELEASE"
+  (cd "$STAGE" && node --check server/server.js)
+  printf '%s\n' "$EXPECTED_SHA256" > "$STAGE/RELEASE_ARCHIVE_SHA256"
+  printf '%s\n' "$SHA" > "$STAGE/REVISION"
+  chown -R www-data:www-data "$STAGE"
+  mv "$STAGE" "$RELEASE"
+fi
 
 if [[ -L "$CURRENT" ]]; then
   PREVIOUS="$(readlink -f "$CURRENT")"
@@ -107,4 +145,5 @@ NOT_FOUND_STATUS="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 20 'https
 printf 'previous=%s\nrelease=%s\n' "$PREVIOUS" "$RELEASE" >> "$BACKUP/MANIFEST.txt"
 SWITCHED=0
 trap - ERR
+prune_old_artifacts
 printf 'DEPLOY=SUCCESS\nRELEASE=%s\nBACKUP=%s\n' "$RELEASE" "$BACKUP"
