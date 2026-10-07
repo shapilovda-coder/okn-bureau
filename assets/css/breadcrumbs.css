@@ -1,0 +1,70 @@
+.page-breadcrumbs {
+  display: block;
+  position: absolute;
+  top: calc(70px + env(safe-area-inset-top));
+  left: 0;
+  right: 0;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.page-breadcrumbs-inner {
+  width: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 14px clamp(40px, 6vw, 96px) 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8A847C;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.page-breadcrumbs a {
+  color: #B8965A;
+  text-decoration: none;
+  pointer-events: auto;
+  transition: color 0.2s ease;
+}
+
+.page-breadcrumbs a:hover,
+.page-breadcrumbs a:focus-visible {
+  color: #8F713F;
+}
+
+.page-breadcrumbs-separator {
+  color: #B8B2A9;
+  flex: 0 0 auto;
+}
+
+.page-breadcrumbs-current {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .page-breadcrumbs-inner {
+    padding-right: 20px;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .page-breadcrumbs-current {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-breadcrumbs-inner {
+    padding-top: 10px;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+  }
+}

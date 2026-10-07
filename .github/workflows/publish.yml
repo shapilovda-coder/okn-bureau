@@ -1,0 +1,86 @@
+name: Validate, preview and publish
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: oknproekt-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout reviewed revision
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24
+
+      - name: Validate runtime and site
+        run: |
+          npm run check
+          npm run validate
+          npm run release:build
+
+  deploy:
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      github.event_name != 'pull_request' &&
+      vars.OKN_VPS_DEPLOY_ENABLED == 'true'
+    needs: validate
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout reviewed revision
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24
+
+      - name: Assemble release
+        run: |
+          npm run release:build
+          tar -C .release -czf "/tmp/oknproekt-release-${GITHUB_SHA}.tar.gz" .
+          sha256sum "/tmp/oknproekt-release-${GITHUB_SHA}.tar.gz"
+
+      - name: Configure deploy access
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.OKN_VPS_SSH_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.OKN_VPS_KNOWN_HOSTS }}
+        run: |
+          test -n "$SSH_PRIVATE_KEY"
+          test -n "$SSH_KNOWN_HOSTS"
+          install -m 700 -d "$HOME/.ssh"
+          printf '%s\n' "$SSH_PRIVATE_KEY" > "$HOME/.ssh/id_ed25519"
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/id_ed25519" "$HOME/.ssh/known_hosts"
+
+      - name: Upload and deploy
+        env:
+          VPS_HOST: ${{ secrets.OKN_VPS_HOST }}
+          VPS_PORT: ${{ secrets.OKN_VPS_PORT }}
+          VPS_USER: ${{ secrets.OKN_VPS_USER }}
+        run: |
+          test -n "$VPS_HOST"
+          test -n "$VPS_PORT"
+          test -n "$VPS_USER"
+          archive="/tmp/oknproekt-release-${GITHUB_SHA}.tar.gz"
+          checksum="$(sha256sum "$archive" | awk '{print $1}')"
+          scp -P "$VPS_PORT" "$archive" "$VPS_USER@$VPS_HOST:$archive"
+          ssh -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" \
+            "sudo /usr/local/sbin/oknproekt-deploy '$GITHUB_SHA' '$checksum'"

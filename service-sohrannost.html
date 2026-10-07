@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Раздел обеспечения сохранности ОКН — разработка и согласование</title>
-<meta name="description" content="Разрабатываем раздел обеспечения сохранности объектов культурного наследия для строительства, реконструкции и работ рядом с ОКН. Сопровождаем подачу в ДКН.">
+<meta name="description" content="Разрабатываем ОСОКН для работ на участках, граничащих с территориями ОКН: строительство, ремонт, благоустройство, памятники и мемориальные доски.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://oknproekt.ru/razdel-obespecheniya-sohrannosti-okn">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" href="/favicon.ico">
 <!-- OG -->
 <meta property="og:title" content="Раздел обеспечения сохранности ОКН — разработка и согласование">
-<meta property="og:description" content="Разрабатываем раздел обеспечения сохранности объектов культурного наследия для строительства, реконструкции и работ рядом с ОКН. Сопровождаем подачу в ДКН.">
+<meta property="og:description" content="Разрабатываем ОСОКН для работ на участках, граничащих с территориями ОКН: строительство, ремонт, благоустройство, памятники и мемориальные доски.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://oknproekt.ru/razdel-obespecheniya-sohrannosti-okn">
 <meta property="og:site_name" content="ОКН.Проект">
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Раздел обеспечения сохранности ОКН — разработка и согласование">
-<meta name="twitter:description" content="Разрабатываем раздел обеспечения сохранности объектов культурного наследия для строительства, реконструкции и работ рядом с ОКН. Сопровождаем подачу в ДКН.">
+<meta name="twitter:description" content="Разрабатываем ОСОКН для работ на участках, граничащих с территориями ОКН: строительство, ремонт, благоустройство, памятники и мемориальные доски.">
 <meta name="twitter:image" content="/assets/img/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -176,7 +176,8 @@
   .service-crosslinks-inner {
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-    padding: 18px 0;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
   .service-back-link {
     display: inline-block;
@@ -655,7 +656,7 @@
 
   .triggers-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
   }
 
@@ -1149,8 +1150,8 @@
 
 
   @media (max-width: 600px) {
-  
-  
+
+
   }
 
   /* ─── HERO IMAGE BACKGROUND ─── */
@@ -2089,7 +2090,7 @@
       "@type": "Service",
       "@id": "https://oknproekt.ru/razdel-obespecheniya-sohrannosti-okn#service",
       "name": "Раздел обеспечения сохранности объектов культурного наследия",
-      "description": "Разрабатываем раздел обеспечения сохранности объектов культурного наследия для строительства, реконструкции, инженерных и земляных работ рядом с ОКН. Определяем зону влияния, мероприятия по обеспечению сохранности и сопровождаем подачу в ДКН.",
+      "description": "Разрабатываем ОСОКН для проведения работ на земельных участках, граничащих с территориями объектов культурного наследия или непосредственно связанных с ними. Оцениваем возможное воздействие, определяем мероприятия по обеспечению сохранности и сопровождаем согласование в ДКН.",
       "serviceType": "Разработка раздела обеспечения сохранности объектов культурного наследия",
       "areaServed": "Москва",
       "provider": {
@@ -2105,7 +2106,15 @@
           "name": "Что такое раздел обеспечения сохранности ОКН?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Это раздел проектной документации, который оценивает влияние планируемых работ на объект культурного наследия и описывает мероприятия по обеспечению его сохранности."
+            "text": "Это раздел проектной документации, который оценивает влияние планируемых работ на объект культурного наследия и описывает меры защиты."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое оценка воздействия работ на ОКН?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Это анализ возможного влияния проектных решений и технологии работ на предмет охраны, конструкции, территорию и условия сохранности ОКН. В необходимых случаях выводы входят в раздел обеспечения сохранности."
           }
         },
         {
@@ -2113,7 +2122,7 @@
           "name": "Когда ОСОКН обязателен?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Обычно при строительстве, реконструкции, инженерных, демонтажных или земляных работах рядом с ОКН либо в зоне влияния объекта. Точный вывод зависит от площадки, технологии работ и требований органа охраны."
+            "text": "ОСОКН может потребоваться при проведении работ на земельных участках, граничащих с территориями ОКН или непосредственно связанных с ними. Это относится не только к строительству, реконструкции, инженерным и земляным работам, но также к благоустройству, размещению некапитальных объектов, установке памятников, монументов и мемориальных досок. Необходимость раздела определяется расположением участка, характером работ и возможным воздействием на ОКН."
           }
         },
         {
@@ -2129,7 +2138,7 @@
           "name": "Что входит в разработку раздела ОСОКН?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "В раздел обычно входят анализ исходных данных, определение зоны влияния, оценка возможного воздействия работ, мероприятия по обеспечению сохранности ОКН, графические материалы и пояснительная записка."
+            "text": "Обычно в раздел входят анализ исходных данных, определение зоны влияния, оценка возможного воздействия работ, мероприятия по обеспечению сохранности ОКН, графические материалы и пояснительная записка."
           }
         },
         {
@@ -2183,6 +2192,7 @@
   gtag('config', 'G-ZGYTL1MPJB');
 </script>
 <link rel="stylesheet" href="/assets/css/breadcrumbs.css">
+<link rel="stylesheet" href="/assets/css/portfolio-cases.css">
 </head>
 
 <body>
@@ -2308,7 +2318,7 @@
     <div class="hero-content">
       <div class="hero-badge">Москва — обеспечение сохранности ОКН</div>
       <h1 class="hero-title">Раздел обеспечения<br> сохранности объектов<br> <em>культурного наследия</em></h1>
-      <p class="hero-sub">Разрабатываем ОСОКН для строительства, реконструкции, земляных и инженерных работ рядом с объектами культурного наследия. Определяем зону влияния, меры защиты и сопровождаем подачу в ДКН.</p>
+      <p class="hero-sub">Разрабатываем ОСОКН для проведения работ на земельных участках, граничащих с территориями объектов культурного наследия или непосредственно связанных с ними. Оцениваем возможное воздействие, определяем мероприятия по обеспечению сохранности и сопровождаем согласование в ДКН.</p>
       <div class="hero-ctas">
         <a href="#cta-final" class="btn btn-primary">Проверить необходимость раздела</a>
         <a href="#services" class="btn btn-outline">Смотреть состав</a>
@@ -2349,7 +2359,7 @@
 
     <div class="services-visual-row">
       <div class="services-text-intro">
-        <p class="services-intro-text">Раздел обеспечения сохранности объектов культурного наследия нужен там, где строительство, реконструкция или инженерные работы могут повлиять на памятник, его территорию или зону восприятия.</p>
+        <p class="services-intro-text">Раздел обеспечения сохранности ОКН может потребоваться не только при строительстве или прокладке инженерных сетей. Он разрабатывается для работ на земельных участках, граничащих с территориями ОКН или непосредственно связанных с ними, если такие работы могут повлиять на объект, его территорию, предмет охраны или условия сохранности.</p>
         <p class="services-license-note">Работы выполняются на основании лицензии Минкультуры России <strong>№ МКРФ 21571 от 10 августа 2021 года</strong></p>
       </div>
       <div class="services-building-img">
@@ -2374,14 +2384,16 @@
           <div class="service-body-inner">
             <div class="svc-col">
               <span class="svc-col-label">О чём</span>
-              <p>Раздел проектной документации, который оценивает влияние строительства, реконструкции, инженерных или земляных работ на ОКН и обосновывает мероприятия по обеспечению сохранности объекта культурного наследия.</p>
+              <p>Раздел проектной документации, который оценивает возможное влияние планируемых работ на объект культурного наследия и обосновывает мероприятия по его сохранности. ОСОКН может разрабатываться при строительстве, реконструкции, капитальном ремонте, инженерных, земляных и демонтажных работах, благоустройстве, размещении некапитальных объектов, установке памятников, монументов и мемориальных досок.</p>
             </div>
             <div class="svc-col">
               <span class="svc-col-label">Когда нужен</span>
               <ul>
-                  <li>Площадка находится рядом с ОКН или в зоне влияния работ</li>
-                  <li>Планируются подземные, свайные, инженерные или демонтажные работы</li>
-                  <li>Нужно подтвердить отсутствие угрозы для предмета охраны, конструкций и территории памятника</li>
+                  <li>земельный участок граничит с территорией ОКН или непосредственно связан с ней</li>
+                  <li>планируются строительство, реконструкция, капитальный ремонт, земляные, инженерные или демонтажные работы</li>
+                  <li>выполняется благоустройство или размещаются некапитальные объекты</li>
+                  <li>устанавливается памятник или монумент на территории ОКН либо мемориальная доска на объекте культурного наследия</li>
+                  <li>необходимо подтвердить отсутствие угрозы для предмета охраны, конструкций, территории ОКН и условий его сохранности</li>
               </ul>
             </div>
             <div class="svc-col">
@@ -2422,28 +2434,70 @@
     <div class="section-header">
       <span class="label">Когда нужно</span>
       <h2>Когда нужен раздел обеспечения сохранности</h2>
-      <p>Раздел нужен не «для галочки», а для доказательства, что проектные решения, технология работ и строительная площадка не создают угроз объекту культурного наследия.</p>
+      <p>ОСОКН нужен не только при новом строительстве и прокладке инженерных сетей. Необходимость и состав раздела определяются расположением участка, характером планируемых работ и возможным воздействием на ОКН, его территорию, предмет охраны и условия сохранности.</p>
     </div>
     <div class="triggers-grid">
       <div class="trigger-card fade-up">
         <div class="trigger-num">01</div>
         <h3>Новое строительство рядом с ОКН</h3>
-        <p>Оцениваем влияние котлована, свай, вибраций, транспорта и строительной технологии на памятник. На этой стадии обычно формируется основа раздела ОСОКН.</p>
+        <p>Оцениваем влияние котлована, свай, вибраций, строительной логистики и применяемых технологий на расположенные рядом объекты культурного наследия.</p>
       </div>
       <div class="trigger-card fade-up">
         <div class="trigger-num">02</div>
-        <h3>Реконструкция или капремонт соседнего здания</h3>
-        <p>Проверяем, не затрагивают ли работы территорию, визуальное восприятие и конструктивную безопасность ОКН.</p>
+        <h3>Реконструкция и капитальный ремонт</h3>
+        <p>Проверяем влияние проектных решений и работ на территорию, конструкции, предмет охраны и условия сохранности ОКН.</p>
       </div>
       <div class="trigger-card fade-up">
         <div class="trigger-num">03</div>
-        <h3>Инженерные и земляные работы</h3>
-        <p>Раздел фиксирует риски, оценку воздействия и меры сохранности при прокладке сетей, вскрытии грунта и работах вблизи фундаментов.</p>
+        <h3>Инженерные, земляные и демонтажные работы</h3>
+        <p>Оцениваем воздействие прокладки и выноса сетей, вскрытия грунта, демонтажа, вибраций и работ вблизи фундаментов исторических зданий.</p>
       </div>
       <div class="trigger-card fade-up">
         <div class="trigger-num">04</div>
+        <h3>Благоустройство и некапитальные объекты</h3>
+        <p>Разрабатываем мероприятия по сохранности при благоустройстве территории, устройстве покрытий, освещения, малых архитектурных форм и размещении некапитальных сооружений.</p>
+      </div>
+      <div class="trigger-card fade-up">
+        <div class="trigger-num">05</div>
+        <h3>Памятники, монументы и мемориальные доски</h3>
+        <p>Готовим ОСОКН при установке памятников и монументов на территории ОКН, а также при размещении мемориальных досок на фасадах объектов культурного наследия.</p>
+      </div>
+      <div class="trigger-card fade-up">
+        <div class="trigger-num">06</div>
         <h3>Требование органа охраны или экспертизы</h3>
-        <p>Помогаем быстро определить состав раздела, исходные материалы, маршрут подачи в ДКН и необходимость ГИКЭ в конкретном случае.</p>
+        <p>Определяем необходимый состав документации, исходные материалы, маршрут согласования в ДКН и необходимость проведения ГИКЭ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="impact-assessment">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="label">Состав документации</span>
+      <h2>Оценка воздействия работ на объект культурного наследия</h2>
+      <p>Оценка воздействия — аналитическая часть документации по обеспечению сохранности. Она связывает параметры проекта и технологию работ с состоянием ОКН, предметом охраны и возможными рисками.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card fade-up">
+        <div class="adv-icon" aria-hidden="true">01</div>
+        <h3>Исходные данные</h3>
+        <p>Проверяем статус и предмет охраны ОКН, проектные решения, расстояния до зоны работ, результаты обследований и инженерных изысканий.</p>
+      </div>
+      <div class="adv-card fade-up">
+        <div class="adv-icon" aria-hidden="true">02</div>
+        <h3>Факторы воздействия</h3>
+        <p>Рассматриваем земляные и демонтажные работы, вибрации, изменение нагрузок, состояние грунтов, строительную логистику и другие факторы конкретного проекта.</p>
+      </div>
+      <div class="adv-card fade-up">
+        <div class="adv-icon" aria-hidden="true">03</div>
+        <h3>Меры сохранности</h3>
+        <p>Формулируем ограничения технологии, защитные мероприятия, требования к организации площадки и, когда это обосновано, к мониторингу состояния объекта.</p>
+      </div>
+      <div class="adv-card fade-up">
+        <div class="adv-icon" aria-hidden="true">04</div>
+        <h3>Вывод для проектного пакета</h3>
+        <p>Обосновываем допустимость решений и включаем выводы в ОСОКН. Отдельный документ без связи с проектом не заменяет полный раздел, когда требуется именно раздел обеспечения сохранности.</p>
       </div>
     </div>
   </div>
@@ -2522,6 +2576,340 @@
     </div>
   </div>
 </section>
+<!-- PORTFOLIO_SYSTEM_START -->
+<section class="portfolio-system" aria-labelledby="all-projects-heading">
+  <div class="container">
+    <div class="portfolio-intro"><div class="section-header"><span class="label">Подтверждённый опыт</span><h2 id="all-projects-heading">Практика разработки разделов обеспечения сохранности</h2><p>Примеры показывают, для каких сценариев готовились разделы и какие объекты культурного наследия учитывались при оценке воздействия.</p></div></div>
+    <div class="portfolio-category" id="osokn-practice" data-portfolio>
+  <div class="portfolio-category-heading">
+    <div class="portfolio-category-copy"><span class="label">Практика команды</span><h2>Разделы обеспечения сохранности</h2><p>Проекты для реконструкции, нового строительства, капитального ремонта, демонтажа, инженерных работ, благоустройства и некапитальных объектов в зоне влияния ОКН.</p></div>
+    <div class="portfolio-controls" aria-label="Навигация по проектам">
+      <button class="portfolio-arrow" type="button" data-portfolio-prev aria-label="Показать предыдущий проект">←</button>
+      <button class="portfolio-arrow" type="button" data-portfolio-next aria-label="Показать следующий проект">→</button>
+    </div>
+  </div>
+  <div class="portfolio-carousel" data-portfolio-carousel tabindex="0" role="region" aria-label="Разделы обеспечения сохранности"><article class="portfolio-card" data-case-kind="photo">
+  <div class="portfolio-card-media"><img src="/assets/cases/osokn/office-cluster-psb.webp" alt="Офисный кластер ПСБ после капитального ремонта и благоустройства" width="1532" height="1146" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Капитальный ремонт · благоустройство · инженерные сети</span><span>2022</span></div>
+    <h3>Офисный кластер ПСБ</h3>
+    <p class="portfolio-card-description">Раздел для капитального ремонта пяти корпусов, благоустройства территории, некапитальных сооружений и новых инженерных сетей.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> ПАО «Промсвязьбанк»</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-office-cluster-psb" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article>
+<article class="portfolio-card" data-case-kind="photo">
+  <div class="portfolio-card-media"><img src="/assets/cases/osokn/depo-three-stations.webp" alt="ДЕПО Три вокзала с летним кафе на кровле" width="1600" height="1200" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Некапитальный объект</span><span>2023</span></div>
+    <h3>Летнее кафе на кровле ДЕПО «Три вокзала»</h3>
+    <p class="portfolio-card-description">Раздел для размещения некапитального объекта — летнего кафе — на кровле здания трамвайного парка.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> ООО «ДЕПО «ТРИ ВОКЗАЛА»</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-depo-three-stations" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article>
+<article class="portfolio-card" data-case-kind="drawing">
+  <div class="portfolio-card-media"><img src="/assets/cases/osokn/usadba-uzkoe-demolition.webp" alt="Схема демонтажа жилых домов рядом с усадьбой Узкое" width="1381" height="1039" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Демонтаж</span><span>2024</span></div>
+    <h3>Демонтаж жилых домов рядом с усадьбой «Узкое»</h3>
+    <p class="portfolio-card-description">Оценка воздействия демонтажа жилых домов на усадьбу «Узкое» и связанные объекты культурного наследия.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> ПАО «ПИК»</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-usadba-uzkoe" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article>
+<article class="portfolio-card" data-case-kind="drawing">
+  <div class="portfolio-card-media"><img src="/assets/cases/osokn/suvorovskaya-networks.webp" alt="Схема выноса сетей связи для станции метро Суворовская" width="1600" height="1274" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Инженерные сети</span><span>2025</span></div>
+    <h3>Вынос сетей связи для станции метро «Суворовская»</h3>
+    <p class="portfolio-card-description">Раздел для выноса сетей связи при строительстве станции «Суворовская» Кольцевой линии метро.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> ООО «ПСК ТЕЛЕКОМ»</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-suvorovskaya" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article>
+<article class="portfolio-card" data-case-kind="photo">
+  <div class="portfolio-card-media"><img src="/assets/cases/osokn/dom-polimerov-vdnh.webp" alt="Павильон Дом Полимеров на ВДНХ во время реконструкции" width="1280" height="853" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Реконструкция</span><span>2025</span></div>
+    <h3>Реконструкция «Дома Полимеров» на ВДНХ</h3>
+    <p class="portfolio-card-description">Раздел обеспечения сохранности для реконструкции павильона в границах исторического ансамбля ВДНХ.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> ООО «СИБУР»</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-dom-polimerov-vdnh" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article>
+<article class="portfolio-card" data-case-kind="photo">
+  <div class="portfolio-card-media"><img src="/assets/cases/osokn/levezon-novo-peredelkino.webp" alt="Проект культурно-досугового центра в Ново-Переделкино" width="965" height="566" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Новое строительство</span><span>2026</span></div>
+    <h3>Культурно-досуговый центр рядом с дачей Левенсона</h3>
+    <p class="portfolio-card-description">Раздел для нового культурно-досугового центра, благоустройства и ресурсоснабжающих сетей в Ново-Переделкино.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> ГБУ города Москвы «Объединение культурных и досуговых центров Западного административного округа»</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-levezon-novo-peredelkino" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article></div>
+  <a class="portfolio-all-link" href="/cases#obespechenie-sohrannosti">Все проекты категории →</a>
+</div>
+    <div class="portfolio-category" id="monumental-practice" data-portfolio>
+  <div class="portfolio-category-heading">
+    <div class="portfolio-category-copy"><span class="label">Отдельное направление</span><h2>Обеспечение сохранности при установке памятников, монументов и мемориальных досок</h2><p>Разрабатываем разделы обеспечения сохранности для установки произведений монументального искусства и размещения мемориальных досок в Москве. В практике команды — более 10 согласованных мемориальных досок.</p></div>
+    <div class="portfolio-controls" aria-label="Навигация по проектам">
+      <button class="portfolio-arrow" type="button" data-portfolio-prev aria-label="Показать предыдущий проект">←</button>
+      <button class="portfolio-arrow" type="button" data-portfolio-next aria-label="Показать следующий проект">→</button>
+    </div>
+  </div>
+  <div class="portfolio-carousel" data-portfolio-carousel tabindex="0" role="region" aria-label="Обеспечение сохранности при установке памятников, монументов и мемориальных досок"><article class="portfolio-card" data-case-kind="monument" data-case-id="case-fidel-castro">
+  <div class="portfolio-card-media"><img src="/assets/cases/monuments/fidel-castro.webp" alt="Памятник Фиделю Кастро в Москве" width="677" height="902" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Установка памятника</span></div>
+    <h3>Памятник Фиделю Кастро</h3>
+    <p class="portfolio-card-description">Раздел обеспечения сохранности объектов культурного наследия при установке памятника Фиделю Кастро в Москве.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> ООГО «Российское военно-историческое общество»</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-fidel-castro" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article>
+<article class="portfolio-card" data-case-kind="monument" data-case-id="case-mikhail-ulyanov">
+  <div class="portfolio-card-media"><img src="/assets/cases/monuments/mikhail-ulyanov.webp" alt="Памятник народному артисту СССР Михаилу Ульянову" width="613" height="883" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Установка памятника</span></div>
+    <h3>Памятник Михаилу Ульянову</h3>
+    <p class="portfolio-card-description">Раздел обеспечения сохранности объектов культурного наследия при установке памятника народному артисту СССР Михаилу Ульянову в Москве.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> Скульптор И. А. Бурганов</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-mikhail-ulyanov" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article>
+<article class="portfolio-card" data-case-kind="monument" data-case-id="case-petr-gertsen">
+  <div class="portfolio-card-media"><img src="/assets/cases/monuments/petr-gertsen.webp" alt="Памятник Петру Александровичу Герцену" width="596" height="928" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Установка памятника</span></div>
+    <h3>Памятник Петру Александровичу Герцену</h3>
+    <p class="portfolio-card-description">Раздел обеспечения сохранности объектов культурного наследия при установке памятника Петру Александровичу Герцену в Москве.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> ФГБУ «НМИЦ радиологии» Минздрава России</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-petr-gertsen" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article>
+<article class="portfolio-card" data-case-kind="monument" data-case-id="case-arkadiy-koshko">
+  <div class="portfolio-card-media"><img src="/assets/cases/monuments/arkadiy-koshko.webp" alt="Памятник Аркадию Францевичу Кошко в Москве" width="661" height="882" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Установка памятника</span></div>
+    <h3>Памятник Аркадию Францевичу Кошко</h3>
+    <p class="portfolio-card-description">Раздел обеспечения сохранности объектов культурного наследия при установке памятника Аркадию Францевичу Кошко в Москве.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> Департамент строительства города Москвы</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-arkadiy-koshko" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article>
+<article class="portfolio-card" data-case-kind="monument" data-case-id="case-yuriy-lyubimov">
+  <div class="portfolio-card-media"><img src="/assets/cases/monuments/yuriy-lyubimov.webp" alt="Памятник основателю Театра на Таганке Юрию Любимову" width="623" height="1003" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Установка памятника</span></div>
+    <h3>Памятник Юрию Петровичу Любимову</h3>
+    <p class="portfolio-card-description">Раздел обеспечения сохранности объектов культурного наследия при установке памятника основателю Театра на Таганке Юрию Петровичу Любимову в Москве.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> НКО «Благотворительный фонд развития театрального искусства Ю. П. Любимова»</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-yuriy-lyubimov" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article>
+<article class="portfolio-card" data-case-kind="monument" data-case-id="case-ivan-osterman">
+  <div class="portfolio-card-media"><img src="/assets/cases/monuments/ivan-osterman.webp" alt="Памятник Ивану Андреевичу Остерману" width="660" height="881" loading="lazy" decoding="async"></div>
+  <div class="portfolio-card-body">
+    <div class="portfolio-card-kicker"><span>Установка памятника</span></div>
+    <h3>Памятник Ивану Андреевичу Остерману</h3>
+    <p class="portfolio-card-description">Раздел обеспечения сохранности объектов культурного наследия при установке памятника Ивану Андреевичу Остерману в Москве.</p>
+    <p class="portfolio-card-client"><strong>Заказчик:</strong> ООГО «Российское военно-историческое общество»</p>
+    <button class="portfolio-card-link" type="button" data-case-open="case-ivan-osterman" aria-haspopup="dialog">Подробнее →</button>
+  </div>
+</article></div>
+  <a class="portfolio-all-link" href="/cases#monumental-art">Все проекты категории →</a>
+</div>
+  </div>
+</section>
+<dialog class="case-dialog" id="case-office-cluster-psb" data-case-kind="photo" aria-labelledby="case-office-cluster-psb-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/osokn/office-cluster-psb.webp" alt="Офисный кластер ПСБ после капитального ремонта и благоустройства" width="1532" height="1146" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Обеспечение сохранности</div>
+      <h2 id="case-office-cluster-psb-title">Офисный кластер ПСБ</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> ПАО «Промсвязьбанк»</div><div><strong>Год:</strong> 2022</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности объектов культурного наследия при капитальном ремонте зданий и благоустройстве земельного участка для офисного кластера.</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>Оценивалось воздействие организации офисного кластера из пяти корпусов, возведения новых некапитальных сооружений, комплексного благоустройства и прокладки инженерных сетей.</p></div>
+      <div class="case-dialog-section"><h3>Объекты культурного наследия</h3><ul><li>«Ансамбль городской застройки»</li><li>«Комплекс жилой застройки»</li><li>«Хозяйственные корпуса городской усадьбы, середины XIX века»</li></ul></div>
+      <div class="case-dialog-section"><h3>Результат</h3><p>Согласован Департаментом культурного наследия города Москвы в 2022 году.</p></div>
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-dialog" id="case-depo-three-stations" data-case-kind="photo" aria-labelledby="case-depo-three-stations-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/osokn/depo-three-stations.webp" alt="ДЕПО Три вокзала с летним кафе на кровле" width="1600" height="1200" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Обеспечение сохранности</div>
+      <h2 id="case-depo-three-stations-title">Летнее кафе на кровле ДЕПО «Три вокзала»</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> ООО «ДЕПО «ТРИ ВОКЗАЛА»</div><div><strong>Год:</strong> 2023</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности при размещении летнего кафе на кровле выявленного объекта культурного наследия.</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>Оценивалось воздействие размещения некапитального объекта на историческое здание и условия его сохранности.</p></div>
+      <div class="case-dialog-section"><h3>Объекты культурного наследия</h3><ul><li>«Ансамбль зданий Рязанского трамвайного парка, 1910–1911 годы»</li></ul></div>
+      <div class="case-dialog-section"><h3>Результат</h3><p>Согласован Департаментом культурного наследия города Москвы в 2023 году.</p></div>
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-dialog" id="case-usadba-uzkoe" data-case-kind="drawing" aria-labelledby="case-usadba-uzkoe-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/osokn/usadba-uzkoe-demolition.webp" alt="Схема демонтажа жилых домов рядом с усадьбой Узкое" width="1381" height="1039" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Обеспечение сохранности</div>
+      <h2 id="case-usadba-uzkoe-title">Демонтаж жилых домов рядом с усадьбой «Узкое»</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> ПАО «ПИК»</div><div><strong>Год:</strong> 2024</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности при демонтаже объектов капитального строительства — жилых домов.</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>В составе работы оценивалось воздействие демонтажа на объекты федерального, регионального и выявленного статуса.</p></div>
+      <div class="case-dialog-section"><h3>Объекты культурного наследия</h3><ul><li>«Усадьба «Узкое» (Стрешневых–Голицыных), XVII–XIX века»</li><li>«Усадьба «Узкое» — произведение садово-паркового искусства и ландшафтной архитектуры</li><li>«Старая оранжерея», конец XVIII века</li></ul></div>
+      <div class="case-dialog-section"><h3>Результат</h3><p>Согласован Департаментом культурного наследия города Москвы в 2024 году.</p></div>
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-dialog" id="case-suvorovskaya" data-case-kind="drawing" aria-labelledby="case-suvorovskaya-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/osokn/suvorovskaya-networks.webp" alt="Схема выноса сетей связи для станции метро Суворовская" width="1600" height="1274" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Обеспечение сохранности</div>
+      <h2 id="case-suvorovskaya-title">Вынос сетей связи для станции метро «Суворовская»</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> ООО «ПСК ТЕЛЕКОМ»</div><div><strong>Год:</strong> 2025</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности объектов культурного наследия при выносе сетей связи для станции метро «Суворовская».</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>Оценивалось воздействие инженерных работ на несколько объектов культурного наследия в зоне строительства.</p></div>
+      <div class="case-dialog-section"><h3>Объекты культурного наследия</h3><ul><li>Ансамбль Екатерининского института</li><li>Памятник маршалу Ф. И. Толбухину</li><li>Дом В. Л. Дурова — музей «Уголок Дедушки Дурова»</li><li>Памятник М. В. Фрунзе</li><li>Самотечный бульвар и парк ЦДСА</li></ul></div>
+      <div class="case-dialog-section"><h3>Результат</h3><p>Согласован Департаментом культурного наследия города Москвы в 2025 году.</p></div>
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-dialog" id="case-dom-polimerov-vdnh" data-case-kind="photo" aria-labelledby="case-dom-polimerov-vdnh-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/osokn/dom-polimerov-vdnh.webp" alt="Павильон Дом Полимеров на ВДНХ во время реконструкции" width="1280" height="853" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Обеспечение сохранности</div>
+      <h2 id="case-dom-polimerov-vdnh-title">Реконструкция «Дома Полимеров» на ВДНХ</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> ООО «СИБУР»</div><div><strong>Год:</strong> 2025</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности для реконструкции павильона «Дом Полимеров» на ВДНХ.</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>Оценивалось воздействие реконструкции на планировочную структуру ансамбля, систему цветочных партеров и соседние павильоны.</p></div>
+      <div class="case-dialog-section"><h3>Объекты культурного наследия</h3><ul><li>Ансамбль «ВСХВ–ВДНХ–ВВЦ»</li><li>«Планировочная структура, 1939–1954 годы»</li><li>«Система цветочных партеров, 1954 год»</li><li>Павильоны «Здравоохранение» и «Металлургия»</li></ul></div>
+      <div class="case-dialog-section"><h3>Результат</h3><p>Согласован Департаментом культурного наследия города Москвы в 2025 году.</p></div>
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-dialog" id="case-levezon-novo-peredelkino" data-case-kind="photo" aria-labelledby="case-levezon-novo-peredelkino-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/osokn/levezon-novo-peredelkino.webp" alt="Проект культурно-досугового центра в Ново-Переделкино" width="965" height="566" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Обеспечение сохранности</div>
+      <h2 id="case-levezon-novo-peredelkino-title">Культурно-досуговый центр рядом с дачей Левенсона</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> ГБУ города Москвы «Объединение культурных и досуговых центров Западного административного округа»</div><div><strong>Год:</strong> 2026</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности при строительстве культурно-досугового центра на месте ДК «Луч».</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>Оценивалось воздействие строительства, благоустройства территории и устройства ресурсоснабжающих сетей на расположенный рядом объект федерального значения.</p></div>
+      <div class="case-dialog-section"><h3>Объекты культурного наследия</h3><ul><li>«Дача Левенсона, 1900-е годы, архитектор Ф. О. Шехтель»</li></ul></div>
+      <div class="case-dialog-section"><h3>Результат</h3><p>Согласован Департаментом культурного наследия города Москвы в 2026 году.</p></div>
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-dialog" id="case-fidel-castro" data-case-kind="monument" aria-labelledby="case-fidel-castro-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/monuments/fidel-castro.webp" alt="Памятник Фиделю Кастро в Москве" width="677" height="902" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Монументальное искусство</div>
+      <h2 id="case-fidel-castro-title">Памятник Фиделю Кастро</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> ООГО «Российское военно-историческое общество»</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности объектов культурного наследия при выполнении работ по установке памятника Фиделю Кастро в Москве.</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>Работа относилась к обеспечению сохранности объектов культурного наследия при установке произведения монументального искусства городского значения.</p></div>
+
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-dialog" id="case-mikhail-ulyanov" data-case-kind="monument" aria-labelledby="case-mikhail-ulyanov-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/monuments/mikhail-ulyanov.webp" alt="Памятник народному артисту СССР Михаилу Ульянову" width="613" height="883" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Монументальное искусство</div>
+      <h2 id="case-mikhail-ulyanov-title">Памятник Михаилу Ульянову</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> Скульптор И. А. Бурганов</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности объектов культурного наследия при выполнении работ по установке памятника народному артисту СССР Михаилу Ульянову в Москве.</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>Работа относилась к обеспечению сохранности объектов культурного наследия при установке произведения монументального искусства городского значения.</p></div>
+
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-dialog" id="case-petr-gertsen" data-case-kind="monument" aria-labelledby="case-petr-gertsen-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/monuments/petr-gertsen.webp" alt="Памятник Петру Александровичу Герцену" width="596" height="928" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Монументальное искусство</div>
+      <h2 id="case-petr-gertsen-title">Памятник Петру Александровичу Герцену</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> ФГБУ «НМИЦ радиологии» Минздрава России</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности объектов культурного наследия при выполнении работ по установке памятника Петру Александровичу Герцену в Москве.</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>Работа относилась к обеспечению сохранности объектов культурного наследия при установке произведения монументального искусства городского значения.</p></div>
+
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-dialog" id="case-arkadiy-koshko" data-case-kind="monument" aria-labelledby="case-arkadiy-koshko-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/monuments/arkadiy-koshko.webp" alt="Памятник Аркадию Францевичу Кошко в Москве" width="661" height="882" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Монументальное искусство</div>
+      <h2 id="case-arkadiy-koshko-title">Памятник Аркадию Францевичу Кошко</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> Департамент строительства города Москвы</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности объектов культурного наследия при выполнении работ по установке памятника Аркадию Францевичу Кошко в Москве.</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>Работа относилась к обеспечению сохранности объектов культурного наследия при установке произведения монументального искусства городского значения.</p></div>
+
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-dialog" id="case-yuriy-lyubimov" data-case-kind="monument" aria-labelledby="case-yuriy-lyubimov-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/monuments/yuriy-lyubimov.webp" alt="Памятник основателю Театра на Таганке Юрию Любимову" width="623" height="1003" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Монументальное искусство</div>
+      <h2 id="case-yuriy-lyubimov-title">Памятник Юрию Петровичу Любимову</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> НКО «Благотворительный фонд развития театрального искусства Ю. П. Любимова»</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности объектов культурного наследия при выполнении работ по установке памятника основателю Театра на Таганке Юрию Петровичу Любимову в Москве.</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>Работа относилась к обеспечению сохранности объектов культурного наследия при установке произведения монументального искусства городского значения.</p></div>
+
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-dialog" id="case-ivan-osterman" data-case-kind="monument" aria-labelledby="case-ivan-osterman-title">
+  <div class="case-dialog-layout">
+    <div class="case-dialog-media"><img src="/assets/cases/monuments/ivan-osterman.webp" alt="Памятник Ивану Андреевичу Остерману" width="660" height="881" loading="lazy" decoding="async"></div>
+    <div class="case-dialog-content">
+      <button class="case-dialog-close" type="button" data-case-close aria-label="Закрыть описание проекта">×</button>
+      <div class="case-dialog-kicker">Монументальное искусство</div>
+      <h2 id="case-ivan-osterman-title">Памятник Ивану Андреевичу Остерману</h2>
+      <div class="case-dialog-meta"><div><strong>Заказчик:</strong> ООГО «Российское военно-историческое общество»</div></div>
+      <div class="case-dialog-section"><h3>Задача</h3><p>Разработан раздел обеспечения сохранности объектов культурного наследия при выполнении работ по установке памятника Ивану Андреевичу Остерману в Москве.</p></div>
+      <div class="case-dialog-section"><h3>Состав работы</h3><p>Работа относилась к обеспечению сохранности объектов культурного наследия при установке произведения монументального искусства городского значения.</p></div>
+
+      <a class="case-dialog-service-link" href="/razdel-obespecheniya-sohrannosti-okn">Разработка раздела обеспечения сохранности →</a>
+    </div>
+  </div>
+</dialog>
+<!-- PORTFOLIO_SYSTEM_END -->
+
 <section class="service-crosslinks" aria-labelledby="related-reading">
   <div class="container service-crosslinks-inner">
     <div class="service-links-title" id="related-reading">Материалы по теме</div>
@@ -2557,6 +2945,17 @@
         </div>
         <div class="faq-item ">
           <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
+            <span>Что такое оценка воздействия работ на ОКН?</span>
+            <div class="faq-toggle">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-a" role="region"><p>Это анализ возможного влияния проектных решений и технологии работ на предмет охраны, конструкции, территорию и условия сохранности ОКН. В необходимых случаях выводы входят в раздел обеспечения сохранности.</p></div>
+        </div>
+        <div class="faq-item ">
+          <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
             <span>Когда ОСОКН обязателен?</span>
             <div class="faq-toggle">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
@@ -2564,7 +2963,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-a" role="region"><p>Обычно при строительстве, реконструкции, инженерных или земляных работах рядом с ОКН либо на территории, связанной с объектом. Точный вывод зависит от площадки и вида работ.</p></div>
+          <div class="faq-a" role="region"><p>ОСОКН может потребоваться при проведении работ на земельных участках, граничащих с территориями ОКН или непосредственно связанных с ними. Это относится не только к строительству, реконструкции, инженерным и земляным работам, но также к благоустройству, размещению некапитальных объектов, установке памятников, монументов и мемориальных досок. Необходимость раздела определяется расположением участка, характером работ и возможным воздействием на ОКН.</p></div>
         </div>
         <div class="faq-item ">
           <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaqBtn(this)">
@@ -2686,6 +3085,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -2968,5 +3369,6 @@
   }
 
 </script>
+<script src="/assets/js/portfolio-cases.js" defer></script>
 </body>
 </html>

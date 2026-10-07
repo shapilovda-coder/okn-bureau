@@ -11,6 +11,7 @@ npm-debug.log*
 *.log
 coverage/
 dist/
+.release*/
 backup-*/
 *.rollback-*
 ._*

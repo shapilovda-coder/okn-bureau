@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "start": "node server/server.js",
-    "check": "node --check server/server.js"
+    "check": "node --check server/server.js",
+    "validate": "node scripts/validate-site.mjs",
+    "vercel:routes": "node scripts/generate-vercel-config.mjs",
+    "release:build": "node scripts/create-release.mjs .release"
   },
   "engines": {
     "node": ">=20"
