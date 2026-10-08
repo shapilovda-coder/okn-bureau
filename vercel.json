@@ -29,6 +29,10 @@
       "destination": "/blog-static.html"
     },
     {
+      "source": "/blog/pokupka-obekta-kulturnogo-naslediya",
+      "destination": "/blog-pokupka-okn.html"
+    },
+    {
       "source": "/blog/zony-ohrany-i-zashchitnye-zony-okn",
       "destination": "/blog-zony-ohrany-okn.html"
     },

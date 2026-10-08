@@ -41,6 +41,7 @@ const SECURITY_HEADERS = {
 const routeMap = new Map([
   ["/", "index.html"],
   ["/blog", "blog-static.html"],
+  ["/blog/pokupka-obekta-kulturnogo-naslediya", "blog-pokupka-okn.html"],
   ["/blog/zony-ohrany-i-zashchitnye-zony-okn", "blog-zony-ohrany-okn.html"],
   ["/blog/okn-v-proektah-krt", "blog-okn-krt.html"],
   ["/blog/arendator-obekta-kulturnogo-naslediya", "blog-arendator-okn.html"],
