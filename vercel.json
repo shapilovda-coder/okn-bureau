@@ -29,6 +29,10 @@
       "destination": "/blog-static.html"
     },
     {
+      "source": "/blog/redevelopment-okn",
+      "destination": "/blog-redevelopment-okn.html"
+    },
+    {
       "source": "/blog/pokupka-obekta-kulturnogo-naslediya",
       "destination": "/blog-pokupka-okn.html"
     },
