@@ -44,6 +44,7 @@ const routeMap = new Map([
   ["/blog/redevelopment-okn", "blog-redevelopment-okn.html"],
   ["/blog/pokupka-obekta-kulturnogo-naslediya", "blog-pokupka-okn.html"],
   ["/blog/zony-ohrany-i-zashchitnye-zony-okn", "blog-zony-ohrany-okn.html"],
+  ["/blog/mozhno-li-stroit-v-zashchitnoy-zone-okn", "blog-stroitelstvo-zashchitnaya-zona-okn.html"],
   ["/blog/okn-v-proektah-krt", "blog-okn-krt.html"],
   ["/blog/arendator-obekta-kulturnogo-naslediya", "blog-arendator-okn.html"],
   ["/blog/sobstvennik-obekta-kulturnogo-naslediya-chto-delat", "blog-sobstvennik-okn.html"],
