@@ -29,6 +29,10 @@
       "destination": "/blog-static.html"
     },
     {
+      "source": "/blog/obespechenie-sohrannosti-okn-pri-provedenii-rabot",
+      "destination": "/blog-obespechenie-sohrannosti-okn.html"
+    },
+    {
       "source": "/blog/redevelopment-okn",
       "destination": "/blog-redevelopment-okn.html"
     },
