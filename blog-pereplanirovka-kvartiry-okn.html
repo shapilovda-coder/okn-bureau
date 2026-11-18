@@ -2156,12 +2156,14 @@
 
   .article-table {
     width: 100%;
-    min-width: 760px;
+    min-width: 0;
+    table-layout: fixed;
     border-collapse: collapse;
   }
 
   .article-table th,
   .article-table td {
+    overflow-wrap: anywhere;
     padding: 18px 16px;
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
