@@ -1,0 +1,27 @@
+name: Check nginx maintenance access
+on:
+  push:
+    branches: [fix/nginx-access-check-20261119]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Read deployment account maintenance permissions
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.OKN_VPS_SSH_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.OKN_VPS_KNOWN_HOSTS }}
+          VPS_HOST: ${{ secrets.OKN_VPS_HOST }}
+          VPS_PORT: ${{ secrets.OKN_VPS_PORT }}
+          VPS_USER: ${{ secrets.OKN_VPS_USER }}
+        run: |
+          set -eu
+          test -n "$SSH_PRIVATE_KEY"
+          test -n "$SSH_KNOWN_HOSTS"
+          install -m 700 -d "$HOME/.ssh"
+          printf '%s\n' "$SSH_PRIVATE_KEY" > "$HOME/.ssh/id_ed25519"
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/id_ed25519" "$HOME/.ssh/known_hosts"
+          ssh -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" 'id -un; sudo -n -l; test ! -w /etc/nginx/sites-available/oknproekt.ru || printf "NGINX_CONFIG_WRITABLE=yes\n"'
