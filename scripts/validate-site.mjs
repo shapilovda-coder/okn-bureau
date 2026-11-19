@@ -7,6 +7,15 @@ const ORIGIN = "https://oknproekt.ru";
 const errors = [];
 const routes = await readRouteMap();
 const routeByPath = new Map(routes.map((route) => [route.source, route.destination]));
+const pageIds = new Map();
+const titles = new Map();
+const descriptions = new Map();
+for (const { source, destination } of routes) {
+  try {
+    const html = await readFile(destination, "utf8");
+    pageIds.set(source, new Set([...html.matchAll(/\bid=["']([^"']+)["']/gi)].map((match) => match[1])));
+  } catch { /* The main pass reports missing files. */ }
+}
 
 function fail(message) {
   errors.push(message);
@@ -66,6 +75,13 @@ for (const { source: route, destination } of routes) {
 
   if (h1Count !== 1) fail(`${route}: H1=${h1Count}`);
   if (titleCount !== 1) fail(`${route}: Title=${titleCount}`);
+  const title = decodeText(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "");
+  const description = html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i)?.[1]?.trim() || "";
+  for (const [label, value, seen] of [["Title", title, titles], ["Description", description, descriptions]]) {
+    if (!value) fail(`${route}: пустой ${label}`);
+    else if (seen.has(value)) fail(`${route}: ${label} совпадает с ${seen.get(value)}`);
+    else seen.set(value, route);
+  }
   if (canonicalMatches.length !== 1) {
     fail(`${route}: canonical=${canonicalMatches.length}`);
   } else if (canonicalMatches[0][1] !== expectedCanonical) {
@@ -105,11 +121,17 @@ for (const { source: route, destination } of routes) {
 
   const links = [...html.matchAll(/href=["']([^"']+)["']/gi)]
     .map((match) => match[1])
-    .filter((value) => value.startsWith("/") && !value.startsWith("//"));
+    .filter((value) => (value.startsWith("/") && !value.startsWith("//")) || value.startsWith("#"));
 
   for (const href of new Set(links)) {
-    const pathname = new URL(href, ORIGIN).pathname.replace(/\/$/, "") || "/";
-    if (routeByPath.has(pathname)) continue;
+    const target = new URL(href, `${ORIGIN}${route}`);
+    const pathname = target.pathname.replace(/\/$/, "") || "/";
+    if (routeByPath.has(pathname)) {
+      if (target.hash && !pageIds.get(pathname)?.has(decodeURIComponent(target.hash.slice(1)))) {
+        fail(`${route}: отсутствует якорь ${href}`);
+      }
+      continue;
+    }
     if (extname(pathname) && (await exists(pathname.slice(1)))) continue;
     fail(`${route}: внутренняя ссылка без маршрута ${href}`);
   }
@@ -133,6 +155,12 @@ for (const { source, destination } of routes) {
 if (vercelRoutes.size !== routes.length) fail("vercel.json содержит лишние маршруты");
 const robotHeader = (vercel.headers || []).flatMap((entry) => entry.headers || []).find((header) => header.key.toLowerCase() === "x-robots-tag");
 if (!robotHeader || !/noindex/i.test(robotHeader.value)) fail("Vercel Preview не защищён X-Robots-Tag: noindex");
+
+const nginx = await readFile("deploy/nginx/oknproekt.ru.conf", "utf8");
+for (const { source, destination } of routes) {
+  const redirect = `location = /${destination} { return 301 ${ORIGIN}${source}$is_args$args; }`;
+  if (!nginx.includes(redirect)) fail(`${source}: nginx не перенаправляет /${destination} на canonical`);
+}
 
 if (errors.length) {
   console.error(errors.map((error) => `- ${error}`).join("\n"));

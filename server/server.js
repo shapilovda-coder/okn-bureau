@@ -1,6 +1,6 @@
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
-import { extname, join, normalize, resolve } from "node:path";
+import { extname, join, normalize, resolve, sep } from "node:path";
 
 const PORT = Number(process.env.PORT || 3000);
 const HOST = process.env.HOST || "127.0.0.1";
@@ -79,6 +79,8 @@ const routeMap = new Map([
   ["/razreshenie-na-provedenie-rabot-po-sohraneniyu-okn", "service-razreshenie-dkn.html"],
   ["/o-kompanii", "about-static.html"]
 ]);
+
+const canonicalByFile = new Map([...routeMap].map(([route, file]) => [`/${file}`, route]));
 
 const contentTypes = {
   ".html": "text/html; charset=utf-8",
@@ -161,17 +163,35 @@ function resolveStaticPath(pathname) {
   const normalizedPathname = pathname !== "/" ? pathname.replace(/\/+$/, "") || "/" : "/";
   const mapped = routeMap.get(normalizedPathname);
   if (mapped) return join(PUBLIC_DIR, mapped);
-  const safePath = normalize(decodeURIComponent(pathname)).replace(/^([.][.][/\\])+/, "");
+  const safePath = normalize(pathname).replace(/^([.][.][/\\])+/, "");
   return safePath === "/" ? join(PUBLIC_DIR, "index.html") : join(PUBLIC_DIR, safePath);
 }
 async function serveStatic(req, res) {
-  const url = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
-  const filePath = resolveStaticPath(url.pathname);
-  if (!filePath.startsWith(PUBLIC_DIR)) { res.writeHead(403); res.end("Forbidden"); return; }
+  let url;
+  let pathname;
+  try {
+    url = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
+    pathname = decodeURIComponent(url.pathname);
+    if (pathname.includes("\0")) throw new URIError("Null byte in URL");
+  } catch {
+    res.writeHead(400, { ...SECURITY_HEADERS, "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" });
+    res.end("Bad Request");
+    return;
+  }
+  const normalizedPathname = pathname.replace(/\/+$/, "") || "/";
+  const canonical = canonicalByFile.get(normalizedPathname)
+    || (routeMap.has(normalizedPathname) ? normalizedPathname : null);
+  if (canonical && url.pathname !== canonical) {
+    res.writeHead(301, { ...SECURITY_HEADERS, Location: canonical + url.search, "Cache-Control": "no-cache" });
+    res.end();
+    return;
+  }
+  const filePath = resolveStaticPath(pathname);
+  if (filePath !== PUBLIC_DIR && !filePath.startsWith(PUBLIC_DIR + sep)) { res.writeHead(403); res.end("Forbidden"); return; }
   try {
     const file = await readFile(filePath);
     const ext = extname(filePath).toLowerCase();
-    const cacheControl = ext === ".html" ? "no-cache" : "public, max-age=31536000, immutable";
+    const cacheControl = [".html", ".xml", ".txt"].includes(ext) ? "no-cache" : "public, max-age=31536000, immutable";
     res.writeHead(200, { ...SECURITY_HEADERS, "Content-Type": contentTypes[ext] || "application/octet-stream", "Cache-Control": cacheControl });
     res.end(file);
   } catch {
@@ -189,4 +209,4 @@ const server = createServer(async (req, res) => {
   if ((req.url || "").startsWith("/api/lead")) return handleLead(req, res);
   await serveStatic(req, res);
 });
-server.listen(PORT, HOST, () => { console.log(`ОКН.Проект server listening on http://${HOST}:${PORT}`); });
+server.listen(PORT, HOST, () => { console.log(`ОКН.Проект server listening on http://${HOST}:${server.address().port}`); });
