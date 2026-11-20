@@ -29,6 +29,10 @@
       "destination": "/blog-static.html"
     },
     {
+      "source": "/blog/kondicioner-v-dome-pamyatnike-predpisanie",
+      "destination": "/blog-kondicioner-predpisanie-okn.html"
+    },
+    {
       "source": "/blog/pereplanirovka-kvartiry-v-okn",
       "destination": "/blog-pereplanirovka-kvartiry-okn.html"
     },
