@@ -29,6 +29,18 @@
       "destination": "/blog-static.html"
     },
     {
+      "source": "/blog/vyveska-na-obekte-kulturnogo-naslediya",
+      "destination": "/blog-vyveska-na-okn.html"
+    },
+    {
+      "source": "/blog/zamena-okon-v-obekte-kulturnogo-naslediya",
+      "destination": "/blog-zamena-okon-okn.html"
+    },
+    {
+      "source": "/blog/vhodnaya-gruppa-v-obekte-kulturnogo-naslediya",
+      "destination": "/blog-vhodnaya-gruppa-okn.html"
+    },
+    {
       "source": "/blog/kondicioner-v-dome-pamyatnike-predpisanie",
       "destination": "/blog-kondicioner-predpisanie-okn.html"
     },
